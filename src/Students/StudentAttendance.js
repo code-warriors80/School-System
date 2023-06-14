@@ -64,8 +64,8 @@ const StudentAttendance = () => {
                         </td>
                         <td className='py-5'> <button className='bg-blue-500 p-3 rounded-lg text-white' disabled>10 May 2023</button></td>
                         <td className='py-5 flex items-start justify-center gap-2'>
-                        <button className='bg-green-500 p-3 rounded-lg text-white'>Present</button>
-                          <button className='bg-color-danger p-3 rounded-lg text-white'>Absent</button>
+                        <button className='border-solid text-green-500 border-2 border-green-500 hover:bg-green-500 hover:text-white p-3 rounded-lg text-white'>Present</button>
+                          <button className='border-2 border-solid text-color-danger hover:bg-color-danger hover:text-white border-color-danger p-3 rounded-lg text-white'>Absent</button>
                         </td>
                     </tr>
 
@@ -80,8 +80,8 @@ const StudentAttendance = () => {
                         </td>
                         <td className='py-5'> <button className='bg-blue-500 p-3 rounded-lg text-white' disabled>10 May 2023</button></td>
                         <td className='py-5 flex items-start justify-center gap-2'>
-                        <button className='bg-green-500 p-3 rounded-lg text-white'>Present</button>
-                          <button className='bg-color-danger p-3 rounded-lg text-white'>Absent</button>
+                          <button className='border-solid text-green-500 border-2 border-green-500 hover:bg-green-500 hover:text-white p-3 rounded-lg text-white'>Present</button>
+                          <button className='border-2 border-solid text-color-danger hover:bg-color-danger hover:text-white border-color-danger p-3 rounded-lg text-white'>Absent</button>
                         </td>
                     </tr>
                     
@@ -96,8 +96,8 @@ const StudentAttendance = () => {
                         </td>
                         <td className='py-5'> <button className='bg-blue-500 p-3 rounded-lg text-white' disabled>10 May 2023</button></td>
                         <td className='py-5 flex items-start justify-center gap-2'>
-                        <button className='bg-green-500 p-3 rounded-lg text-white'>Present</button>
-                          <button className='bg-color-danger p-3 rounded-lg text-white'>Absent</button>
+                          <button className='border-solid text-green-500 border-2 border-green-500 hover:bg-green-500 hover:text-white p-3 rounded-lg text-white'>Present</button>
+                          <button className='border-2 border-solid text-color-danger hover:bg-color-danger hover:text-white border-color-danger p-3 rounded-lg text-white'>Absent</button>
                         </td>
                     </tr>
                   </tbody>

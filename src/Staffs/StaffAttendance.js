@@ -49,13 +49,13 @@ const StaffAttendance = () => {
                               <p className='font-semibold text-[17px]'>Mrs Samuel Malam</p>
                         </td>
                         <td className='py-5'>
-                            <button className='bg-green-500 p-3 rounded-lg text-white'>Sign In</button>
+                            <button className='border-2 border-solid border-green-500 text-green-500 hover:bg-green-500 hover:text-white p-3 rounded-lg text-white'>Sign In</button>
                         </td>
                         <td className='py-5'>
-                            <button className='bg-blue-500 p-3 rounded-lg text-white'>Sign Out</button>
+                            <button className='border-2 border-solid border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white p-3 rounded-lg text-white'>Sign Out</button>
                         </td>
                         <td className='py-5 flex items-start justify-center gap-2'>
-                          <button className='bg-color-danger p-3 rounded-lg text-white'>Absent</button>
+                          <button className='border-2 border-solid border-red-500 text-red-500 hover:bg-red-500 hover:text-white p-3 rounded-lg text-white'>Absent</button>
                         </td>
                     </tr>
 
@@ -66,13 +66,13 @@ const StaffAttendance = () => {
                               <p className='font-semibold text-[17px]'>Mr Joseph Mosses</p>
                         </td>
                         <td className='py-5'>
-                            <button className='bg-green-500 p-3 rounded-lg text-white'>Sign In</button>
+                            <button className='border-2 border-solid border-green-500 text-green-500 hover:bg-green-500 hover:text-white p-3 rounded-lg text-white'>Sign In</button>
                         </td>
                         <td className='py-5'>
-                            <button className='bg-blue-500 p-3 rounded-lg text-white'>Sign Out</button>
+                            <button className='border-2 border-solid border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white p-3 rounded-lg text-white'>Sign Out</button>
                         </td>
                         <td className='py-5 flex items-start justify-center gap-2'>
-                          <button className='bg-color-danger p-3 rounded-lg text-white'>Absent</button>
+                          <button className='border-2 border-solid border-red-500 text-red-500 hover:bg-red-500 hover:text-white p-3 rounded-lg text-white'>Absent</button>
                         </td>
                     </tr>
                     
@@ -83,13 +83,13 @@ const StaffAttendance = () => {
                                 <p className='font-semibold text-[17px]'>Mrs Silvia Henry</p>
                         </td>
                         <td className='py-5'>
-                            <button className='bg-green-500 p-3 rounded-lg text-white'>Sign In</button>
+                            <button className='border-2 border-solid border-green-500 text-green-500 hover:bg-green-500 hover:text-white p-3 rounded-lg text-white'>Sign In</button>
                         </td>
                         <td className='py-5'>
-                            <button className='bg-blue-500 p-3 rounded-lg text-white'>Sign Out</button>
+                            <button className='border-2 border-solid border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white p-3 rounded-lg text-white'>Sign Out</button>
                         </td>
                         <td className='py-5 flex items-start justify-center gap-2'>
-                          <button className='bg-color-danger p-3 rounded-lg text-white'>Absent</button>
+                          <button className='border-2 border-solid border-red-500 text-red-500 hover:bg-red-500 hover:text-white p-3 rounded-lg text-white'>Absent</button>
                         </td>
                     </tr>
                   </tbody>

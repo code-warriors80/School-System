@@ -34,7 +34,7 @@ const StaffProfile = () => {
                                                                                           <td className='py-3 text-[16px] float-right'>10/7/2003</td>
                                                                            </tr>
                                                             </table>
-                                                            <button className='bg-color-danger w-[82%] py-3 rounded-2xl mt-2 text-white font-bold'>Suspend Staff</button>
+                                                            <button className='border-2 border-solid border-color-danger text-color-danger hover:bg-color-danger hover:text-white w-[82%] py-3 rounded-2xl mt-2 text-white font-bold'>Suspend Staff</button>
                                              </div>
                                              <div className='bg-white w-[45%] p-5 rounded-2xl shadow-lg'>
                                                             Accordions
