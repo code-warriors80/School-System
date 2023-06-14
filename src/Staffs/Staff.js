@@ -1,9 +1,13 @@
 import React, {useState} from 'react'
-import dp from '../image/_DSC0541.JPG'
-import {  FaSearch, FaBell, FaUserPlus, FaCalendar } from 'react-icons/fa'    
+import {  FaSearch, FaBell } from 'react-icons/fa'    
 import SideNotify from '../Components/SideNotify'
 import { Link } from 'react-router-dom'
 import StaffForm from '../Forms/StaffForm'
+
+import staff from '../icons/icons8-writer-male-94.png'
+import calender from '../icons/icons8-calendar-94.png'
+import user from '../icons/icons8-male-user-94.png'
+import bell from '../icons/icons8-bell-94.png'
 
 const Staff = () => {
       const [model, setModel] = useState(false)
@@ -15,16 +19,16 @@ const Staff = () => {
                                   <input type="text" name="search" id="" placeholder="Search" className='p-[10px] text-black w-full'/>
                   </div>
                   <div className='flex items-center'>
-                        <FaBell className='mr-6 text-white text-[25px]'/>
-                        <img src={dp} alt='' className='w-[50px] h-[50px] rounded-full border-2 border-dashed border-white p-1'/>
+                         <img src={bell} className='mr-6 w-8'/>
+                        <img src={user} alt='' className='w-[50px] h-[50px] rounded-full border-2 border-dashed border-white p-1'/>
                   </div>
           </nav>
 
           {model === true &&(<StaffForm setModel={setModel}/>)}
 
           <div className='fixed bottom-10 right-20 gap-3'>
-                  <button className='text-white bg-dark-purple p-4 rounded-full flex items-center justify-center text-[23px] mb-3' onClick={() => {setModel(true)}}><FaUserPlus /></button>
-                  <Link to="/staffAttendance" className='text-white bg-dark-purple p-4 rounded-full flex items-center justify-center text-[23px] mb-3'><FaCalendar /></Link>
+                  <button className='text-white bg-dark-purple p-4 rounded-full flex items-center justify-center text-[23px] mb-3' onClick={() => {setModel(true)}}><img src={staff} alt=''  className='w-10'/></button>
+                  <Link to="/staffAttendance" className='text-white bg-dark-purple p-4 rounded-full flex items-center justify-center text-[23px] mb-3'><img src={calender} alt=''  className='w-10'/></Link>
           </div>
 
           <div className='flex items-start justify-between p-5 '>
@@ -47,7 +51,7 @@ const Staff = () => {
             <div className=' flex items-start gap-5 pb-5 pt-2 flex-wrap mx-auto'>
                   <Link>
                         <div className='bg-white rounded-2xl w-64 p-5 text-center shadow-lg'>
-                            <img src={dp} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-2'/>
+                            <img src={user} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-1'/>
                             <h3 className='mb-1 mt-2 font-semibold text-[18px]'>Mrs Bisola Damilola</h3>
                             <p className='text-[14px] text-dark-purple'>Staff Position</p>
                             <div className='bg-dark-purple w-full py-3 rounded-lg text-white mt-1'>
@@ -59,7 +63,7 @@ const Staff = () => {
 
                   <Link>
                         <div className='bg-white rounded-2xl w-64 p-5 text-center shadow-lg'>
-                            <img src={dp} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-2'/>
+                            <img src={user} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-1'/>
                             <h3 className='mb-1 mt-2 font-semibold text-[19px]'>Staffs Name</h3>
                             <p className='text-[14px] text-dark-purple'>Staff Position</p>
                             <div className='bg-dark-purple w-full py-3 rounded-lg text-white mt-1'>
@@ -70,7 +74,7 @@ const Staff = () => {
 
                   <Link>
                         <div className='bg-white rounded-2xl w-64 p-5 text-center shadow-lg'>
-                            <img src={dp} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-2'/>
+                            <img src={user} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-1'/>
                             <h3 className='mb-1 mt-2 font-semibold text-[19px]'>Staffs Name</h3>
                             <p className='text-[14px] text-dark-purple'>Staff Position</p>
                             <div className='bg-dark-purple w-full py-3 rounded-lg text-white mt-1'>
@@ -81,7 +85,7 @@ const Staff = () => {
 
                   <Link>
                         <div className='bg-white rounded-2xl w-64 p-5 text-center shadow-lg'>
-                            <img src={dp} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-2'/>
+                            <img src={user} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-1'/>
                             <h3 className='mb-1 mt-2 font-semibold text-[19px]'>Staffs Name</h3>
                             <p className='text-[14px] text-dark-purple'>Staff Position</p>
                             <div className='bg-dark-purple w-full py-3 rounded-lg text-white mt-1'>
@@ -92,7 +96,7 @@ const Staff = () => {
 
                   <Link>
                         <div className='bg-white rounded-2xl w-64 p-5 text-center shadow-lg'>
-                            <img src={dp} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-2'/>
+                            <img src={user} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-1'/>
                             <h3 className='mb-1 mt-2 font-semibold text-[19px]'>Staffs Name</h3>
                             <p className='text-[14px] text-dark-purple'>Staff Position</p>
                             <div className='bg-dark-purple w-full py-3 rounded-lg text-white mt-1'>
@@ -103,7 +107,7 @@ const Staff = () => {
 
                   <Link>
                         <div className='bg-white rounded-2xl w-64 p-5 text-center shadow-lg'>
-                            <img src={dp} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-2'/>
+                            <img src={user} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-1'/>
                             <h3 className='mb-1 mt-2 font-semibold text-[19px]'>Staffs Name</h3>
                             <p className='text-[14px] text-dark-purple'>Staff Position</p>
                             <div className='bg-dark-purple w-full py-3 rounded-lg text-white mt-1'>
@@ -114,7 +118,7 @@ const Staff = () => {
 
                   <Link>
                         <div className='bg-white rounded-2xl w-64 p-5 text-center shadow-lg'>
-                            <img src={dp} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-2'/>
+                            <img src={user} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-1'/>
                             <h3 className='mb-1 mt-2 font-semibold text-[19px]'>Staffs Name</h3>
                             <p className='text-[14px] text-dark-purple'>Staff Position</p>
                             <div className='bg-dark-purple w-full py-3 rounded-lg text-white mt-1'>
@@ -125,7 +129,7 @@ const Staff = () => {
 
                   <Link>
                         <div className='bg-white rounded-2xl w-64 p-5 text-center shadow-lg'>
-                            <img src={dp} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-2'/>
+                            <img src={user} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-1'/>
                             <h3 className='mb-1 mt-2 font-semibold text-[19px]'>Staffs Name</h3>
                             <p className='text-[14px] text-dark-purple'>Staff Position</p>
                             <div className='bg-dark-purple w-full py-3 rounded-lg text-white mt-1'>
@@ -136,7 +140,7 @@ const Staff = () => {
 
                   <Link>
                         <div className='bg-white rounded-2xl w-64 p-5 text-center shadow-lg'>
-                            <img src={dp} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-2'/>
+                            <img src={user} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-1'/>
                             <h3 className='mb-1 mt-2 font-semibold text-[19px]'>Staffs Name</h3>
                             <p className='text-[14px] text-dark-purple'>Staff Position</p>
                             <div className='bg-dark-purple w-full py-3 rounded-lg text-white mt-1'>
@@ -147,7 +151,7 @@ const Staff = () => {
 
                   <Link>
                         <div className='bg-white rounded-2xl w-64 p-5 text-center shadow-lg'>
-                            <img src={dp} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-2'/>
+                            <img src={user} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-1'/>
                             <h3 className='mb-1 mt-2 font-semibold text-[19px]'>Staffs Name</h3>
                             <p className='text-[14px] text-dark-purple'>Staff Position</p>
                             <div className='bg-dark-purple w-full py-3 rounded-lg text-white mt-1'>

@@ -1,13 +1,14 @@
 import React from 'react'
-import dp from '../image/_DSC0541.JPG'
-import { FaTimes } from 'react-icons/fa'
+
+import puple from '../icons/icons8-student-male-94.png'
+import close from '../icons/icons8-close-94.png'
 
 const TakenStudentAttendance = ({setModel}) => {
   return (
     <div className='fixed w-[66%] p-5 bg-light-gray h-[90vh]'>
         <div className='flex items-center justify-between'>
             <h1 className='text-[20px]'>Today's Attendance</h1>
-            <button className='text-[20px]' onClick={() => setModel(false)}><FaTimes /></button>
+            <button className='text-[20px]' onClick={() => setModel(false)}><img src={close} alt=''  className='w-5'/></button>
         </div>
 
         <div className='flex items-center justify-between'>
@@ -42,7 +43,7 @@ const TakenStudentAttendance = ({setModel}) => {
                   <tbody>
                     <tr>
                         <td className='py-5'>1</td>
-                        <td className='py-5'><img src={dp} alt='' className='w-[50px] h-[50px] border-2 border-dashed border-dark-brown p-1 rounded-full mx-auto'/></td>
+                        <td className='py-5'><img src={puple} alt='' className='w-[50px] h-[50px] border-2 border-dashed border-dark-brown p-1 rounded-full mx-auto'/></td>
                         <td>
                               <p className='font-semibold text-[17px]'>Mrs Samuel Malam</p>
                         </td>
@@ -63,7 +64,7 @@ const TakenStudentAttendance = ({setModel}) => {
 
                     <tr className='bg-light-gray'>
                         <td className='py-5'>2</td>
-                        <td className='py-5'><img src={dp} alt='' className='w-[50px] h-[50px] border-2 border-dashed border-dark-brown p-1 rounded-full mx-auto'/></td>
+                        <td className='py-5'><img src={puple} alt='' className='w-[50px] h-[50px] border-2 border-dashed border-dark-brown p-1 rounded-full mx-auto'/></td>
                         <td>     
                               <p className='font-semibold text-[17px]'>Mr Joseph Mosses</p>
                         </td>
@@ -80,7 +81,7 @@ const TakenStudentAttendance = ({setModel}) => {
                     
                     <tr>
                         <td className='py-5'>3</td>
-                        <td className='py-5'><img src={dp} alt='' className='w-[50px] h-[50px] border-2 border-dashed border-dark-brown p-1 rounded-full mx-auto'/></td>
+                        <td className='py-5'><img src={puple} alt='' className='w-[50px] h-[50px] border-2 border-dashed border-dark-brown p-1 rounded-full mx-auto'/></td>
                         <td>
                                 <p className='font-semibold text-[17px]'>Mrs Silvia Henry</p>
                         </td>

@@ -1,8 +1,12 @@
 import React, {useState} from 'react'
 import dp from '../image/_DSC0541.JPG'
-import {  FaSearch, FaBell, FaCalendarCheck } from 'react-icons/fa'    
+import {  FaSearch, FaBell } from 'react-icons/fa'    
 import SideNotify from '../Components/SideNotify'
 import TakenStaffAttendance from './TakenStaffAttendance'
+
+import user from '../icons/icons8-male-user-94.png'
+import calander from '../icons/icons8-today-94.png'
+import bell from '../icons/icons8-bell-94.png'
 
 const StaffAttendance = () => {
   const [model, setModel] = useState(false)
@@ -14,15 +18,15 @@ const StaffAttendance = () => {
                                   <input type="text" name="search" id="" placeholder="Search" className='p-[10px] text-black w-full'/>
                   </div>
                   <div className='flex items-center'>
-                        <FaBell className='mr-6 text-white text-[25px]'/>
-                        <img src={dp} alt='' className='w-[50px] h-[50px] rounded-full border-2 border-dashed border-white p-1'/>
+                        <img src={bell} className='mr-6 w-8'/>
+                        <img src={user} alt='' className='w-[50px] h-[50px] rounded-full border-2 border-dashed border-white p-1'/>
                   </div>
           </nav>
 
           {model === true &&(<TakenStaffAttendance setModel={setModel} />)}
 
           <div className='fixed bottom-10 right-20 gap-3'>
-                  <button className='text-white bg-dark-purple p-4 rounded-full flex items-center justify-center text-[23px] mb-3' onClick={() => setModel(true)}><FaCalendarCheck /></button>
+                  <button className='text-white bg-dark-purple p-4 rounded-full flex items-center justify-center text-[23px] mb-3' onClick={() => setModel(true)}><img src={calander} alt=''  className='w-10'/></button>
           </div>
 
           <h3 className='ml-5 mt-5 text-[20px]'>Staff Attendance</h3>
@@ -44,52 +48,52 @@ const StaffAttendance = () => {
                   <tbody>
                     <tr>
                         <td className='py-5'>1</td>
-                        <td className='py-5'><img src={dp} alt='' className='w-[50px] h-[50px] border-2 border-dashed border-dark-brown p-1 rounded-full mx-auto'/></td>
+                        <td className='py-5'><img src={user} alt='' className='w-[50px] h-[50px] border-2 border-dashed border-dark-brown p-1 rounded-full mx-auto'/></td>
                         <td>
                               <p className='font-semibold text-[17px]'>Mrs Samuel Malam</p>
                         </td>
                         <td className='py-5'>
-                            <button className='border-2 border-solid border-green-500 text-green-500 hover:bg-green-500 hover:text-white p-3 rounded-lg text-white'>Sign In</button>
+                            <button className='border-2 border-solid border-green-500 text-green-500 hover:bg-green-500 hover:text-white p-3 rounded-lg'>Sign In</button>
                         </td>
                         <td className='py-5'>
-                            <button className='border-2 border-solid border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white p-3 rounded-lg text-white'>Sign Out</button>
+                            <button className='border-2 border-solid border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white p-3 rounded-lg'>Sign Out</button>
                         </td>
                         <td className='py-5 flex items-start justify-center gap-2'>
-                          <button className='border-2 border-solid border-red-500 text-red-500 hover:bg-red-500 hover:text-white p-3 rounded-lg text-white'>Absent</button>
+                          <button className='border-2 border-solid border-red-500 text-red-500 hover:bg-red-500 hover:text-white p-3 rounded-lg'>Absent</button>
                         </td>
                     </tr>
 
                     <tr className='bg-light-gray'>
                         <td className='py-5'>2</td>
-                        <td className='py-5'><img src={dp} alt='' className='w-[50px] h-[50px] border-2 border-dashed border-dark-brown p-1 rounded-full mx-auto'/></td>
+                        <td className='py-5'><img src={user} alt='' className='w-[50px] h-[50px] border-2 border-dashed border-dark-brown p-1 rounded-full mx-auto'/></td>
                         <td>     
                               <p className='font-semibold text-[17px]'>Mr Joseph Mosses</p>
                         </td>
                         <td className='py-5'>
-                            <button className='border-2 border-solid border-green-500 text-green-500 hover:bg-green-500 hover:text-white p-3 rounded-lg text-white'>Sign In</button>
+                            <button className='border-2 border-solid border-green-500 text-green-500 hover:bg-green-500 hover:text-white p-3 rounded-lg'>Sign In</button>
                         </td>
                         <td className='py-5'>
-                            <button className='border-2 border-solid border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white p-3 rounded-lg text-white'>Sign Out</button>
+                            <button className='border-2 border-solid border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white p-3 rounded-lg'>Sign Out</button>
                         </td>
                         <td className='py-5 flex items-start justify-center gap-2'>
-                          <button className='border-2 border-solid border-red-500 text-red-500 hover:bg-red-500 hover:text-white p-3 rounded-lg text-white'>Absent</button>
+                          <button className='border-2 border-solid border-red-500 text-red-500 hover:bg-red-500 hover:text-white p-3 rounded-lg'>Absent</button>
                         </td>
                     </tr>
                     
                     <tr>
                         <td className='py-5'>3</td>
-                        <td className='py-5'><img src={dp} alt='' className='w-[50px] h-[50px] border-2 border-dashed border-dark-brown p-1 rounded-full mx-auto'/></td>
+                        <td className='py-5'><img src={user} alt='' className='w-[50px] h-[50px] border-2 border-dashed border-dark-brown p-1 rounded-full mx-auto'/></td>
                         <td>
                                 <p className='font-semibold text-[17px]'>Mrs Silvia Henry</p>
                         </td>
                         <td className='py-5'>
-                            <button className='border-2 border-solid border-green-500 text-green-500 hover:bg-green-500 hover:text-white p-3 rounded-lg text-white'>Sign In</button>
+                            <button className='border-2 border-solid border-green-500 text-green-500 hover:bg-green-500 hover:text-white p-3 rounded-lg'>Sign In</button>
                         </td>
                         <td className='py-5'>
-                            <button className='border-2 border-solid border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white p-3 rounded-lg text-white'>Sign Out</button>
+                            <button className='border-2 border-solid border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white p-3 rounded-lg'>Sign Out</button>
                         </td>
                         <td className='py-5 flex items-start justify-center gap-2'>
-                          <button className='border-2 border-solid border-red-500 text-red-500 hover:bg-red-500 hover:text-white p-3 rounded-lg text-white'>Absent</button>
+                          <button className='border-2 border-solid border-red-500 text-red-500 hover:bg-red-500 hover:text-white p-3 rounded-lg'>Absent</button>
                         </td>
                     </tr>
                   </tbody>

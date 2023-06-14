@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import dp from '../image/_DSC0541.JPG'
+
+import user from '../icons/icons8-male-user-94.png'
 
 const SideNotify = () => {
   return (
@@ -18,7 +19,7 @@ const SideNotify = () => {
                 {/* USER */}  
                 <Link className='flex items-center justify-between hover:bg-gray-100 rounded-2xl py-3 px-3 border-2 border-red-300'>
                     <div className='flex items-center gap-5'>
-                      <img src={dp} alt='' className='w-[55px] h-[55px] rounded-full border-2 border-dashed border-dark-brown p-1'/>
+                      <img src={user} alt='' className='w-[55px] h-[55px] rounded-full border-2 border-dashed border-dark-brown p-1'/>
                         <h4 className='text-dark-purple font-bold text-sm'>Mrs Joy Bamidele</h4>
                     </div>
                     <p className='text-[12px]'>Active</p>
@@ -26,7 +27,7 @@ const SideNotify = () => {
 
                 <Link className='flex items-center justify-between hover:bg-gray-100 rounded-2xl py-3 px-3 border-2 border-red-300'>
                     <div className='flex items-center gap-5'>
-                      <img src={dp} alt='' className='w-[55px] h-[55px] rounded-full border-2 border-dashed border-dark-brown p-1'/>
+                      <img src={user} alt='' className='w-[55px] h-[55px] rounded-full border-2 border-dashed border-dark-brown p-1'/>
                         <h4 className='text-dark-purple font-bold text-sm'>Mrs Dorcas Shehu</h4>
                     </div>
                     <p className='text-[12px]'>Active</p>
@@ -34,7 +35,7 @@ const SideNotify = () => {
 
                 <Link className='flex items-center justify-between hover:bg-gray-100 rounded-2xl py-3 px-3 border-2 border-red-300'>
                     <div className='flex items-center gap-5'>
-                      <img src={dp} alt='' className='w-[55px] h-[55px] rounded-full border-2 border-dashed border-dark-brown p-1'/>
+                      <img src={user} alt='' className='w-[55px] h-[55px] rounded-full border-2 border-dashed border-dark-brown p-1'/>
                         <h4 className='text-dark-purple font-bold text-sm'>Mr Chris Tosin</h4>
                     </div>
                     <p className='text-[12px]'>Active</p>

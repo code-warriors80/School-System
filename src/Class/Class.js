@@ -1,9 +1,12 @@
 import React, {useState} from 'react'
-import dp from '../image/_DSC0541.JPG'
 import {  FaSearch, FaBell, FaPlusCircle } from 'react-icons/fa'    
 import SideNotify from '../Components/SideNotify'
 import { Link } from 'react-router-dom'
 import ClassForm from '../Forms/ClassForm'
+
+import user from '../icons/icons8-male-user-94.png'
+import bell from '../icons/icons8-bell-94.png'
+import add from '../icons/icons8-plus-94.png'
 
 const Class = () => {
   const [model, setModel] = useState(false)
@@ -15,13 +18,13 @@ const Class = () => {
                                   <input type="text" name="search" id="" placeholder="Search" className='p-[10px] text-black w-full'/>
                   </div>
                   <div className='flex items-center'>
-                        <FaBell className='mr-6 text-white text-[25px]'/>
-                        <img src={dp} alt='' className='w-[50px] h-[50px] rounded-full border-2 border-dashed border-white p-1'/>
+                         <img src={bell} className='mr-6 w-8'/>
+                        <img src={user} alt='' className='w-[50px] h-[50px] rounded-full border-2 border-dashed border-white p-1'/>
                   </div>
           </nav>
           {model === true &&(<ClassForm setModel={setModel} />)}
           <div className='fixed bottom-10 right-20 gap-3'>
-                  <button className='text-white bg-dark-purple p-4 rounded-full flex items-center justify-center text-[23px] mb-3' onClick={() => setModel(true)}><FaPlusCircle /></button>
+                  <button className='text-white bg-dark-purple p-4 rounded-full flex items-center justify-center text-[23px] mb-3' onClick={() => setModel(true)}><img src={add} className='w-8' /></button>
           </div>
 
           <div className='flex items-start justify-between p-5 '>
@@ -42,7 +45,7 @@ const Class = () => {
                     <tr>
                         <td className='py-5'>1</td>
                         <td className='py-5'>Pri-Nursery 1</td>
-                        <td className='py-5'> <img src={dp} alt='' className='w-[40px] h-[40px] border-2 border-dashed border-dark-brown p-1 rounded-full mx-auto'/></td>
+                        <td className='py-5'> <img src={user} alt='' className='w-[40px] h-[40px] border-2 border-dashed border-dark-brown p-1 rounded-full mx-auto'/></td>
                         <td>
                         <div className='py-5'>
                               <p>Mrs Samuel Malam</p>
@@ -58,7 +61,7 @@ const Class = () => {
                     <tr className='bg-light-gray'>
                         <td className='py-5'>2</td>
                         <td className='py-5'>Pri-Nursery 2</td>
-                        <td className='py-5'><img src={dp} alt='' className='w-[40px] h-[40px] border-2 border-dashed border-dark-brown p-1 rounded-full mx-auto'/></td>
+                        <td className='py-5'><img src={user} alt='' className='w-[40px] h-[40px] border-2 border-dashed border-dark-brown p-1 rounded-full mx-auto'/></td>
                         <td>
                           <div className='py-5'>
                               <p>Mr Joseph Mosses</p>
@@ -74,7 +77,7 @@ const Class = () => {
                     <tr>
                         <td className='py-5'>3</td>
                         <td className='py-5'>Nursery</td>
-                        <td className='py-5'><img src={dp} alt='' className='w-[40px] h-[40px] border-2 border-dashed border-dark-brown p-1 rounded-full mx-auto'/></td>
+                        <td className='py-5'><img src={user} alt='' className='w-[40px] h-[40px] border-2 border-dashed border-dark-brown p-1 rounded-full mx-auto'/></td>
                         <td>
                         <div className='py-5'>
                                 <p>Mrs Silvia Henry</p>

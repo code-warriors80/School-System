@@ -1,8 +1,12 @@
 import React, {useState} from 'react'
-import dp from '../image/_DSC0541.JPG'
-import {  FaSearch, FaBell, FaCalendarCheck } from 'react-icons/fa'    
+import {  FaSearch } from 'react-icons/fa'    
 import SideNotify from '../Components/SideNotify'
 import TakenStudentAttendance from './TakenStudentAttendance'
+
+import user from '../icons/icons8-male-user-94.png'
+import calander from '../icons/icons8-today-94.png'
+import puple from '../icons/icons8-student-male-94.png'
+import bell from '../icons/icons8-bell-94.png'
 
 const StudentAttendance = () => {
   const [model, setModel] = useState(false)
@@ -14,15 +18,15 @@ const StudentAttendance = () => {
                                   <input type="text" name="search" id="" placeholder="Search" className='p-[10px] text-black w-full'/>
                   </div>
                   <div className='flex items-center'>
-                        <FaBell className='mr-6 text-white text-[25px]'/>
-                        <img src={dp} alt='' className='w-[50px] h-[50px] rounded-full border-2 border-dashed border-white p-1'/>
+                  <img src={bell} className='mr-6 w-8'/>
+                        <img src={user} alt='' className='w-[50px] h-[50px] rounded-full border-2 border-dashed border-white p-1'/>
                   </div>
           </nav>
 
           {model === true &&(<TakenStudentAttendance setModel={setModel} />)}
 
           <div className='fixed bottom-10 right-20 gap-3'>
-                  <button className='text-white bg-dark-purple p-4 rounded-full flex items-center justify-center text-[23px] mb-3' onClick={() => setModel(true)}><FaCalendarCheck /></button>
+                  <button className='text-white bg-dark-purple p-4 rounded-full flex items-center justify-center text-[23px] mb-3' onClick={() => setModel(true)}><img src={calander} alt=''  className='w-10'/></button>
           </div>
 
           <h3 className='ml-5 mt-5 text-[20px]'>Student Attendance</h3>
@@ -55,7 +59,7 @@ const StudentAttendance = () => {
                   <tbody>
                     <tr>
                         <td className='py-5'>1</td>
-                        <td className='py-5'><img src={dp} alt='' className='w-[50px] h-[50px] border-2 border-dashed border-dark-brown p-1 rounded-full mx-auto'/></td>
+                        <td className='py-5'><img src={puple} alt='' className='w-[50px] h-[50px] border-2 border-dashed border-dark-brown p-1 rounded-full mx-auto'/></td>
                         <td>
                               <p className='font-semibold text-[17px]'>Mrs Samuel Malam</p>
                         </td>
@@ -64,14 +68,14 @@ const StudentAttendance = () => {
                         </td>
                         <td className='py-5'> <button className='bg-blue-500 p-3 rounded-lg text-white' disabled>10 May 2023</button></td>
                         <td className='py-5 flex items-start justify-center gap-2'>
-                        <button className='border-solid text-green-500 border-2 border-green-500 hover:bg-green-500 hover:text-white p-3 rounded-lg text-white'>Present</button>
-                          <button className='border-2 border-solid text-color-danger hover:bg-color-danger hover:text-white border-color-danger p-3 rounded-lg text-white'>Absent</button>
+                        <button className='border-solid text-green-500 border-2 border-green-500 hover:bg-green-500 hover:text-white p-3 rounded-lg'>Present</button>
+                          <button className='border-2 border-solid text-color-danger hover:bg-color-danger hover:text-white border-color-danger p-3 rounded-lg'>Absent</button>
                         </td>
                     </tr>
 
                     <tr className='bg-light-gray'>
                         <td className='py-5'>2</td>
-                        <td className='py-5'><img src={dp} alt='' className='w-[50px] h-[50px] border-2 border-dashed border-dark-brown p-1 rounded-full mx-auto'/></td>
+                        <td className='py-5'><img src={puple} alt='' className='w-[50px] h-[50px] border-2 border-dashed border-dark-brown p-1 rounded-full mx-auto'/></td>
                         <td>     
                               <p className='font-semibold text-[17px]'>Mr Joseph Mosses</p>
                         </td>
@@ -80,14 +84,14 @@ const StudentAttendance = () => {
                         </td>
                         <td className='py-5'> <button className='bg-blue-500 p-3 rounded-lg text-white' disabled>10 May 2023</button></td>
                         <td className='py-5 flex items-start justify-center gap-2'>
-                          <button className='border-solid text-green-500 border-2 border-green-500 hover:bg-green-500 hover:text-white p-3 rounded-lg text-white'>Present</button>
-                          <button className='border-2 border-solid text-color-danger hover:bg-color-danger hover:text-white border-color-danger p-3 rounded-lg text-white'>Absent</button>
+                          <button className='border-solid text-green-500 border-2 border-green-500 hover:bg-green-500 hover:text-white p-3 rounded-lg'>Present</button>
+                          <button className='border-2 border-solid text-color-danger hover:bg-color-danger hover:text-white border-color-danger p-3 rounded-lg'>Absent</button>
                         </td>
                     </tr>
                     
                     <tr>
                         <td className='py-5'>3</td>
-                        <td className='py-5'><img src={dp} alt='' className='w-[50px] h-[50px] border-2 border-dashed border-dark-brown p-1 rounded-full mx-auto'/></td>
+                        <td className='py-5'><img src={puple} alt='' className='w-[50px] h-[50px] border-2 border-dashed border-dark-brown p-1 rounded-full mx-auto'/></td>
                         <td>
                                 <p className='font-semibold text-[17px]'>Mrs Silvia Henry</p>
                         </td>
@@ -96,8 +100,8 @@ const StudentAttendance = () => {
                         </td>
                         <td className='py-5'> <button className='bg-blue-500 p-3 rounded-lg text-white' disabled>10 May 2023</button></td>
                         <td className='py-5 flex items-start justify-center gap-2'>
-                          <button className='border-solid text-green-500 border-2 border-green-500 hover:bg-green-500 hover:text-white p-3 rounded-lg text-white'>Present</button>
-                          <button className='border-2 border-solid text-color-danger hover:bg-color-danger hover:text-white border-color-danger p-3 rounded-lg text-white'>Absent</button>
+                          <button className='border-solid text-green-500 border-2 border-green-500 hover:bg-green-500 hover:text-white p-3 rounded-lg'>Present</button>
+                          <button className='border-2 border-solid text-color-danger hover:bg-color-danger hover:text-white border-color-danger p-3 rounded-lg'>Absent</button>
                         </td>
                     </tr>
                   </tbody>
