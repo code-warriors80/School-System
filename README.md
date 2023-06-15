@@ -87,7 +87,7 @@ RESPONSIBILITIES
 - Upload Lesson Note 
 
 * SPARROW
-- database schemas
+- database model/schemas
 - Update Stafs
 - Take Attendance
 
