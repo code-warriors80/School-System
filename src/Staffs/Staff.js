@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {  FaSearch, FaBell } from 'react-icons/fa'    
+import {  FaSearch } from 'react-icons/fa'    
 import SideNotify from '../Components/SideNotify'
 import { Link } from 'react-router-dom'
 import StaffForm from '../Forms/StaffForm'
@@ -19,7 +19,7 @@ const Staff = () => {
                                   <input type="text" name="search" id="" placeholder="Search" className='p-[10px] text-black w-full'/>
                   </div>
                   <div className='flex items-center'>
-                         <img src={bell} className='mr-6 w-8'/>
+                         <img src={bell} alt='' className='mr-6 w-8'/>
                         <img src={user} alt='' className='w-[50px] h-[50px] rounded-full border-2 border-dashed border-white p-1'/>
                   </div>
           </nav>
