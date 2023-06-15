@@ -21,7 +21,7 @@ const Student = () => {
                                   <input type="text" name="search" id="" placeholder="Search" className='p-[10px] text-black w-full'/>
                   </div>
                   <div className='flex items-center'>
-                        <img src={bell} className='mr-6 w-8'/>
+                        <img src={bell} alt='' className='mr-6 w-8'/>
                         <img src={user} alt='' className='w-[50px] h-[50px] rounded-full border-2 border-dashed border-white p-1'/>
                   </div>
           </nav>
@@ -34,7 +34,7 @@ const Student = () => {
           {model === true &&(<StudentForm setModel={setModel}/>)}
 
           <div className='flex items-start justify-between p-5 '>
-            <div className=' w-[69%] h-[88vh] overflow-scroll scroll'>
+            <div className=' w-[69%]  h-[88vh] overflow-scroll scroll'>
               <div className='flex items-center justify-between'>
                    <div className='bg-white mb-5 px-4 py-4 w-56 mt-4 rounded-lg'>
                       <select className='w-48'>

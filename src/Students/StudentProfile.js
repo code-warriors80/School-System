@@ -5,6 +5,7 @@ import user from '../icons/icons8-male-user-94.png'
 import bell from '../icons/icons8-bell-94.png'
 import student from '../icons/icons8-student-male-94.png'
 import map from '../icons/icons8-map-pinpoint-94.png'
+import Tabs from './tabs'
 
 const StudentProfile = () => {
   return (
@@ -41,7 +42,7 @@ const StudentProfile = () => {
                                                             <button className='border-2 border-solid border-color-danger text-color-danger hover:bg-color-danger hover:text-white w-[82%] py-3 rounded-2xl mt-2 font-bold'>Suspend Student</button>
                                              </div>
                                              <div className='bg-white w-[45%] p-5 rounded-2xl shadow-lg'>
-                                                            Accordions
+                                                            <Tabs />
                                              </div>
                                              
                                              <div className='bg-white w-[22%] p-7 py-5 rounded-2xl shadow-lg'>
