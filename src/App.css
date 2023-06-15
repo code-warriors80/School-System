@@ -11,3 +11,14 @@
 {
   width: 0;
 }
+
+.tabs
+{
+  display: none;
+}
+
+.active-tab
+{
+  background-color: white;
+  border-top: 3px solid #081A51;
+}
