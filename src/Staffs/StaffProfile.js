@@ -1,18 +1,18 @@
 import React from 'react'
-import {  FaSearch } from 'react-icons/fa'    
 
 import user from '../icons/icons8-male-user-94.png'
 import bell from '../icons/icons8-bell-94.png'
 import man from '../icons/icons8-user-male-94.png'
 import map from '../icons/icons8-map-pinpoint-94.png'
 import Tabs from './tabs'
+import search from '../icons/icons8-search-94.png'
 
 const StaffProfile = () => {
   return (
                <div className='w-full'>
                               <nav className='py-3 px-10 bg-dark-purple flex items-center justify-between'>
                               <div className="hidden lg:flex search--box bg-white lg:items-center w-[25%] gap-[5px] py-[3px] rounded-md  px-[12px] bg-light-gray">
-                                             <i className="text-[1.2rem] pointer text-gray-800"><FaSearch /></i>
+                                             <i className="text-[1.2rem] pointer text-gray-800"><img src={search} alt='' className='w-6'/></i>
                                              <input type="text" name="search" id="" placeholder="Search" className='p-[10px] text-black w-full'/>
                               </div>
                               <div className='flex items-center'>
@@ -35,8 +35,8 @@ const StaffProfile = () => {
                                                                                           <td className='py-3 text-[16px] float-right'>08116934763</td>
                                                                            </tr>
                                                                            <tr>
-                                                                                          <th className='py-3 text-[18px] float-left'>DOB</th>
-                                                                                          <td className='py-3 text-[16px] float-right'>10/7/2003</td>
+                                                                                          <th className='py-3 text-[18px] float-left'>Gender</th>
+                                                                                          <td className='py-3 text-[16px] float-right'>Female</td>
                                                                            </tr>
                                                             </table>
                                                             <button className='border-2 border-solid border-color-danger text-color-danger hover:bg-color-danger hover:text-white w-[82%] py-3 rounded-2xl mt-2 font-bold'>Suspend Staff</button>

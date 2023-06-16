@@ -2,13 +2,12 @@ import React, {useState} from 'react'
 
 const Tabs = () => {
                const [toggleState, setToggle] = useState(1);
-
+               
                const toggleTab = (index) => {
                               setToggle(index);
                }
-
   return (
-    <div>
+               <div>
                <div className='block-tabs flex mb-2 cursor-pointer'>
                               <div className={toggleState === 1 ? 'active-tab py-4 px-10' : 'tab bg-light-gray py-4 px-10'} onClick={() => toggleTab(1)}>Home</div>
                               <div className={toggleState === 2 ? 'active-tab py-4 px-10' : 'tab bg-light-gray py-4 px-10'}  onClick={() => toggleTab(2)}>Information</div>
@@ -27,46 +26,37 @@ const Tabs = () => {
                               </div>
 
                               <div className={toggleState === 2 ? ' content active-content' : 'tabs'}>
-                                             <h1 className='text-2xl my-5'>Personal Information</h1>
+                                             <h1 className='text-2xl my-5'>Class Information</h1>
                                              <hr/>
                                              <table className='w-[100%]'>
-                                                            <tr>
-                                                                           <th className='float-left py-3 text-[18px]'>Name</th>
-                                                                           <td className='float-right py-3'>Bayo Clement</td>
-                                                            </tr>
                                                             <tr>
                                                                            <th className='float-left py-3 text-[18px]'>Class</th>
                                                                            <td className='float-right py-3'>Pr-Nursery 1</td>
                                                             </tr>
 
                                                             <tr>
-                                                                           <th className='float-left py-3 text-[18px]'>Email</th>
-                                                                           <td className='float-right py-3'>Muctar@gmail.com</td>
+                                                                           <th className='float-left py-3 text-[18px]'>Number Of Pupils</th>
+                                                                           <td className='float-right py-3'>20</td>
                                                             </tr>
 
                                                             <tr>
-                                                                           <th className='float-left py-3 text-[18px]'>Gender</th>
-                                                                           <td className='float-right py-3'>Female</td>
+                                                                           <th className='float-left py-3 text-[18px]'>Class Prefect</th>
+                                                                           <td className='float-right py-3'>Halima Auwal</td>
                                                             </tr>
 
                                                             <tr>
-                                                                           <th className='float-left py-3 text-[18px]'>Contact</th>
+                                                                           <th className='float-left py-3 text-[18px]'>Class Teachers Contact</th>
                                                                            <td className='float-right py-3'>08116934763</td>
                                                             </tr>
 
                                                             <tr>
-                                                                           <th className='float-left py-3 text-[18px]'>Parent Name</th>
-                                                                           <td className='float-right py-3'>Mr Samuel Clement</td>
+                                                                           <th className='float-left py-3 text-[18px]'>Fee's</th>
+                                                                           <td className='float-right py-3'>N 45,000</td>
                                                             </tr>
 
                                                             <tr>
-                                                                           <th className='float-left py-3 text-[18px]'>DOB</th>
-                                                                           <td className='float-right py-3'>10th July 2003</td>
-                                                            </tr>
-
-                                                            <tr>
-                                                                           <th className='float-left py-3 text-[18px]'>Address</th>
-                                                                           <td className='float-right py-3'>Blk 35 MOQ Chindit Cantoonment</td>
+                                                                           <th className='float-left py-3 text-[18px]'>Subjects Offered</th>
+                                                                           <td className='float-right py-3'>12</td>
                                                             </tr>
                                              </table>
                               </div>
@@ -128,12 +118,31 @@ const Tabs = () => {
                                              </form>
                               </div>
                               <div className={toggleState === 4 ? ' content active-content' : 'tabs'}>
-                                             <h1 className='text-2xl my-5'>Settings</h1>
+                                             <h1 className='text-2xl mt-5'>Settings</h1>
                                              <hr/>
-                                             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat, tempora omnis fugit repudiandae 
-                                                            laboriosam atque quibusdam nam vero magnam hic voluptate. Voluptate, doloribus. Temporibus ut 
-                                                            assumenda rem harum! Doloremque, cupiditate?
-                                             </p>
+                                                            <form className='w-full'>
+                                                                           <h1 className='text-[20px] font-thin my-2'>Assign New Class Teacher/Prefect</h1>
+                                                                           <div>
+                                                                                          <label for="staffs" className='block mb-3'>Select Staff</label>
+                                                                                          <select className='bg-light-gray h-[50px] px-2 mb-5 rounded-md w-full'>
+                                                                                                         <option>Select Staff</option>
+                                                                                                         <option>Mr Samuel Clement</option>
+                                                                                                         <option>Mr Joshua Kingsley</option>
+                                                                                          </select>
+                                                                                          
+                                                                           </div>
+
+                                                                           <div>
+                                                                                          <label for="staffs" className='block mb-3'>Select Student</label>
+                                                                                          <select className='bg-light-gray h-[50px] px-2 rounded-md w-full'>
+                                                                                                         <option>Select Student</option>
+                                                                                                         <option>Samuel Clement</option>
+                                                                                                         <option>Joshua Kingsley</option>
+                                                                                          </select>
+                                                                                          
+                                                                           </div>
+                                                                           <button className='bg-dark-purple w-full mt-5 py-3 text-white rounded-lg'>Assign</button>
+                                                            </form>
                               </div>
                </div>
     </div>

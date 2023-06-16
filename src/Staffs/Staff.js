@@ -1,13 +1,15 @@
 import React, {useState} from 'react'
-import {  FaSearch } from 'react-icons/fa'    
 import SideNotify from '../Components/SideNotify'
 import { Link } from 'react-router-dom'
 import StaffForm from '../Forms/StaffForm'
+
+import { staffs } from '../data/staffs'
 
 import staff from '../icons/icons8-writer-male-94.png'
 import calender from '../icons/icons8-calendar-94.png'
 import user from '../icons/icons8-male-user-94.png'
 import bell from '../icons/icons8-bell-94.png'
+import search from '../icons/icons8-search-94.png'
 
 const Staff = () => {
       const [model, setModel] = useState(false)
@@ -15,7 +17,7 @@ const Staff = () => {
     <div className='w-full'>
           <nav className='py-3 px-10 bg-dark-purple flex items-center justify-between'>
                 <div className="hidden lg:flex search--box bg-white lg:items-center w-[25%] gap-[5px] py-[3px] rounded-md  px-[12px] bg-light-gray">
-                                  <i className="text-[1.2rem] pointer text-gray-800"><FaSearch /></i>
+                                  <i className="text-[1.2rem] pointer text-gray-800"><img src={search} alt='' className='w-6'/></i>
                                   <input type="text" name="search" id="" placeholder="Search" className='p-[10px] text-black w-full'/>
                   </div>
                   <div className='flex items-center'>
@@ -43,122 +45,25 @@ const Staff = () => {
                       </select>
                   </div>
                   <div className="flex bg-white items-center w-[29%] gap-[5px] py-[3px] rounded-md  px-[12px] bg-light-gray">
-                                  <i className="text-[1.2rem] pointer text-gray-800"><FaSearch /></i>
+                                  <i className="text-[1.2rem] pointer text-gray-800"><img src={search} alt='' className='w-6'/></i>
                                   <input type="text" name="search" id="" placeholder="Search" className='p-[10px] text-black w-full'/>
                   </div>
               </div>
 
             <div className=' flex items-start gap-5 pb-5 pt-2 flex-wrap mx-auto'>
-                  <Link>
-                        <div className='bg-white rounded-2xl w-64 p-5 text-center shadow-lg'>
-                            <img src={user} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-1'/>
-                            <h3 className='mb-1 mt-2 font-semibold text-[18px]'>Mrs Bisola Damilola</h3>
-                            <p className='text-[14px] text-dark-purple'>Staff Position</p>
-                            <div className='bg-dark-purple w-full py-3 rounded-lg text-white mt-1'>
-                              <Link className=''>View Profile</Link>
-                            </div>
-                            
-                        </div>
-                  </Link>
-
-                  <Link>
-                        <div className='bg-white rounded-2xl w-64 p-5 text-center shadow-lg'>
-                            <img src={user} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-1'/>
-                            <h3 className='mb-1 mt-2 font-semibold text-[19px]'>Staffs Name</h3>
-                            <p className='text-[14px] text-dark-purple'>Staff Position</p>
-                            <div className='bg-dark-purple w-full py-3 rounded-lg text-white mt-1'>
-                              <Link className=''>View Profile</Link>
-                            </div>
-                        </div>
-                  </Link>
-
-                  <Link>
-                        <div className='bg-white rounded-2xl w-64 p-5 text-center shadow-lg'>
-                            <img src={user} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-1'/>
-                            <h3 className='mb-1 mt-2 font-semibold text-[19px]'>Staffs Name</h3>
-                            <p className='text-[14px] text-dark-purple'>Staff Position</p>
-                            <div className='bg-dark-purple w-full py-3 rounded-lg text-white mt-1'>
-                              <Link className=''>View Profile</Link>
-                            </div>
-                        </div>
-                  </Link>
-
-                  <Link>
-                        <div className='bg-white rounded-2xl w-64 p-5 text-center shadow-lg'>
-                            <img src={user} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-1'/>
-                            <h3 className='mb-1 mt-2 font-semibold text-[19px]'>Staffs Name</h3>
-                            <p className='text-[14px] text-dark-purple'>Staff Position</p>
-                            <div className='bg-dark-purple w-full py-3 rounded-lg text-white mt-1'>
-                              <Link className=''>View Profile</Link>
-                            </div>
-                        </div>
-                  </Link>
-
-                  <Link>
-                        <div className='bg-white rounded-2xl w-64 p-5 text-center shadow-lg'>
-                            <img src={user} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-1'/>
-                            <h3 className='mb-1 mt-2 font-semibold text-[19px]'>Staffs Name</h3>
-                            <p className='text-[14px] text-dark-purple'>Staff Position</p>
-                            <div className='bg-dark-purple w-full py-3 rounded-lg text-white mt-1'>
-                              <Link className=''>View Profile</Link>
-                            </div>
-                        </div>
-                  </Link>
-
-                  <Link>
-                        <div className='bg-white rounded-2xl w-64 p-5 text-center shadow-lg'>
-                            <img src={user} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-1'/>
-                            <h3 className='mb-1 mt-2 font-semibold text-[19px]'>Staffs Name</h3>
-                            <p className='text-[14px] text-dark-purple'>Staff Position</p>
-                            <div className='bg-dark-purple w-full py-3 rounded-lg text-white mt-1'>
-                              <Link className=''>View Profile</Link>
-                            </div>
-                        </div>
-                  </Link>
-
-                  <Link>
-                        <div className='bg-white rounded-2xl w-64 p-5 text-center shadow-lg'>
-                            <img src={user} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-1'/>
-                            <h3 className='mb-1 mt-2 font-semibold text-[19px]'>Staffs Name</h3>
-                            <p className='text-[14px] text-dark-purple'>Staff Position</p>
-                            <div className='bg-dark-purple w-full py-3 rounded-lg text-white mt-1'>
-                              <Link className=''>View Profile</Link>
-                            </div>
-                        </div>
-                  </Link>
-
-                  <Link>
-                        <div className='bg-white rounded-2xl w-64 p-5 text-center shadow-lg'>
-                            <img src={user} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-1'/>
-                            <h3 className='mb-1 mt-2 font-semibold text-[19px]'>Staffs Name</h3>
-                            <p className='text-[14px] text-dark-purple'>Staff Position</p>
-                            <div className='bg-dark-purple w-full py-3 rounded-lg text-white mt-1'>
-                              <Link className=''>View Profile</Link>
-                            </div>
-                        </div>
-                  </Link>
-
-                  <Link>
-                        <div className='bg-white rounded-2xl w-64 p-5 text-center shadow-lg'>
-                            <img src={user} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-1'/>
-                            <h3 className='mb-1 mt-2 font-semibold text-[19px]'>Staffs Name</h3>
-                            <p className='text-[14px] text-dark-purple'>Staff Position</p>
-                            <div className='bg-dark-purple w-full py-3 rounded-lg text-white mt-1'>
-                              <Link className=''>View Profile</Link>
-                            </div>
-                        </div>
-                  </Link>
-
-                  <Link>
-                        <div className='bg-white rounded-2xl w-64 p-5 text-center shadow-lg'>
-                            <img src={user} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-1'/>
-                            <h3 className='mb-1 mt-2 font-semibold text-[19px]'>Staffs Name</h3>
-                            <p className='text-[14px] text-dark-purple'>Staff Position</p>
-                            <div className='bg-dark-purple w-full py-3 rounded-lg text-white mt-1'>
-                              <Link to="1" className=''>View Profile</Link>
-                            </div>
-                        </div>
-                  </Link>
+              {staffs.map((staff) => (
+                  <div>
+                  <div className='bg-white rounded-2xl w-64 p-5 text-center shadow-lg'>
+                      <img src={staff.img} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-1'/>
+                      <h3 className='mb-1 mt-2 font-semibold text-[18px]'>{staff.name}</h3>
+                      <p className='text-[14px] text-dark-purple'>{staff.position}</p>
+                      <div className='bg-dark-purple w-full py-3 rounded-lg text-white mt-1'>
+                        <Link to={`${staff.id}`} className='w-full'>View Profile</Link>
+                      </div>
+                      
+                  </div>
+            </div>
+              ))}
               </div>
             </div>
 

@@ -9,6 +9,7 @@ import StaffAttendance from './Staffs/StaffAttendance';
 import StudentAttendance from './Students/StudentAttendance';
 import StaffProfile from './Staffs/StaffProfile';
 import StudentProfile from './Students/StudentProfile';
+import ClassProfile from './Class/ClassProfile';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path='/student/:id' element={<StudentProfile />} />
           <Route path='/studentAttendance' element={<StudentAttendance />}></Route>
           <Route path='/class' element={<Class />}></Route>
+          <Route path='/class/:id' element={<ClassProfile />}></Route>
       </Routes>
       </BrowserRouter>
     </div>

@@ -1,15 +1,15 @@
 import React,{useState} from 'react'
-import dp from '../image/_DSC0541.JPG'
-import {  FaSearch, FaBell } from 'react-icons/fa'    
 import SideNotify from '../Components/SideNotify'
 import { Link } from 'react-router-dom'
 import StudentForm from '../Forms/StudentForm'
 
+import { students } from '../data/students'
+
 import staff from '../icons/icons8-writer-male-94.png'
 import calender from '../icons/icons8-calendar-94.png'
 import user from '../icons/icons8-male-user-94.png'
-import puple from '../icons/icons8-student-male-94.png'
 import bell from '../icons/icons8-bell-94.png'
+import search from '../icons/icons8-search-94.png'
 
 const Student = () => {
       const [model, setModel] = useState(false)
@@ -17,7 +17,7 @@ const Student = () => {
 <div className='w-full'>
           <nav className='py-3 px-10 bg-dark-purple flex items-center justify-between'>
                 <div className="hidden lg:flex search--box bg-white lg:items-center w-[25%] gap-[5px] py-[3px] rounded-md  px-[12px] bg-light-gray">
-                                  <i className="text-[1.2rem] pointer text-gray-800"><FaSearch /></i>
+                                  <i className="text-[1.2rem] pointer text-gray-800"><img src={search} alt='' className='w-6'/></i>
                                   <input type="text" name="search" id="" placeholder="Search" className='p-[10px] text-black w-full'/>
                   </div>
                   <div className='flex items-center'>
@@ -45,122 +45,24 @@ const Student = () => {
                       </select>
                   </div>
                   <div className="flex bg-white items-center w-[29%] gap-[5px] py-[3px] rounded-md  px-[12px] bg-light-gray">
-                                  <i className="text-[1.2rem] pointer text-gray-800"><FaSearch /></i>
+                                  <i className="text-[1.2rem] pointer text-gray-800"><img src={search} alt='' className=' w-6'/></i>
                                   <input type="text" name="search" id="" placeholder="Search" className='p-[10px] text-black w-full'/>
                   </div>
               </div>
 
             <div className=' flex items-start gap-5 pb-5 pt-2 flex-wrap mx-auto'>
+                  {students.map(pupils => (
                   <Link>
                         <div className='bg-white rounded-2xl w-64 p-5 text-center shadow-lg'>
-                            <img src={puple} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-2'/>
-                            <h3 className='mb-1 mt-2'>Student Name</h3>
-                            <p>Student Class</p>
-                            <div className='bg-dark-purple w-full py-3 rounded-lg text-white mt-1'>
-                                    <Link to="/student/1" className=''>View Profile</Link>
-                            </div>
+                        <img src={pupils.img} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-2'/>
+                        <h3 className='mb-1 mt-2'>{pupils.name}</h3>
+                        <p>{pupils.class}</p>
+                        <div className='bg-dark-purple w-full py-3 rounded-lg text-white mt-1'>
+                                    <Link to={`${pupils.id}`} className=''>View Profile</Link>
+                        </div>
                         </div>
                   </Link>
-
-                  <Link>
-                        <div className='bg-white rounded-2xl w-64 p-5 text-center shadow-lg'>
-                            <img src={puple} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-2'/>
-                            <h3 className='mb-1 mt-2'>Student Name</h3>
-                            <p>Student Class</p>
-                            <div className='bg-dark-purple w-full py-3 rounded-lg text-white mt-1'>
-                                    <Link className=''>View Profile</Link>
-                            </div>
-                        </div>
-                  </Link>
-
-                  <Link>
-                        <div className='bg-white rounded-2xl w-64 p-5 text-center shadow-lg'>
-                            <img src={puple} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-2'/>
-                            <h3 className='mb-1 mt-2'>Student Name</h3>
-                            <p>Student Class</p>
-                            <div className='bg-dark-purple w-full py-3 rounded-lg text-white mt-1'>
-                                    <Link className=''>View Profile</Link>
-                            </div>
-                        </div>
-                  </Link>
-
-                  <Link>
-                        <div className='bg-white rounded-2xl w-64 p-5 text-center shadow-lg'>
-                            <img src={puple} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-2'/>
-                            <h3 className='mb-1 mt-2'>Student Name</h3>
-                            <p>Student Class</p>
-                            <div className='bg-dark-purple w-full py-3 rounded-lg text-white mt-1'>
-                                    <Link className=''>View Profile</Link>
-                            </div>
-                        </div>
-                  </Link>
-
-                  <Link>
-                        <div className='bg-white rounded-2xl w-64 p-5 text-center shadow-lg'>
-                            <img src={puple} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-2'/>
-                            <h3 className='mb-1 mt-2'>Student Name</h3>
-                            <p>Student Class</p>
-                            <div className='bg-dark-purple w-full py-3 rounded-lg text-white mt-1'>
-                                    <Link className=''>View Profile</Link>
-                            </div>
-                        </div>
-                  </Link>
-
-                  <Link>
-                        <div className='bg-white rounded-2xl w-64 p-5 text-center shadow-lg'>
-                            <img src={puple} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-2'/>
-                            <h3 className='mb-1 mt-2'>Student Name</h3>
-                            <p>Student Class</p>
-                            <div className='bg-dark-purple w-full py-3 rounded-lg text-white mt-1'>
-                                    <Link className=''>View Profile</Link>
-                            </div>
-                        </div>
-                  </Link>
-
-                  <Link>
-                        <div className='bg-white rounded-2xl w-64 p-5 text-center shadow-lg'>
-                            <img src={puple} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-2'/>
-                            <h3 className='mb-1 mt-2'>Student Name</h3>
-                            <p>Student Class</p>
-                            <div className='bg-dark-purple w-full py-3 rounded-lg text-white mt-1'>
-                                    <Link className=''>View Profile</Link>
-                            </div>
-                        </div>
-                  </Link>
-
-                  <Link>
-                        <div className='bg-white rounded-2xl w-64 p-5 text-center shadow-lg'>
-                            <img src={puple} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-2'/>
-                            <h3 className='mb-1 mt-2'>Student Name</h3>
-                            <p>Student Class</p>
-                            <div className='bg-dark-purple w-full py-3 rounded-lg text-white mt-1'>
-                                    <Link className=''>View Profile</Link>
-                            </div>
-                        </div>
-                  </Link>
-
-                  <Link>
-                        <div className='bg-white rounded-2xl w-64 p-5 text-center shadow-lg'>
-                            <img src={puple} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-2'/>
-                            <h3 className='my-1 mt-2'>Staffs Name</h3>
-                            <p>Staff Position</p>
-                            <div className='bg-dark-purple w-full py-3 rounded-lg text-white mt-1'>
-                                    <Link className=''>View Profile</Link>
-                            </div>
-                            
-                        </div>
-                  </Link>
-
-                  <Link>
-                        <div className='bg-white rounded-2xl w-64 p-5 text-center shadow-lg'>
-                            <img src={puple} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-2'/>
-                            <h3 className='mb-1 mt-2'>Student Name</h3>
-                            <p>Student Class</p>
-                              <div className='bg-dark-purple w-full py-3 rounded-lg text-white mt-1'>
-                                    <Link className=''>View Profile</Link>
-                            </div>
-                        </div>
-                  </Link>
+                  ))}
               </div>
             </div>
 

@@ -13,6 +13,7 @@ const Tabs = () => {
                               <div className={toggleState === 1 ? 'active-tab py-4 px-10' : 'tab bg-light-gray py-4 px-10'} onClick={() => toggleTab(1)}>Home</div>
                               <div className={toggleState === 2 ? 'active-tab py-4 px-10' : 'tab bg-light-gray py-4 px-10'}  onClick={() => toggleTab(2)}>Information</div>
                               <div className={toggleState === 3 ? 'active-tab py-4 px-10' : 'tab bg-light-gray py-4 px-10'}  onClick={() => toggleTab(3)}>Update Profile</div>
+                              <div className={toggleState === 4 ? 'active-tab py-4 px-10' : 'tab bg-light-gray py-4 px-10'}  onClick={() => toggleTab(4)}>Settings</div>
                </div>
 
                <div className='content-tabs'>
@@ -124,6 +125,15 @@ const Tabs = () => {
                                                             <button className='bg-red-500 text-white py-3 px-5 rounded-2xl mt-2'>Reset Password</button>
                                                             </div>
                                              </form>
+                              </div>
+
+                              <div className={toggleState === 4 ? ' content active-content' : 'tabs'}>
+                                             <h1 className='text-2xl my-5'>Settings</h1>
+                                             <hr/>
+                                             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat, tempora omnis fugit repudiandae 
+                                                            laboriosam atque quibusdam nam vero magnam hic voluptate. Voluptate, doloribus. Temporibus ut 
+                                                            assumenda rem harum! Doloremque, cupiditate?
+                                             </p>
                               </div>
 
                </div>

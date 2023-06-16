@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import {  FaBook,  FaChalkboardTeacher, FaUserGraduate, FaUsers,FaSearch } from 'react-icons/fa'    
 import SideNotify from '../Components/SideNotify'
 
 import user from '../icons/icons8-male-user-94.png'
@@ -9,17 +8,18 @@ import staff from '../icons/icons8-users-94.png'
 import student from '../icons/icons8-student-male-94.png'
 import classes from '../icons/icons8-classroom-94.png'
 import subject from '../icons/icons8-books-94.png'
+import search from '../icons/icons8-search-94.png'
 
 const Dashboard = () => {
   return (
     <div className='w-full'>
     <nav className='py-3 px-10 bg-dark-purple flex items-center justify-between'>
           <div className="hidden lg:flex search--box bg-white lg:items-center w-[25%] gap-[5px] py-[3px] rounded-md  px-[12px] bg-light-gray">
-                            <i className="text-[1.2rem] pointer text-gray-800"><FaSearch /></i>
+                            <i className="text-[1.2rem] pointer text-gray-800"><img src={search} alt='' className='w-6'/></i>
                             <input type="text" name="search" id="" placeholder="Search" className='p-[10px] text-black w-full'/>
             </div>
             <div className='flex items-center'>
-                  <img src={bell} className='mr-6 w-8'/>
+                  <img src={bell} alt='' className='mr-6 w-8'/>
                   <img src={user} alt='' className='w-[50px] h-[50px] rounded-full border-2 border-dashed border-white p-1'/>
             </div>
     </nav>
@@ -38,10 +38,10 @@ const Dashboard = () => {
                                   <span className="uppercase text-[13px] lg:text-[15px] text-white">Staffs</span>
                               </div>
                               <div>
-                                <i className='text-[70px] text-link-color'><img src={staff} className='w[80px]' /></i>
+                                <i className='text-[70px] text-link-color'><img src={staff} alt='' className='w[80px]' /></i>
                               </div>
                           </div>
-                          <div className='flex items-center justify-center py-[15px] bg-link-color text-white'><Link to="/" className='text-[13px] uppercase'>Learn More</ Link></div>
+                          <div className='flex items-center justify-center py-[15px] bg-link-color text-white'><Link to="/staff" className='text-[13px] uppercase'>Learn More</ Link></div>
                       </div>
                   </Link>
 
@@ -53,10 +53,10 @@ const Dashboard = () => {
                                   <span className="uppercase text-[13px] lg:text-[15px] text-white">Student</span>
                               </div>
                               <div>
-                                <i className='text-[70px] text-link-color'><img src={student} className='w[80px]' /></i>
+                                <i className='text-[70px] text-link-color'><img src={student} alt='' className='w[80px]' /></i>
                               </div>
                           </div>
-                          <div className='flex items-center justify-center py-[15px] bg-link-color text-white'><Link to="/" className='text-[13px] uppercase'>Learn More</ Link></div>
+                          <div className='flex items-center justify-center py-[15px] bg-link-color text-white'><Link to="/student" className='text-[13px] uppercase'>Learn More</ Link></div>
                       </div>
                   </Link>
                   <Link >
@@ -67,10 +67,10 @@ const Dashboard = () => {
                                   <span className="uppercase text-[13px] lg:text-[15px] text-white">Class</span>
                               </div>
                               <div>
-                                <i className='text-[70px] text-link-color'><img src={classes} className='w[80px]' /></i>
+                                <i className='text-[70px] text-link-color'><img src={classes} alt='' className='w[80px]' /></i>
                               </div>
                           </div>
-                          <div className='flex items-center justify-center py-[15px] bg-link-color text-white'><Link to="/" className='text-[13px] uppercase'>Learn More</ Link></div>
+                          <div className='flex items-center justify-center py-[15px] bg-link-color text-white'><Link to="/class" className='text-[13px] uppercase'>Learn More</ Link></div>
                       </div>
                   </Link>
                   <Link >
@@ -81,7 +81,7 @@ const Dashboard = () => {
                                   <span className="uppercase text-[13px] lg:text-[15px] text-white">Subjects</span>
                               </div>
                               <div>
-                                <i className='text-[70px] text-link-color'><img src={subject} className='w[80px]' /></i>
+                                <i className='text-[70px] text-link-color'><img src={subject} alt='' className='w[80px]' /></i>
                               </div>
                           </div>
                           <div className='flex items-center justify-center py-[15px] bg-link-color text-white'><Link to="/" className='text-[13px] uppercase'>Learn More</ Link></div>

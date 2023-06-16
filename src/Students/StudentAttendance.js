@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import {  FaSearch } from 'react-icons/fa'    
 import SideNotify from '../Components/SideNotify'
 import TakenStudentAttendance from './TakenStudentAttendance'
 
@@ -7,6 +6,7 @@ import user from '../icons/icons8-male-user-94.png'
 import calander from '../icons/icons8-today-94.png'
 import puple from '../icons/icons8-student-male-94.png'
 import bell from '../icons/icons8-bell-94.png'
+import search from '../icons/icons8-search-94.png'
 
 const StudentAttendance = () => {
   const [model, setModel] = useState(false)
@@ -14,11 +14,11 @@ const StudentAttendance = () => {
     <div className='w-full'>
               <nav className='py-3 px-10 bg-dark-purple flex items-center justify-between'>
                 <div className="hidden lg:flex search--box bg-white lg:items-center w-[25%] gap-[5px] py-[3px] rounded-md  px-[12px] bg-light-gray">
-                                  <i className="text-[1.2rem] pointer text-gray-800"><FaSearch /></i>
+                                  <i className="text-[1.2rem] pointer text-gray-800"><img src={search} alt='' className='w-6'/></i>
                                   <input type="text" name="search" id="" placeholder="Search" className='p-[10px] text-black w-full'/>
                   </div>
                   <div className='flex items-center'>
-                  <img src={bell} className='mr-6 w-8'/>
+                  <img src={bell} alt='' className='mr-6 w-8'/>
                         <img src={user} alt='' className='w-[50px] h-[50px] rounded-full border-2 border-dashed border-white p-1'/>
                   </div>
           </nav>
