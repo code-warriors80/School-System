@@ -24,13 +24,13 @@ function App() {
       <Routes>
           <Route path='/' element={<Dashboard />}></Route>
           <Route path='/staff' element={<Staff />}></Route>
-          <Route path='/staff/:id' element={<StaffProfile data={students}/>} />
+          <Route path='/staff/:id' element={<StaffProfile/>} />
           <Route path='/staffAttendance' element={<StaffAttendance />}></Route>
           <Route path='/student' element={<Student />}></Route>
-          <Route path='/student/:id' element={<StudentProfile data={staffs}/>} />
+          <Route path='/student/:id' element={<StudentProfile/>} />
           <Route path='/studentAttendance' element={<StudentAttendance />}></Route>
           <Route path='/class' element={<Class />}></Route>
-          <Route path='/class/:id' element={<ClassProfile data={classes}/>}></Route>
+          <Route path='/class/:id' element={<ClassProfile/>}></Route>
       </Routes>
       </BrowserRouter>
     </div>

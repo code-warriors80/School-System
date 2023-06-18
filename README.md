@@ -24,6 +24,7 @@ DATABASE MODELS
 
 Table                                        Data Type                                    Required 
 Staffid                                        String                                      True                                     Autogenerate(STF-3digits)
+image                                        String                                       False
 title                                             String                                      False
 surname                                    String                                      True
 firstname                                  String                                       True
@@ -84,21 +85,26 @@ ALL FIUNCTIONS
 NOTE: Other Functions will be updated soon
 
 RESPONSIBILITIES
+
 * JOSHUA (EASYLIFE)
 - database/server connections
 - Add Staffs
-- Upload Lesson Note 
+
 
 * SPARROW
 - database model/schemas
-- Update Stafs
-- Take Attendance
+- Update Staffs
+
+
+* CODE WARRIOR
+- Fetch Staff
+- Search Staff
+
 
 * OGALA (SAVAGE)
 - routing
 - Delete Staff
-- Fetch Daily Attendance/ Fetch Attendance By Date
-- api testing
+- api testing/api calls
 
 NOTE This Functions Are to be completed and Submitted For Review Before 29th June 2023
 
