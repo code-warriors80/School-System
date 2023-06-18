@@ -11,6 +11,11 @@ import StaffProfile from './Staffs/StaffProfile';
 import StudentProfile from './Students/StudentProfile';
 import ClassProfile from './Class/ClassProfile';
 
+// MY DATA
+import { classes } from './data/class';
+import { staffs } from './data/staffs';
+import { students } from './data/students';
+
 function App() {
   return (
     <div className="flex bg-light-gray h-[100vh] overflow-hidden">
@@ -19,13 +24,13 @@ function App() {
       <Routes>
           <Route path='/' element={<Dashboard />}></Route>
           <Route path='/staff' element={<Staff />}></Route>
-          <Route path='/staff/:id' element={<StaffProfile />} />
+          <Route path='/staff/:id' element={<StaffProfile data={students}/>} />
           <Route path='/staffAttendance' element={<StaffAttendance />}></Route>
           <Route path='/student' element={<Student />}></Route>
-          <Route path='/student/:id' element={<StudentProfile />} />
+          <Route path='/student/:id' element={<StudentProfile data={staffs}/>} />
           <Route path='/studentAttendance' element={<StudentAttendance />}></Route>
           <Route path='/class' element={<Class />}></Route>
-          <Route path='/class/:id' element={<ClassProfile />}></Route>
+          <Route path='/class/:id' element={<ClassProfile data={classes}/>}></Route>
       </Routes>
       </BrowserRouter>
     </div>

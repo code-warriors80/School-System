@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 
 import user from '../icons/icons8-male-user-94.png'
 import bell from '../icons/icons8-bell-94.png'
@@ -6,20 +6,33 @@ import man from '../icons/icons8-user-male-94.png'
 import map from '../icons/icons8-map-pinpoint-94.png'
 import Tabs from './tabs'
 import search from '../icons/icons8-search-94.png'
+import lesson from '../icons/icons8-bookmark-94.png'
+import Materials from './Materials'
 
 const StaffProfile = () => {
+
+  const [model, setModel] = useState(false);
+
   return (
                <div className='w-full'>
                               <nav className='py-3 px-10 bg-dark-purple flex items-center justify-between'>
-                              <div className="hidden lg:flex search--box bg-white lg:items-center w-[25%] gap-[5px] py-[3px] rounded-md  px-[12px] bg-light-gray">
-                                             <i className="text-[1.2rem] pointer text-gray-800"><img src={search} alt='' className='w-6'/></i>
-                                             <input type="text" name="search" id="" placeholder="Search" className='p-[10px] text-black w-full'/>
-                              </div>
-                              <div className='flex items-center'>
-                              <img src={bell} alt='' className='mr-6 w-8'/>
-                              <img src={user} alt='' className='w-[50px] h-[50px] rounded-full border-2 border-dashed border-white p-1'/>
-                              </div>
+                                  <div className="hidden lg:flex search--box bg-white lg:items-center w-[25%] gap-[5px] py-[3px] rounded-md  px-[12px] bg-light-gray">
+                                                <i className="text-[1.2rem] pointer text-gray-800"><img src={search} alt='' className='w-6'/></i>
+                                                <input type="text" name="search" id="" placeholder="Search" className='p-[10px] text-black w-full'/>
+                                  </div>
+                                  <div className='flex items-center'>
+                                  <img src={bell} alt='' className='mr-6 w-8'/>
+                                  <img src={user} alt='' className='w-[50px] h-[50px] rounded-full border-2 border-dashed border-white p-1'/>
+                                  </div>
                               </nav>
+
+                              {model === true && (<Materials setModel={setModel}/>)}
+                              
+
+                              <div className='fixed bottom-10 right-20 gap-3'>
+                                    <button onClick={() => {setModel(true)}} className='text-white bg-dark-purple p-4 rounded-full flex items-center justify-center text-[23px] mb-3'><img src={lesson} alt=''  className='w-10'/></button>
+                              </div>
+
                               <div className='flex items-start justify-between p-5'>
                                              <div className='bg-white w-[25%] text-center py-10 rounded-2xl shadow-lg'>
                                                             <img src={user} alt='' className='w-[150px] h-[150px] rounded-full border-2 border-dashed border-dark-purple p-1 mx-auto'/>

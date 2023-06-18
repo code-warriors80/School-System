@@ -55,8 +55,8 @@ const Student = () => {
                   <Link>
                         <div className='bg-white rounded-2xl w-64 p-5 text-center shadow-lg'>
                         <img src={pupils.img} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-2'/>
-                        <h3 className='mb-1 mt-2'>{pupils.name}</h3>
-                        <p>{pupils.class}</p>
+                        <h3 className='mb-1 mt-2 font-semibold text-[18px'>{pupils.name}</h3>
+                        <p className='text-[14px] text-dark-purple'>{pupils.class}</p>
                         <div className='bg-dark-purple w-full py-3 rounded-lg text-white mt-1'>
                                     <Link to={`${pupils.id}`} className=''>View Profile</Link>
                         </div>

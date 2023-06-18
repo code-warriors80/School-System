@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 import SideNotify from '../Components/SideNotify'
 import TakenStaffAttendance from './TakenStaffAttendance'
 
+import { staffs } from '../data/staffs'
+
 import user from '../icons/icons8-male-user-94.png'
 import calander from '../icons/icons8-today-94.png'
 import bell from '../icons/icons8-bell-94.png'
@@ -31,9 +33,9 @@ const StaffAttendance = () => {
           <h3 className='ml-5 mt-5 text-[20px]'>Staff Attendance</h3>
 
           <div className='flex items-start justify-between p-5 '>
-          <div className=' w-[69%] h-[88vh] overflow-scroll scroll'>
+          <div className=' w-[69%] h-[83vh] overflow-scroll scroll'>
           <div className=' bg-white shadow-lg py-3 rounded-2xl'>
-                <table className='w-[95%] mx-auto text-center rounded-2xl'>
+                <table className='bigger w-[95%] mx-auto text-center rounded-2xl'>
                   <thead className='bg-dark-purple text-white rounded-lg'>
                     <tr>
                     <th className='py-5'>SN</th>
@@ -45,56 +47,24 @@ const StaffAttendance = () => {
                     </tr>
                   </thead>
                   <tbody>
+                    {staffs.map((allstaff,index) => (
                     <tr>
-                        <td className='py-5'>1</td>
-                        <td className='py-5'><img src={user} alt='' className='w-[50px] h-[50px] border-2 border-dashed border-dark-brown p-1 rounded-full mx-auto'/></td>
-                        <td>
-                              <p className='font-semibold text-[17px]'>Mrs Samuel Malam</p>
-                        </td>
-                        <td className='py-5'>
-                            <button className='border-2 border-solid border-green-500 text-green-500 hover:bg-green-500 hover:text-white p-3 rounded-lg'>Sign In</button>
-                        </td>
-                        <td className='py-5'>
-                            <button className='border-2 border-solid border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white p-3 rounded-lg'>Sign Out</button>
-                        </td>
-                        <td className='py-5 flex items-start justify-center gap-2'>
-                          <button className='border-2 border-solid border-red-500 text-red-500 hover:bg-red-500 hover:text-white p-3 rounded-lg'>Absent</button>
-                        </td>
-                    </tr>
-
-                    <tr className='bg-light-gray'>
-                        <td className='py-5'>2</td>
-                        <td className='py-5'><img src={user} alt='' className='w-[50px] h-[50px] border-2 border-dashed border-dark-brown p-1 rounded-full mx-auto'/></td>
-                        <td>     
-                              <p className='font-semibold text-[17px]'>Mr Joseph Mosses</p>
-                        </td>
-                        <td className='py-5'>
-                            <button className='border-2 border-solid border-green-500 text-green-500 hover:bg-green-500 hover:text-white p-3 rounded-lg'>Sign In</button>
-                        </td>
-                        <td className='py-5'>
-                            <button className='border-2 border-solid border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white p-3 rounded-lg'>Sign Out</button>
-                        </td>
-                        <td className='py-5 flex items-start justify-center gap-2'>
-                          <button className='border-2 border-solid border-red-500 text-red-500 hover:bg-red-500 hover:text-white p-3 rounded-lg'>Absent</button>
-                        </td>
-                    </tr>
-                    
-                    <tr>
-                        <td className='py-5'>3</td>
-                        <td className='py-5'><img src={user} alt='' className='w-[50px] h-[50px] border-2 border-dashed border-dark-brown p-1 rounded-full mx-auto'/></td>
-                        <td>
-                                <p className='font-semibold text-[17px]'>Mrs Silvia Henry</p>
-                        </td>
-                        <td className='py-5'>
-                            <button className='border-2 border-solid border-green-500 text-green-500 hover:bg-green-500 hover:text-white p-3 rounded-lg'>Sign In</button>
-                        </td>
-                        <td className='py-5'>
-                            <button className='border-2 border-solid border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white p-3 rounded-lg'>Sign Out</button>
-                        </td>
-                        <td className='py-5 flex items-start justify-center gap-2'>
-                          <button className='border-2 border-solid border-red-500 text-red-500 hover:bg-red-500 hover:text-white p-3 rounded-lg'>Absent</button>
-                        </td>
-                    </tr>
+                          <td className='py-5'>{index + 1}</td>
+                          <td className='py-5'><img src={user} alt='' className='w-[50px] h-[50px] border-2 border-dashed border-dark-brown p-1 rounded-full mx-auto'/></td>
+                          <td>
+                                <p className='font-semibold text-[17px]'>{allstaff.name}</p>
+                          </td>
+                          <td className='py-5'>
+                              <button className='border-2 border-solid border-green-500 text-green-500 hover:bg-green-500 hover:text-white p-3 rounded-lg'>Sign In</button>
+                          </td>
+                          <td className='py-5'>
+                              <button className='border-2 border-solid border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white p-3 rounded-lg'>Sign Out</button>
+                          </td>
+                          <td className='py-5 flex items-start justify-center gap-2'>
+                            <button className='border-2 border-solid border-red-500 text-red-500 hover:bg-red-500 hover:text-white p-3 rounded-lg'>Absent</button>
+                          </td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
                 </div>

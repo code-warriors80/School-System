@@ -15,11 +15,11 @@ export const classes = [
                               NOS: 10,
                               fee: 45710,
                },
-                              {
+               {
                               id: 3,
                               class: "Nursery",
                               next_class: 'Reception',
-                              class_teacher: "Mr Sadiq Hamza",
+                              class_teacher: "N/A",
                               NOS: 17,
                               fee: 46710,
                },
@@ -56,8 +56,8 @@ export const classes = [
                               fee: 46710,
                },
                {
-                              id: 1,
-                              class: "Pre-Nursery 1",
+                              id: 8,
+                              class: "Basic 4",
                               next_class: 'Pre-Nursery 2',
                               class_teacher: "Mr Ayomide Tobi",
                               NOS: 9,

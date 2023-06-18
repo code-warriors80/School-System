@@ -22,3 +22,8 @@
   background-color: white;
   border-top: 3px solid #081A51;
 }
+
+.bigger tr:nth-child(even)
+{
+  background: #f0eff5;
+}

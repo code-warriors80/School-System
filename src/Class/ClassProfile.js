@@ -1,12 +1,14 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 
 import user from '../icons/icons8-male-user-94.png'
 import bell from '../icons/icons8-bell-94.png'
-import classes from '../icons/icons8-school-building-94.png'
+import building from '../icons/icons8-school-building-94.png'
 import search from '../icons/icons8-search-94.png'
 import Tabs from './tabs'
 
-const ClassProfile = () => {
+const ClassProfile = ({data}) => {
+  const { id } = useParams()
   return (
                <div className='w-full'>
                               <nav className='py-3 px-10 bg-dark-purple flex items-center justify-between'>
@@ -19,6 +21,9 @@ const ClassProfile = () => {
                                              <img src={user} alt='' className='w-[50px] h-[50px] rounded-full border-2 border-dashed border-white p-1'/>
                                              </div>
                               </nav>
+
+                              {id}
+                              
 
                               <div className='flex items-start justify-between p-5'>
                                              <div className='bg-white w-[25%] text-center py-10 rounded-2xl shadow-lg'>
@@ -48,7 +53,7 @@ const ClassProfile = () => {
                                              <div className='bg-white w-[22%] p-7 py-5 rounded-2xl shadow-lg'>
                                                             <h1 className='py-3 text-[20px]'>About Pri-Nursery 1</h1>
                                                             <div>
-                                                                    <p className='flex items-center text-[16px] font-bold py-5'><img src={classes} alt='' className='w-5 mr-2'/> Class</p>
+                                                                    <p className='flex items-center text-[16px] font-bold py-5'><img src={building} alt='' className='w-5 mr-2'/> Class</p>
                                                                     <table className='w-full mini-profile'>
                                                                         <tr>
                                                                           <th className='float-left py-3 text-[18px]'>Class</th>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 import user from '../icons/icons8-male-user-94.png'
 import bell from '../icons/icons8-bell-94.png'
@@ -6,8 +6,11 @@ import student from '../icons/icons8-student-male-94.png'
 import map from '../icons/icons8-map-pinpoint-94.png'
 import Tabs from './tabs'
 import search from '../icons/icons8-search-94.png'
+import result from '../icons/icons8-diploma-94.png'
+import Material from './Material'
 
 const StudentProfile = () => {
+  const [model, setModel] = useState(false)
   return (
     <div className='w-full'>
                               <nav className='py-3 px-10 bg-dark-purple flex items-center justify-between'>
@@ -20,6 +23,13 @@ const StudentProfile = () => {
                               <img src={user} alt='' className='w-[50px] h-[50px] rounded-full border-2 border-dashed border-white p-1'/>
                               </div>
                               </nav>
+
+                              {model === true&&(<Material setModel={setModel}/>)}
+
+                              <div className='fixed bottom-10 right-20 gap-3'>
+                                    <button onClick={() => {setModel(true)}} className='text-white bg-dark-purple p-4 rounded-full flex items-center justify-center text-[23px] mb-3'><img src={result} alt=''  className='w-10'/></button>
+                            </div>
+                            
                               <div className='flex items-start justify-between p-5'>
                                              <div className='bg-white w-[25%] text-center py-10 rounded-2xl shadow-lg'>
                                                             <img src={student} alt='' className='w-[150px] h-[150px] rounded-full border-2 border-dashed border-dark-purple p-2 mx-auto'/>

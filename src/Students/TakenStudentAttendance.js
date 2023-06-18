@@ -17,8 +17,6 @@ const TakenStudentAttendance = ({setModel}) => {
                             <option>Select All</option>
                             <option>Present</option>
                             <option>Absent</option>
-                            <option>Late</option>
-                            <option>Early</option>
                         </select>
               </div>
 

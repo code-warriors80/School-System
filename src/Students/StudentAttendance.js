@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 import SideNotify from '../Components/SideNotify'
 import TakenStudentAttendance from './TakenStudentAttendance'
 
+import { students } from '../data/students'
+
 import user from '../icons/icons8-male-user-94.png'
 import calander from '../icons/icons8-today-94.png'
 import puple from '../icons/icons8-student-male-94.png'
@@ -32,7 +34,7 @@ const StudentAttendance = () => {
           <h3 className='ml-5 mt-5 text-[20px]'>Student Attendance</h3>
 
           <div className='flex items-start justify-between p-5 '>
-          <div className=' w-[69%] h-[88vh] overflow-scroll scroll'>
+          <div className=' w-[69%] h-[83vh] overflow-scroll scroll'>
           <div className='flex items-center justify-between'>
                <div className='bg-white mb-5 px-4 py-4 w-56 mt-4 rounded-lg'>
                               <select className='w-48'>
@@ -45,7 +47,7 @@ const StudentAttendance = () => {
                </div>
         </div>
           <div className=' bg-white shadow-lg py-3 rounded-2xl'>
-                <table className='w-[95%] mx-auto text-center rounded-2xl'>
+                <table className='bigger w-[95%] mx-auto text-center rounded-2xl'>
                   <thead className='bg-dark-purple text-white rounded-lg'>
                     <tr>
                     <th className='py-5'>SN</th>
@@ -57,14 +59,15 @@ const StudentAttendance = () => {
                     </tr>
                   </thead>
                   <tbody>
+                  {students.map((pupils, index) => (
                     <tr>
-                        <td className='py-5'>1</td>
+                        <td className='py-5'>{index + 1}</td>
                         <td className='py-5'><img src={puple} alt='' className='w-[50px] h-[50px] border-2 border-dashed border-dark-brown p-1 rounded-full mx-auto'/></td>
                         <td>
-                              <p className='font-semibold text-[17px]'>Mrs Samuel Malam</p>
+                              <p className='font-semibold text-[17px]'>{pupils.name}</p>
                         </td>
                         <td className='py-5'>
-                        <button className='bg-yellow-500 p-3 rounded-lg text-white' disabled>Pri-Nursery 1</button>
+                        <button className='bg-yellow-500 p-3 rounded-lg text-white' disabled>{pupils.class}</button>
                         </td>
                         <td className='py-5'> <button className='bg-blue-500 p-3 rounded-lg text-white' disabled>10 May 2023</button></td>
                         <td className='py-5 flex items-start justify-center gap-2'>
@@ -72,38 +75,7 @@ const StudentAttendance = () => {
                           <button className='border-2 border-solid text-color-danger hover:bg-color-danger hover:text-white border-color-danger p-3 rounded-lg'>Absent</button>
                         </td>
                     </tr>
-
-                    <tr className='bg-light-gray'>
-                        <td className='py-5'>2</td>
-                        <td className='py-5'><img src={puple} alt='' className='w-[50px] h-[50px] border-2 border-dashed border-dark-brown p-1 rounded-full mx-auto'/></td>
-                        <td>     
-                              <p className='font-semibold text-[17px]'>Mr Joseph Mosses</p>
-                        </td>
-                        <td className='py-5'>
-                        <button className='bg-yellow-500 p-3 rounded-lg text-white' disabled>Pri-Nursery 1</button>
-                        </td>
-                        <td className='py-5'> <button className='bg-blue-500 p-3 rounded-lg text-white' disabled>10 May 2023</button></td>
-                        <td className='py-5 flex items-start justify-center gap-2'>
-                          <button className='border-solid text-green-500 border-2 border-green-500 hover:bg-green-500 hover:text-white p-3 rounded-lg'>Present</button>
-                          <button className='border-2 border-solid text-color-danger hover:bg-color-danger hover:text-white border-color-danger p-3 rounded-lg'>Absent</button>
-                        </td>
-                    </tr>
-                    
-                    <tr>
-                        <td className='py-5'>3</td>
-                        <td className='py-5'><img src={puple} alt='' className='w-[50px] h-[50px] border-2 border-dashed border-dark-brown p-1 rounded-full mx-auto'/></td>
-                        <td>
-                                <p className='font-semibold text-[17px]'>Mrs Silvia Henry</p>
-                        </td>
-                        <td className='py-5'>
-                            <button className='bg-yellow-500 p-3 rounded-lg text-white' disabled>Pri-Nursery 1</button>
-                        </td>
-                        <td className='py-5'> <button className='bg-blue-500 p-3 rounded-lg text-white' disabled>10 May 2023</button></td>
-                        <td className='py-5 flex items-start justify-center gap-2'>
-                          <button className='border-solid text-green-500 border-2 border-green-500 hover:bg-green-500 hover:text-white p-3 rounded-lg'>Present</button>
-                          <button className='border-2 border-solid text-color-danger hover:bg-color-danger hover:text-white border-color-danger p-3 rounded-lg'>Absent</button>
-                        </td>
-                    </tr>
+                  ))}
                   </tbody>
                 </table>
                 </div>

@@ -18,6 +18,8 @@ June - November
 Start Date: 20th june 2023
 End Date: 20th November 2023 
 
+Daily Supervision - 9:00 AM - 10:00 AM
+
 DATABASE MODELS
 
 Table                                        Data Type                                    Required 
