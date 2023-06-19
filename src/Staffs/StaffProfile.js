@@ -10,7 +10,7 @@ import search from '../icons/icons8-search-94.png'
 import lesson from '../icons/icons8-bookmark-94.png'
 import Materials from './Materials'
 
-const StaffProfile = ({data}) => {
+const StaffProfile = () => {
 
   const [model, setModel] = useState(false);
   const { id } = useParams()

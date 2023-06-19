@@ -104,7 +104,7 @@ RESPONSIBILITIES
 * OGALA (SAVAGE)
 - routing
 - Delete Staff
-- api testing/api calls
+- api testing
 
 NOTE This Functions Are to be completed and Submitted For Review Before 29th June 2023
 

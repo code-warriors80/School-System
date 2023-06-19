@@ -12,9 +12,7 @@ import StudentProfile from './Students/StudentProfile';
 import ClassProfile from './Class/ClassProfile';
 
 // MY DATA
-import { classes } from './data/class';
-import { staffs } from './data/staffs';
-import { students } from './data/students';
+
 
 function App() {
   return (
@@ -27,10 +25,10 @@ function App() {
           <Route path='/staff/:id' element={<StaffProfile/>} />
           <Route path='/staffAttendance' element={<StaffAttendance />}></Route>
           <Route path='/student' element={<Student />}></Route>
-          <Route path='/student/:id' element={<StudentProfile/>} />
+          <Route path='/student/:id' element={<StudentProfile />} />
           <Route path='/studentAttendance' element={<StudentAttendance />}></Route>
           <Route path='/class' element={<Class />}></Route>
-          <Route path='/class/:id' element={<ClassProfile/>}></Route>
+          <Route path='/class/:id' element={<ClassProfile />}></Route>
       </Routes>
       </BrowserRouter>
     </div>
