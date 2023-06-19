@@ -10,6 +10,11 @@ PACKAGES
 - dotenv
 - mongoose
 
+PROJECT GUIDELINES
+- Daily and Weekly Supervision is important and all developer must participate failure without permission would attract a 1 week suspension from project  
+- Once a task is completed, please report for supervision and permission to start the next task
+- Difficulty or inability to carry out a function or meet up deadline should be communicated on time
+
 NOTE: Packages installed must be indicated on the packages list
 
 PROJECT DURATION
@@ -19,6 +24,7 @@ Start Date: 20th june 2023
 End Date: 20th November 2023 
 
 Daily Supervision - 9:00 AM - 10:00 AM
+Weekly Supervison - Saturday 11:00 AM - 12:00 PM
 
 DATABASE MODELS
 
