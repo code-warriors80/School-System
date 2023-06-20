@@ -10,4 +10,23 @@
 .scroll::-webkit-scrollbar
 {
   width: 0;
+<<<<<<< HEAD
+=======
+}
+
+.tabs
+{
+  display: none;
+}
+
+.active-tab
+{
+  background-color: white;
+  border-top: 3px solid #081A51;
+}
+
+.bigger tr:nth-child(even)
+{
+  background: #f0eff5;
+>>>>>>> 3ea7b530f7462bf55852e26c6d8bbf048d1f2e9d
 }

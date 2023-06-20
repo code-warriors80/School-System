@@ -1,13 +1,23 @@
 import React from 'react'
+<<<<<<< HEAD
 import dp from '../image/_DSC0541.JPG'
 import { FaTimes } from 'react-icons/fa'
+=======
+
+import puple from '../icons/icons8-student-male-94.png'
+import close from '../icons/icons8-close-94.png'
+>>>>>>> 3ea7b530f7462bf55852e26c6d8bbf048d1f2e9d
 
 const TakenStudentAttendance = ({setModel}) => {
   return (
     <div className='fixed w-[66%] p-5 bg-light-gray h-[90vh]'>
         <div className='flex items-center justify-between'>
             <h1 className='text-[20px]'>Today's Attendance</h1>
+<<<<<<< HEAD
             <button className='text-[20px]' onClick={() => setModel(false)}><FaTimes /></button>
+=======
+            <button className='text-[20px]' onClick={() => setModel(false)}><img src={close} alt=''  className='w-5'/></button>
+>>>>>>> 3ea7b530f7462bf55852e26c6d8bbf048d1f2e9d
         </div>
 
         <div className='flex items-center justify-between'>
@@ -16,8 +26,11 @@ const TakenStudentAttendance = ({setModel}) => {
                             <option>Select All</option>
                             <option>Present</option>
                             <option>Absent</option>
+<<<<<<< HEAD
                             <option>Late</option>
                             <option>Early</option>
+=======
+>>>>>>> 3ea7b530f7462bf55852e26c6d8bbf048d1f2e9d
                         </select>
               </div>
 
@@ -42,7 +55,11 @@ const TakenStudentAttendance = ({setModel}) => {
                   <tbody>
                     <tr>
                         <td className='py-5'>1</td>
+<<<<<<< HEAD
                         <td className='py-5'><img src={dp} alt='' className='w-[50px] h-[50px] border-2 border-dashed border-dark-brown p-1 rounded-full mx-auto'/></td>
+=======
+                        <td className='py-5'><img src={puple} alt='' className='w-[50px] h-[50px] border-2 border-dashed border-dark-brown p-1 rounded-full mx-auto'/></td>
+>>>>>>> 3ea7b530f7462bf55852e26c6d8bbf048d1f2e9d
                         <td>
                               <p className='font-semibold text-[17px]'>Mrs Samuel Malam</p>
                         </td>
@@ -63,7 +80,11 @@ const TakenStudentAttendance = ({setModel}) => {
 
                     <tr className='bg-light-gray'>
                         <td className='py-5'>2</td>
+<<<<<<< HEAD
                         <td className='py-5'><img src={dp} alt='' className='w-[50px] h-[50px] border-2 border-dashed border-dark-brown p-1 rounded-full mx-auto'/></td>
+=======
+                        <td className='py-5'><img src={puple} alt='' className='w-[50px] h-[50px] border-2 border-dashed border-dark-brown p-1 rounded-full mx-auto'/></td>
+>>>>>>> 3ea7b530f7462bf55852e26c6d8bbf048d1f2e9d
                         <td>     
                               <p className='font-semibold text-[17px]'>Mr Joseph Mosses</p>
                         </td>
@@ -80,7 +101,11 @@ const TakenStudentAttendance = ({setModel}) => {
                     
                     <tr>
                         <td className='py-5'>3</td>
+<<<<<<< HEAD
                         <td className='py-5'><img src={dp} alt='' className='w-[50px] h-[50px] border-2 border-dashed border-dark-brown p-1 rounded-full mx-auto'/></td>
+=======
+                        <td className='py-5'><img src={puple} alt='' className='w-[50px] h-[50px] border-2 border-dashed border-dark-brown p-1 rounded-full mx-auto'/></td>
+>>>>>>> 3ea7b530f7462bf55852e26c6d8bbf048d1f2e9d
                         <td>
                                 <p className='font-semibold text-[17px]'>Mrs Silvia Henry</p>
                         </td>
