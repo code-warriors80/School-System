@@ -58,7 +58,7 @@ const Dashboard = () => {
                             <div className='flex items-center justify-between px-[30px] py-5'>
                                 <div>
                                     <h2 className='text-[35px] text-white'>70</h2>
-                                    <span className="uppercase text-[13px] lg:text-[15px] text-white">Student</span>
+                                    <span className="uppercase text-[13px] lg:text-[15px] text-white">Students</span>
                                 </div>
                                 <div>
                                     <i className='text-[70px] text-link-color'><img src={student} alt='' className='w[80px]' /></i>

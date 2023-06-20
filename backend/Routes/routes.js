@@ -12,7 +12,7 @@ router.get('/staff/:id', () => {})
 // ADD NEW STAFF
 router.post('/addStaff', () => {})
 
-// UPDATE SPECIFIC
+// UPDATE SPECIFIC STAFF
 router.patch('/:id/addStaff', () => {})
 
 // DELETE SPECIFIC STAFF

@@ -9,14 +9,17 @@ const Tabs = () => {
 
   return (
     <div>
+              {/* TAB HEADER */}
                <div className='block-tabs flex mb-2 cursor-pointer'>
                               <div className={toggleState === 1 ? 'active-tab py-4 px-10' : 'tab bg-light-gray py-4 px-10'} onClick={() => toggleTab(1)}>Home</div>
                               <div className={toggleState === 2 ? 'active-tab py-4 px-10' : 'tab bg-light-gray py-4 px-10'}  onClick={() => toggleTab(2)}>Information</div>
                               <div className={toggleState === 3 ? 'active-tab py-4 px-10' : 'tab bg-light-gray py-4 px-10'}  onClick={() => toggleTab(3)}>Update Profile</div>
                               <div className={toggleState === 4 ? 'active-tab py-4 px-10' : 'tab bg-light-gray py-4 px-10'}  onClick={() => toggleTab(4)}>Settings</div>
                </div>
+               {/* END TAB HEADER */}
 
                <div className='content-tabs'>
+                               {/* TAB CONTENT 1 */}
                               <div className={toggleState === 1 ? ' content active-content' : 'tabs'}>
                                              <h1 className='text-2xl my-5'>Home</h1>
                                              <hr/>
@@ -25,7 +28,9 @@ const Tabs = () => {
                                                             assumenda rem harum! Doloremque, cupiditate?
                                              </p>
                               </div>
+                              {/* END TAB CONTENT 1 */}
 
+                              {/* TAB CONTENT 2 */}
                               <div className={toggleState === 2 ? ' content active-content' : 'tabs'}>
                                              <h1 className='text-2xl my-5'>Personal Information</h1>
                                              <hr/>
@@ -69,10 +74,13 @@ const Tabs = () => {
                                                             </tr>
                                              </table>
                               </div>
+                              {/* END TAB CONTENT 2 */}
 
+                              {/* TAB CONTENT 3 */}
                               <div className={toggleState === 3 ? ' content active-content' : 'tabs'}>
                                              <h1 className='text-2xl my-5'>Update Profile</h1>
                                              <hr/>
+                                             {/* UPDATE USER DETAIL FORM */}
                                              <form className='w-full'>
                                                             <div className='flex gap-3 justify-between'>
                                                                            <div className='mb-5 w-[48%]'>
@@ -125,8 +133,11 @@ const Tabs = () => {
                                                             <button className='bg-red-500 text-white py-3 px-5 rounded-2xl mt-2'>Reset Password</button>
                                                             </div>
                                              </form>
+                                             {/* END UPDATE USER DETAIL FORM */}
                               </div>
+                              {/* END TAB CONTENT 3 */}
 
+                              {/* TAB CONTENT 4 */}
                               <div className={toggleState === 4 ? ' content active-content' : 'tabs'}>
                                              <h1 className='text-2xl my-5'>Settings</h1>
                                              <hr/>
@@ -134,8 +145,9 @@ const Tabs = () => {
                                                             laboriosam atque quibusdam nam vero magnam hic voluptate. Voluptate, doloribus. Temporibus ut 
                                                             assumenda rem harum! Doloremque, cupiditate?
                                              </p>
+                                             <button className='bg-red-500 text-white py-3 px-5 rounded-2xl mt-2'>Delete Account</button>
                               </div>
-
+                              {/* END TAB CONTENT 4 */}
                </div>
     </div>
   )
