@@ -120,3 +120,5 @@ Venue - 5G
 Time - 1:00 PM
 
 Please lets all be Present on time and with our pc,s
+
+THANK YOU
