@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import SideNotify from '../Components/SideNotify'
-import TakenStudentAttendance from './TakenStudentAttendance'
+import TakenClassAttendance from './takenClassAttendance'
 
 import { students } from '../data/students'
 
@@ -25,7 +25,7 @@ const StudentAttendance = () => {
                   </div>
           </nav>
 
-          {model === true &&(<TakenStudentAttendance setModel={setModel} />)}
+          {model === true &&(<TakenClassAttendance setModel={setModel} />)}
 
           <div className='fixed bottom-10 right-20 gap-3'>
                   <button className='text-white bg-dark-purple p-4 rounded-full flex items-center justify-center text-[23px] mb-3' onClick={() => setModel(true)}><img src={calander} alt=''  className='w-10'/></button>
