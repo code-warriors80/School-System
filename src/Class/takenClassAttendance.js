@@ -3,7 +3,7 @@ import React from 'react'
 import puple from '../icons/icons8-student-male-94.png'
 import close from '../icons/icons8-close-94.png'
 
-const TakenStudentAttendance = ({setModel}) => {
+const TakenClassAttendance = ({setModel}) => {
   return (
     <div className='fixed w-[66%] p-5 bg-light-gray h-[90vh]'>
         <div className='flex items-center justify-between'>
@@ -101,4 +101,4 @@ const TakenStudentAttendance = ({setModel}) => {
   )
 }
 
-export default TakenStudentAttendance
+export default TakenClassAttendance

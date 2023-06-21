@@ -1,15 +1,17 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 // ICONS
+import calender from '../icons/icons8-calendar-94.png'
 import user from '../icons/icons8-male-user-94.png'
 import bell from '../icons/icons8-bell-94.png'
 import building from '../icons/icons8-school-building-94.png'
 import search from '../icons/icons8-search-94.png'
 import Tabs from './tabs'
 
-const ClassProfile = ({data}) => {
-  const { id } = useParams()
+const ClassProfile = () => {
+  const {id} = useParams()
   return (
 <div className='w-full'>
                               {/* TOP NAV */}
@@ -25,7 +27,9 @@ const ClassProfile = ({data}) => {
                               </nav>
                               {/* END TOP NAV */}
 
-                              {id}
+                              <div className='fixed bottom-10 right-20 gap-3'>
+                                  <Link to={`/class/attendance/${id}`} className='text-white bg-dark-purple p-4 rounded-full flex items-center justify-center text-[23px] mb-3'><img src={calender} alt=''  className='w-10'/></Link>
+                            </div>
                               
 
                             {/* CLASS DETAIL CONTAINER */}

@@ -1,14 +1,30 @@
 import React, {useState} from 'react'
+// import { useStaffsContext } from '../hooks/useStaffsContext';
 
-const Tabs = () => {
+const Tabs = ({workout}) => {
                const [toggleState, setToggle] = useState(1);
+              //  const [dispatch] = useStaffsContext()
 
+              //  TAB TOGGLER
                const toggleTab = (index) => {
                               setToggle(index);
                }
 
+              //  DELETE FUNCTION
+              //  const deleteStaff = async () => {
+              //       const response = await fetch('', () => workout.id, {
+              //         method: 'DELETE'
+              //       })
+
+              //       const json = await response.json()
+
+              //       if(response.ok) {
+              //           dispatch({type: 'DELETE_STAFF',  payload: json})
+              //       }
+              //  }
+
   return (
-    <div>
+    <div className='scroll h-[80vh] overflow-scroll'>
               {/* TAB HEADER */}
                <div className='block-tabs flex mb-2 cursor-pointer'>
                               <div className={toggleState === 1 ? 'active-tab py-4 px-10' : 'tab bg-light-gray py-4 px-10'} onClick={() => toggleTab(1)}>Home</div>
@@ -49,6 +65,11 @@ const Tabs = () => {
                                                             </tr>
 
                                                             <tr>
+                                                                           <th className='float-left py-3 text-[18px]'>Role</th>
+                                                                           <td className='float-right py-3'>Admin</td>
+                                                            </tr>
+
+                                                            <tr>
                                                                            <th className='float-left py-3 text-[18px]'>Email</th>
                                                                            <td className='float-right py-3'>Muctar@gmail.com</td>
                                                             </tr>
@@ -71,6 +92,16 @@ const Tabs = () => {
                                                             <tr>
                                                                            <th className='float-left py-3 text-[18px]'>Address</th>
                                                                            <td className='float-right py-3'>Blk 35 MOQ Chindit Cantoonment</td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                           <th className='float-left py-3 text-[18px]'>City</th>
+                                                                           <td className='float-right py-3'>Olamaboro</td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                           <th className='float-left py-3 text-[18px]'>State</th>
+                                                                           <td className='float-right py-3'>Kogi State</td>
                                                             </tr>
                                              </table>
                               </div>
@@ -116,6 +147,17 @@ const Tabs = () => {
 
                                                             <div className='flex gap-3 justify-between'>
                                                                            <div className='mb-5 w-[48%]'>
+                                                                                          <label className='block mb-3'>City</label>
+                                                                                          <input type='password' placeholder='City' className='bg-light-gray h-[50px] px-5 rounded-2xl w-full' name=''/>
+                                                                           </div>    
+                                                                           <div className='mb-5 w-[48%]'>
+                                                                                          <label className='block mb-3'>State</label>
+                                                                                          <input type='password' placeholder='State' className='bg-light-gray h-[50px] px-5 rounded-2xl w-full' name=''/>
+                                                                           </div>    
+                                                            </div>
+
+                                                            <div className='flex gap-3 justify-between'>
+                                                                           <div className='mb-5 w-[48%]'>
                                                                                           <label className='block mb-3'>DOB</label>
                                                                                           <input type='date' placeholder='Contact' className='bg-light-gray h-[50px] px-5 rounded-2xl w-full' name=''/>
                                                                            </div>    
@@ -141,11 +183,12 @@ const Tabs = () => {
                               <div className={toggleState === 4 ? ' content active-content' : 'tabs'}>
                                              <h1 className='text-2xl my-5'>Settings</h1>
                                              <hr/>
-                                             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat, tempora omnis fugit repudiandae 
-                                                            laboriosam atque quibusdam nam vero magnam hic voluptate. Voluptate, doloribus. Temporibus ut 
-                                                            assumenda rem harum! Doloremque, cupiditate?
+                                             <p>
+                                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat, tempora omnis fugit repudiandae 
+                                                    laboriosam atque quibusdam nam vero magnam hic voluptate. Voluptate, doloribus. Temporibus ut 
+                                                    assumenda rem harum! Doloremque, cupiditate?
                                              </p>
-                                             <button className='bg-red-500 text-white py-3 px-5 rounded-2xl mt-2'>Delete Account</button>
+                                             {/* <button className='bg-red-500 text-white py-3 px-5 rounded-2xl mt-2' onClick={deleteStaff}>Delete Account</button> */}
                               </div>
                               {/* END TAB CONTENT 4 */}
                </div>

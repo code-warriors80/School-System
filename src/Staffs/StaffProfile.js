@@ -1,5 +1,4 @@
 import React,{useState} from 'react'
-import { useParams } from 'react-router-dom'
 
 // ICONS
 import user from '../icons/icons8-male-user-94.png'
@@ -14,27 +13,25 @@ import Materials from './Materials'
 const StaffProfile = () => {
 
   const [model, setModel] = useState(false);
-  const { id } = useParams()
 
   return (
                <div className='w-full'>
                               {/* TOP NAV */}
-                              <nav className='py-3 px-10 bg-dark-purple flex items-center justify-between'>
-                                    <div className="hidden lg:flex search--box bg-white lg:items-center w-[25%] gap-[5px] py-[3px] rounded-md  px-[12px] bg-light-gray">
-                                                  <i className="text-[1.2rem] pointer text-gray-800"><img src={search} alt='' className='w-6'/></i>
-                                                  <input type="text" name="search" id="" placeholder="Search" className='p-[10px] text-black w-full'/>
-                                    </div>
-                                    <div className='flex items-center'>
-                                    <img src={bell} alt='' className='mr-6 w-8'/>
-                                    <img src={user} alt='' className='w-[50px] h-[50px] rounded-full border-2 border-dashed border-white p-1'/>
-                                    </div>
-                              </nav>
+                                    <nav className='py-3 px-10 bg-dark-purple flex items-center justify-between'>
+                                          <div className="hidden lg:flex search--box bg-white lg:items-center w-[25%] gap-[5px] py-[3px] rounded-md  px-[12px] bg-light-gray">
+                                                      <i className="text-[1.2rem] pointer text-gray-800"><img src={search} alt='' className='w-6'/></i>
+                                                      <input type="text" name="search" id="" placeholder="Search" className='p-[10px] text-black w-full'/>
+                                          </div>
+                                          <div className='flex items-center'>
+                                          <img src={bell} alt='' className='mr-6 w-8'/>
+                                          <img src={user} alt='' className='w-[50px] h-[50px] rounded-full border-2 border-dashed border-white p-1'/>
+                                          </div>
+                                    </nav>
                               {/* END TOP NAV */}
 
                               {/* MODEL */}
-                              {model === true && (<Materials setModel={setModel}/>)}
+                                    {model === true && (<Materials setModel={setModel}/>)}
                               {/* END MODEL */}
-                              {id}
 
                               {/* MODEL BUTTON */}
                               <div className='fixed bottom-10 right-20 gap-3'>

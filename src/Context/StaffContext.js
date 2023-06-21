@@ -13,6 +13,11 @@ export const staffsReducer = (state, action) => {
                                              return {
                                                             staffs: [action.payload, ...state.staffs]
                                              }
+
+                              // case 'DELETE_STAFF':
+                              //       return{
+                              //             staffs: state.staffs.filter((w) => w._id !== action.payload._id)
+                              //       }
                               default:
                                              return state
                }

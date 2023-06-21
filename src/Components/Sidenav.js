@@ -33,7 +33,7 @@ const Sidenav = () => {
   return (
     <div className={`${open ? 'w-72' : 'w-20'} p-5 pt-8 duration-300 h-screen bg-dark-purple relative`}>
         <div>
-          <button className='absolute cursor-pointer -right-3 bg-white top-3 border-2 border-dark-purple p-2 rounded-full' onClick={() => setOpen(!open)}><img src={arrow} className={`${!open ? 'w-5' : 'rotate-180 w-5'}`} /></button>
+          <button className='absolute cursor-pointer -right-3 bg-white top-3 border-2 border-dark-purple p-2 rounded-full' onClick={() => setOpen(!open)}><img src={arrow} alt='' className={`${!open ? 'w-5' : 'rotate-180 w-5'}`} /></button>
         </div>
 
         <div className='flex items-center gap-x-4 items-center'>
