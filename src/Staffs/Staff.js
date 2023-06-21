@@ -36,7 +36,7 @@ const Staff = () => {
           {/* SIDE MENU */}
           <div className='fixed bottom-10 right-20 gap-3'>
                   <button className='text-white bg-dark-purple p-4 rounded-full flex items-center justify-center text-[23px] mb-3' onClick={() => {setModel(true)}}><img src={staff} alt=''  className='w-10'/></button>
-                  <Link to="/staffAttendance" className='text-white bg-dark-purple p-4 rounded-full flex items-center justify-center text-[23px] mb-3'><img src={calender} alt=''  className='w-10'/></Link>
+                  <Link to="/staff/attendance" className='text-white bg-dark-purple p-4 rounded-full flex items-center justify-center text-[23px] mb-3'><img src={calender} alt=''  className='w-10'/></Link>
           </div>
           {/* END SIDE  MENU */}
 
@@ -47,7 +47,7 @@ const Staff = () => {
                     {/* SELECT DEPARTMENT */}
                     <div className='bg-white mb-5 px-4 py-4 w-56 mt-4 rounded-lg'>
                         <select className='w-48'>
-                          <option>Select Department</option>
+                          <option>Select Roles</option>
                           <option>Admin</option>
                           <option>ICT</option>
                           <option>Languages</option>

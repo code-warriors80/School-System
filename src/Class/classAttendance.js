@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import SideNotify from '../Components/SideNotify'
-import TakenStudentAttendance from './TakenStudentAttendance'
 
 import { students } from '../data/students'
 
@@ -9,8 +8,9 @@ import calander from '../icons/icons8-today-94.png'
 import puple from '../icons/icons8-student-male-94.png'
 import bell from '../icons/icons8-bell-94.png'
 import search from '../icons/icons8-search-94.png'
+import TakenClassAttendance from './takenClassAttendance'
 
-const StudentAttendance = () => {
+const ClassAttendance = () => {
   const [model, setModel] = useState(false)
   return (
     <div className='w-full'>
@@ -25,7 +25,7 @@ const StudentAttendance = () => {
                   </div>
           </nav>
 
-          {model === true &&(<TakenStudentAttendance setModel={setModel} />)}
+          {model === true &&(<TakenClassAttendance setModel={setModel} />)}
 
           <div className='fixed bottom-10 right-20 gap-3'>
                   <button className='text-white bg-dark-purple p-4 rounded-full flex items-center justify-center text-[23px] mb-3' onClick={() => setModel(true)}><img src={calander} alt=''  className='w-10'/></button>
@@ -86,4 +86,4 @@ const StudentAttendance = () => {
   )
 }
 
-export default StudentAttendance
+export default ClassAttendance

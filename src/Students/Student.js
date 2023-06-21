@@ -6,7 +6,6 @@ import StudentForm from '../Forms/StudentForm'
 import { students } from '../data/students'
 
 import staff from '../icons/icons8-writer-male-94.png'
-import calender from '../icons/icons8-calendar-94.png'
 import user from '../icons/icons8-male-user-94.png'
 import bell from '../icons/icons8-bell-94.png'
 import search from '../icons/icons8-search-94.png'
@@ -28,7 +27,6 @@ const Student = () => {
 
           <div className='fixed bottom-10 right-20 gap-3'>
                   <button className='text-white bg-dark-purple p-4 rounded-full flex items-center justify-center text-[23px] mb-3' onClick={() => setModel(true)}><img src={staff} alt=''  className='w-10'/></button>
-                  <Link to="/studentAttendance" className='text-white bg-dark-purple p-4 rounded-full flex items-center justify-center text-[23px] mb-3'><img src={calender} alt=''  className='w-10'/></Link>
           </div>
 
           {model === true &&(<StudentForm setModel={setModel}/>)}
