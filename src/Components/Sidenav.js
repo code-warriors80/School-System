@@ -1,5 +1,24 @@
 import React, {useState} from 'react'
 import logo from '../image/1574619145-removebg-preview.png'
+<<<<<<< HEAD
+import { FaArrowLeft, FaBook,  FaChalkboardTeacher, FaUserGraduate, FaUsers } from 'react-icons/fa'
+import { BsBank2, BsGear, BsPatchCheck, BsSpeedometer2, BsBoxArrowRight, BsMessenger } from "react-icons/bs";
+import { Link } from 'react-router-dom';
+
+const Sidenav = () => {
+  const [open, setOpen] = useState(false);
+  const Menus = [
+    {title: "Dashboard", src: <BsSpeedometer2 />, link: "/"},
+    {title: "Inbox", src: <BsMessenger />},
+    {title: "Staff", src: <FaUsers />, link: "/staff" , gap: true},
+    {title: "Student", src: <FaUserGraduate />, link: "/student"},
+    {title: "Class", src: <FaChalkboardTeacher />, link: "/class"},
+    {title: "Subjects", src: <FaBook />, link: "/"},
+    {title: "Financial", src: <BsBank2 />},
+    {title: "Testimonials", src: <BsPatchCheck /> , gap: true},
+    {title: "Setting", src: <BsGear />},
+    {title: "Logout", src: <BsBoxArrowRight /> , gap: true},
+=======
 import { Link } from 'react-router-dom';
 
 // icons
@@ -29,11 +48,16 @@ const Sidenav = () => {
     {title: "Setting", src: <img src={gear} alt='' className={`${!open ? 'w-7' : 'w-7'}`}/>},
     {title: "Logout", src: <img src={logout} alt='' className={`${!open ? 'w-7' : 'w-7'}`}/>, gap: true},
     
+>>>>>>> 3ea7b530f7462bf55852e26c6d8bbf048d1f2e9d
   ]
   return (
     <div className={`${open ? 'w-72' : 'w-20'} p-5 pt-8 duration-300 h-screen bg-dark-purple relative`}>
         <div>
+<<<<<<< HEAD
+          <button className='absolute cursor-pointer -right-3 bg-white top-3 border-2 border-dark-purple p-2 rounded-full' onClick={() => setOpen(!open)}><FaArrowLeft className={`${!open && 'rotate-180'}`}/></button>
+=======
           <button className='absolute cursor-pointer -right-3 bg-white top-3 border-2 border-dark-purple p-2 rounded-full' onClick={() => setOpen(!open)}><img src={arrow} className={`${!open ? 'w-5' : 'rotate-180 w-5'}`} /></button>
+>>>>>>> 3ea7b530f7462bf55852e26c6d8bbf048d1f2e9d
         </div>
 
         <div className='flex items-center gap-x-4 items-center'>
@@ -45,7 +69,11 @@ const Sidenav = () => {
           {Menus.map((menu, index) => (
             <li key={index} className={`text-gray-300 text-sm cursor-pointer p-2 hover:bg-light-white rounded-md ${menu.gap ? "mt-9"  :  "mt-2"}`}>
               <Link to={menu.link} className='flex items-center gap-x-4'>
+<<<<<<< HEAD
+                  <i className="text-2xl">{menu.src}</i>
+=======
                   <i>{menu.src}</i>
+>>>>>>> 3ea7b530f7462bf55852e26c6d8bbf048d1f2e9d
                   <span className={`${!open && 'hidden'} origin-left duration-200`}>{menu.title}</span>
               </Link>
             </li>

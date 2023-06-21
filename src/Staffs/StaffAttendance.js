@@ -1,4 +1,11 @@
 import React, {useState} from 'react'
+<<<<<<< HEAD
+import dp from '../image/_DSC0541.JPG'
+import {  FaSearch, FaBell, FaCalendarCheck } from 'react-icons/fa'    
+import SideNotify from '../Components/SideNotify'
+import TakenStaffAttendance from './TakenStaffAttendance'
+
+=======
 import SideNotify from '../Components/SideNotify'
 import TakenStaffAttendance from './TakenStaffAttendance'
 
@@ -10,10 +17,29 @@ import calander from '../icons/icons8-today-94.png'
 import bell from '../icons/icons8-bell-94.png'
 import search from '../icons/icons8-search-94.png'
 
+>>>>>>> 3ea7b530f7462bf55852e26c6d8bbf048d1f2e9d
 const StaffAttendance = () => {
   const [model, setModel] = useState(false)
   return (
     <div className='w-full'>
+<<<<<<< HEAD
+              <nav className='py-3 px-10 bg-dark-purple flex items-center justify-between'>
+                <div className="hidden lg:flex search--box bg-white lg:items-center w-[25%] gap-[5px] py-[3px] rounded-md  px-[12px] bg-light-gray">
+                                  <i className="text-[1.2rem] pointer text-gray-800"><FaSearch /></i>
+                                  <input type="text" name="search" id="" placeholder="Search" className='p-[10px] text-black w-full'/>
+                  </div>
+                  <div className='flex items-center'>
+                        <FaBell className='mr-6 text-white text-[25px]'/>
+                        <img src={dp} alt='' className='w-[50px] h-[50px] rounded-full border-2 border-dashed border-white p-1'/>
+                  </div>
+          </nav>
+
+          {model === true &&(<TakenStaffAttendance setModel={setModel} />)}
+
+          <div className='fixed bottom-10 right-20 gap-3'>
+                  <button className='text-white bg-dark-purple p-4 rounded-full flex items-center justify-center text-[23px] mb-3' onClick={() => setModel(true)}><FaCalendarCheck /></button>
+          </div>
+=======
           {/* TOP NAV */}
             <nav className='py-3 px-10 bg-dark-purple flex items-center justify-between'>
                 <div className="hidden lg:flex search--box bg-white lg:items-center w-[25%] gap-[5px] py-[3px] rounded-md  px-[12px] bg-light-gray">
@@ -37,10 +63,82 @@ const StaffAttendance = () => {
                   <button className='text-white bg-dark-purple p-4 rounded-full flex items-center justify-center text-[23px] mb-3' onClick={() => setModel(true)}><img src={calander} alt=''  className='w-10'/></button>
           </div>
           {/* END TAKEN ATTENDANCE MODEL BUTTON */}
+>>>>>>> 3ea7b530f7462bf55852e26c6d8bbf048d1f2e9d
 
           <h3 className='ml-5 mt-5 text-[20px]'>Staff Attendance</h3>
 
           <div className='flex items-start justify-between p-5 '>
+<<<<<<< HEAD
+          <div className=' w-[69%] h-[88vh] overflow-scroll scroll'>
+          <div className=' bg-white shadow-lg py-3 rounded-2xl'>
+                <table className='w-[95%] mx-auto text-center rounded-2xl'>
+                  <thead className='bg-dark-purple text-white rounded-lg'>
+                    <tr>
+                    <th className='py-5'>SN</th>
+                    <th className='py-5'>Staff Image</th>
+                    <th className='py-5'>Staff Name</th>
+                    <th className='py-5'>Time in</th>
+                    <th className='py-5'>Time out</th>
+                    <th className='py-5'>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                        <td className='py-5'>1</td>
+                        <td className='py-5'><img src={dp} alt='' className='w-[50px] h-[50px] border-2 border-dashed border-dark-brown p-1 rounded-full mx-auto'/></td>
+                        <td>
+                              <p className='font-semibold text-[17px]'>Mrs Samuel Malam</p>
+                        </td>
+                        <td className='py-5'>
+                            <button className='border-2 border-solid border-green-500 text-green-500 hover:bg-green-500 hover:text-white p-3 rounded-lg text-white'>Sign In</button>
+                        </td>
+                        <td className='py-5'>
+                            <button className='border-2 border-solid border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white p-3 rounded-lg text-white'>Sign Out</button>
+                        </td>
+                        <td className='py-5 flex items-start justify-center gap-2'>
+                          <button className='border-2 border-solid border-red-500 text-red-500 hover:bg-red-500 hover:text-white p-3 rounded-lg text-white'>Absent</button>
+                        </td>
+                    </tr>
+
+                    <tr className='bg-light-gray'>
+                        <td className='py-5'>2</td>
+                        <td className='py-5'><img src={dp} alt='' className='w-[50px] h-[50px] border-2 border-dashed border-dark-brown p-1 rounded-full mx-auto'/></td>
+                        <td>     
+                              <p className='font-semibold text-[17px]'>Mr Joseph Mosses</p>
+                        </td>
+                        <td className='py-5'>
+                            <button className='border-2 border-solid border-green-500 text-green-500 hover:bg-green-500 hover:text-white p-3 rounded-lg text-white'>Sign In</button>
+                        </td>
+                        <td className='py-5'>
+                            <button className='border-2 border-solid border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white p-3 rounded-lg text-white'>Sign Out</button>
+                        </td>
+                        <td className='py-5 flex items-start justify-center gap-2'>
+                          <button className='border-2 border-solid border-red-500 text-red-500 hover:bg-red-500 hover:text-white p-3 rounded-lg text-white'>Absent</button>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td className='py-5'>3</td>
+                        <td className='py-5'><img src={dp} alt='' className='w-[50px] h-[50px] border-2 border-dashed border-dark-brown p-1 rounded-full mx-auto'/></td>
+                        <td>
+                                <p className='font-semibold text-[17px]'>Mrs Silvia Henry</p>
+                        </td>
+                        <td className='py-5'>
+                            <button className='border-2 border-solid border-green-500 text-green-500 hover:bg-green-500 hover:text-white p-3 rounded-lg text-white'>Sign In</button>
+                        </td>
+                        <td className='py-5'>
+                            <button className='border-2 border-solid border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white p-3 rounded-lg text-white'>Sign Out</button>
+                        </td>
+                        <td className='py-5 flex items-start justify-center gap-2'>
+                          <button className='border-2 border-solid border-red-500 text-red-500 hover:bg-red-500 hover:text-white p-3 rounded-lg text-white'>Absent</button>
+                        </td>
+                    </tr>
+                  </tbody>
+                </table>
+                </div>
+                </div>
+              <SideNotify />
+=======
                 {/* ATTENDANCE TABLE PARENT */}
                 <div className=' w-[69%] h-[83vh] overflow-scroll scroll'>
                         <div className=' bg-white shadow-lg py-3 rounded-2xl'>
@@ -83,6 +181,7 @@ const StaffAttendance = () => {
                 {/* END ATTENDANCE TABLE PARENT */}
 
                 <SideNotify />
+>>>>>>> 3ea7b530f7462bf55852e26c6d8bbf048d1f2e9d
           </div>
     </div>
   )

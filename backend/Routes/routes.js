@@ -12,7 +12,11 @@ router.get('/staff/:id', () => {})
 // ADD NEW STAFF
 router.post('/addStaff', () => {})
 
+<<<<<<< HEAD
+// UPDATE SPECIFIC
+=======
 // UPDATE SPECIFIC STAFF
+>>>>>>> 3ea7b530f7462bf55852e26c6d8bbf048d1f2e9d
 router.patch('/:id/addStaff', () => {})
 
 // DELETE SPECIFIC STAFF
