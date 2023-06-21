@@ -1,9 +1,31 @@
 const Staff = require('')
 const bcrypt = require('bcrypt')
 const idGen = require('./idGen')
+const { default: mongoose } = require('mongoose')
 
 
+// GET ALL STAFF
+const getStaffs = async (req, res) => {
+    const staffs = await Staff.find({}).sort({createdAt: -1})
 
+    res.status(200).json(staffs)
+}
+// END GET ALL STAFF
+
+// GET SINGLE STAFF
+const getStaff = async (req, res) => {
+    const { staffId } = req.params
+
+    const staff = await Staff.findById(staffId)
+
+    if(!staff) {
+        return res.status(404).json({error: 'No Staff Found'})
+    }
+}
+// END GET SINGLE STAFF
+
+
+// ADD NEW STAFF
 const addStaff = async (req, res) => {
     const { firtname, lastname, surname, email, gender, image, title, contact, address, city, state, position } = req.body
     const lenStaff = Staff.find({}).length()
@@ -46,5 +68,26 @@ const addStaff = async (req, res) => {
         console.log(error)
     }
 }
+// ADD NEW STAFF
 
-module.exports = addStaff
+
+// DELETE SINGLE STAFF
+const deleteStaff = async (req, res) => {
+    const { staffId } = req.params
+
+    if(!mongoose.Types.ObjectId.isValid(staffId))
+    {
+        return res.status(404).json({error: 'No Such Staff'})
+    }
+
+    const staff = await Staff.findOneAndDelete({staffId: staffId})
+    
+    if(!staff) {
+        return res.status(404).json({error: 'No Staff Found'})
+    }
+
+    res.status(200).json(staff)
+}
+// DELETE SINGLE STAFF
+
+module.exports = {getStaffs, getStaff,addStaff, deleteStaff}

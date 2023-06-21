@@ -17,10 +17,10 @@ router.post('/addStaff', () => {})
 =======
 // UPDATE SPECIFIC STAFF
 >>>>>>> 3ea7b530f7462bf55852e26c6d8bbf048d1f2e9d
-router.patch('/:id/addStaff', () => {})
+router.patch('/:id/updateStaff', () => {})
 
 // DELETE SPECIFIC STAFF
-router.delete('/:id/Staff', () => {})
+router.delete('/:id/deleteStaff', () => {})
 
 
 module.exports = router

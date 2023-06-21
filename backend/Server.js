@@ -3,6 +3,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const connectDB = require('./config/connectDB')
 const app = express()
+const routes = require('./Routes/routes')
 
 const PORT = process.env.PORT || 3500
 
@@ -11,7 +12,7 @@ console.log(process.env.NODE_ENV)
 connectDB()
 
 // MIDDLEWARE
-app.use('/api/v1/staff', require('./Routes/routes'))
+app.use('/api/v1/staff', routes)
 
 // server and database connections
 mongoose.connection.once('open', () => {
