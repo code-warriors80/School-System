@@ -27,7 +27,7 @@ const getStaff = async (req, res) => {
 
 // ADD NEW STAFF
 const addStaff = async (req, res) => {
-    const { firtname, lastname, surname, email, gender, image, title, contact, address, city, state, position } = req.body
+    const { title, firtname, lastname, surname, email, gender, image, contact, address, city, state, position, role } = req.body
     const lenStaff = Staff.find({}).length()
 
     const password = 'Jethro10'
@@ -35,7 +35,7 @@ const addStaff = async (req, res) => {
 
     console.log(staffId)
     // confirm data
-    if (!staffId || !firtname || !lastname || !surname || !gender || !contact || !password) {
+    if (!staffId || !firtname || !lastname || !surname || !gender || !contact || !role || !position || !password) {
         res.json({ message: 'All fields are required' })
     }
     const staff = Staff.findOne({ staffId }).exec()
@@ -46,6 +46,7 @@ const addStaff = async (req, res) => {
         // hash the password with bcrypt
         const hashedPwd = await bcrypt.hash(password, 10)
         const newStaff = await staff.create({
+            title,
             firtname,
             lastname,
             surname,
@@ -59,7 +60,8 @@ const addStaff = async (req, res) => {
             address,
             city,
             state,
-            position
+            position,
+            role
 
         })
         res.json({ message: `new staff ${newStaff.firstname} created ` })
@@ -68,7 +70,7 @@ const addStaff = async (req, res) => {
         console.log(error)
     }
 }
-// ADD NEW STAFF
+// END ADD NEW STAFF
 
 
 // DELETE SINGLE STAFF

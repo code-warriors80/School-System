@@ -12,7 +12,7 @@ console.log(process.env.NODE_ENV)
 connectDB()
 
 // MIDDLEWARE
-app.use('/api/v1/staff', routes)
+app.use('/api/v1', routes)
 
 // server and database connections
 mongoose.connection.once('open', () => {
