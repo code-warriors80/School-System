@@ -33,7 +33,6 @@ const getStaff = async (req, res) => {
 // ADD NEW STAFF
 const addStaff = async (req, res) => {
     const { title, firstname, lastname, surname, email, gender,  contact, address, city, state, position, role } = req.body
-    const lenStaff = Staff.find({}).length()
 
     const password = 'Jethro10'
     const staffId = idGen(0)
