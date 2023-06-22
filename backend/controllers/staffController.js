@@ -83,20 +83,7 @@ const addStaff = async (req, res) => {
         // hash the password with bcrypt
         const hashedPwd = await bcrypt.hash(password, 10)
         const newStaff = await staff.create({
-            title,
-            staffId,
-            firstname,
-            lastname,
-            surname,
-            email,
-            gender,
-            contact,
-            address,
-            city,
-            state,
-            position,
-            role,
-            "password": hashedPwd,
+            title, firstname, lastname, surname, email, gender,  contact, address, city, state, position, role, staffId, "password": hashedPwd,
         })
         res.json({ message: `new staff ${newStaff.firstname} created ` })
 
@@ -105,6 +92,25 @@ const addStaff = async (req, res) => {
     }
 }
 // END ADD NEW STAFF
+
+// UPDATE SINGLE STAFF
+const updateStaff = async (req, res) => {
+    const {id} = req.params
+
+    if(!mongoose.Types.ObjectId.isValid(id))
+    {
+        return res.status(404).json({error: 'No Such Staff'})
+    }
+
+    const staff = await Staff.findByIdAndUpdate(id)
+
+    if(!staff) {
+        return res.status(404).json({error: 'No Staff Found'})
+    }
+
+    res.status(200).json(staff)
+}
+// END UPDATE SINGLE STAFF
 
 
 // DELETE SINGLE STAFF
@@ -126,4 +132,4 @@ const deleteStaff = async (req, res) => {
 }
 // DELETE SINGLE STAFF
 
-module.exports = {getStaffs, getStaff,addStaff, deleteStaff}
+module.exports = {getStaffs, getStaff, addStaff, updateStaff ,deleteStaff}

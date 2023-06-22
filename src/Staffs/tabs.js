@@ -1,9 +1,10 @@
 import React, {useState} from 'react'
-// import { useStaffsContext } from '../hooks/useStaffsContext';
+import Staff from '../../backend/Model/staffModel';
+import { useStaffsContext } from '../hooks/useStaffsContext';
 
 const Tabs = ({workout}) => {
                const [toggleState, setToggle] = useState(1);
-              //  const [dispatch] = useStaffsContext()
+               const [dispatch] = useStaffsContext()
 
               //  TAB TOGGLER
                const toggleTab = (index) => {
@@ -11,17 +12,17 @@ const Tabs = ({workout}) => {
                }
 
               //  DELETE FUNCTION
-              //  const deleteStaff = async () => {
-              //       const response = await fetch('', () => workout.id, {
-              //         method: 'DELETE'
-              //       })
+               const deleteStaff = async () => {
+                    const response = await fetch(`staff/${Staff.id}`, () => workout.id, {
+                      method: 'DELETE'
+                    })
 
-              //       const json = await response.json()
+                    const json = await response.json()
 
-              //       if(response.ok) {
-              //           dispatch({type: 'DELETE_STAFF',  payload: json})
-              //       }
-              //  }
+                    if(response.ok) {
+                        dispatch({type: 'DELETE_STAFF',  payload: json})
+                    }
+               }
 
   return (
     <div className='scroll h-[80vh] overflow-scroll'>

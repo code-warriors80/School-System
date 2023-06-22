@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 const staffSchema = new Schema({
                title: {
                               type: String,
-                              required: true
+                              required: false
                },
                staffId: {
                               type: String,

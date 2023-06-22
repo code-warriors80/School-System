@@ -12,15 +12,22 @@ console.log(process.env.NODE_ENV)
 connectDB()
 
 // MIDDLEWARE
+app.use(express.json())
+
+app.use((req, res, next) => {
+    console.log(req.path, req.method);
+    next()
+})
+
+// ROUTES
 app.use('/api/v1', routes)
 
 // server and database connections
 mongoose.connection.once('open', () => {
     console.log('connected to mongoDB')
-    app.listen(PORT, console.log(`server running on port ${PORT}`))
+     app.listen(PORT, console.log(`server running on port ${PORT}`))
 })
 
 mongoose.connection.on('error', (err) => {
     console.log(err)
 })
-// app.listen(PORT, console.log(`server running on port ${PORT}`))
