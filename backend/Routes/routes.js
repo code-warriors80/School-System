@@ -14,7 +14,7 @@ router.get('/staff/:id', controllers.getStaff)
 router.post('/addStaff', controllers.addStaff)
 
 // UPDATE SPECIFIC STAFF
-router.patch('/:id/updateStaff', () => {})
+// router.patch('/:id/updateStaff', () => {})
 
 // DELETE SPECIFIC STAFF
 router.delete('/:id/deleteStaff', controllers.deleteStaff)

@@ -72,7 +72,7 @@ const Class = () => {
                                       </td>
                                       <td className='py-5'>{myclass.NOS}</td>
                                       <td className='py-5 flex items-start justify-center gap-2'>
-                                        <Link to={`/class/${myclass.id}`} className='bg-color-warning rounded-lg p-3 text-white'>View</Link>
+                                        <Link to={`/class/${myclass.class}`} className='bg-color-warning rounded-lg p-3 text-white'>View</Link>
                                         <button className='bg-color-danger p-3 rounded-lg text-white'>Delete</button>
                                       </td>
                                 </tr>

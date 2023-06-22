@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import SideNotify from '../Components/SideNotify'
 import { Link } from 'react-router-dom'
 import StaffForm from '../Forms/StaffForm'
+// import { useStaffsContext } from '../hooks/useStaffsContext'
 
 import { staffs } from '../data/staffs'
 
@@ -14,6 +15,23 @@ import search from '../icons/icons8-search-94.png'
 
 const Staff = () => {
       const [model, setModel] = useState(false)
+      // const [staffs, dispatch] = useStaffsContext()
+
+      // useEffect(() => {
+
+      //   const fetchStaffs = async () => {
+      //     const response = await fetch("/staff");
+      //     const json = response.json()
+
+      //     if(response.ok)
+      //     {
+      //       dispatch({type: "GET_STAFFS", payload: json})
+      //     }
+      //   }
+
+      //   fetchStaffs()
+
+      // }, [dispatch]) 
   return (
     <div className='w-full'>
         {/* TOP NAV */}
@@ -65,7 +83,7 @@ const Staff = () => {
 
             {/* FETCH STAFF PARENT */}
             <div className=' flex items-start gap-5 pb-5 pt-2 flex-wrap mx-auto'>
-                  {staffs.map((staff) => (
+                  {staffs && staffs.map((staff) => (
                       <div>
                           <div className='bg-white rounded-2xl w-64 p-5 text-center shadow-lg'>
                               <img src={staff.img} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-1'/>
