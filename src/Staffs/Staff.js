@@ -35,27 +35,27 @@ const Staff = () => {
   return (
     <div className='w-full'>
         {/* TOP NAV */}
-          <nav className='py-3 px-10 bg-dark-purple flex items-center justify-between'>
-                <div className="hidden lg:flex search--box bg-white lg:items-center w-[25%] gap-[5px] py-[3px] rounded-md  px-[12px] bg-light-gray">
-                                  <i className="text-[1.2rem] pointer text-gray-800"><img src={search} alt='' className='w-6'/></i>
-                                  <input type="text" name="search" id="" placeholder="Search" className='p-[10px] text-black w-full'/>
-                  </div>
-                  <div className='flex items-center'>
-                         <img src={bell} alt='' className='mr-6 w-8'/>
-                        <img src={user} alt='' className='w-[50px] h-[50px] rounded-full border-2 border-dashed border-white p-1'/>
-                  </div>
-          </nav>
+            <nav className='py-3 px-10 bg-dark-purple flex items-center justify-between'>
+                  <div className="hidden lg:flex search--box bg-white lg:items-center w-[25%] gap-[5px] py-[3px] rounded-md  px-[12px] bg-light-gray">
+                                    <i className="text-[1.2rem] pointer text-gray-800"><img src={search} alt='' className='w-6'/></i>
+                                    <input type="text" name="search" id="" placeholder="Search" className='p-[10px] text-black w-full'/>
+                    </div>
+                    <div className='flex items-center'>
+                          <img src={bell} alt='' className='mr-6 w-8'/>
+                          <img src={user} alt='' className='w-[50px] h-[50px] rounded-full border-2 border-dashed border-white p-1'/>
+                    </div>
+            </nav>
           {/* END TOP NAV */}
 
           {/* ADD STAFF MODEL */}
-          {model === true &&(<StaffForm setModel={setModel}/>)}
+              {model === true &&(<StaffForm setModel={setModel}/>)}
           {/* END ADD STAFF MODEL */}
 
           {/* SIDE MENU */}
-          <div className='fixed bottom-10 right-20 gap-3'>
-                  <button className='text-white bg-dark-purple p-4 rounded-full flex items-center justify-center text-[23px] mb-3' onClick={() => {setModel(true)}}><img src={staff} alt=''  className='w-10'/></button>
-                  <Link to="/staff/attendance" className='text-white bg-dark-purple p-4 rounded-full flex items-center justify-center text-[23px] mb-3'><img src={calender} alt=''  className='w-10'/></Link>
-          </div>
+              <div className='fixed bottom-10 right-20 gap-3'>
+                      <button className='text-white bg-dark-purple p-4 rounded-full flex items-center justify-center text-[23px] mb-3' onClick={() => {setModel(true)}}><img src={staff} alt=''  className='w-10'/></button>
+                      <Link to="/staff/attendance" className='text-white bg-dark-purple p-4 rounded-full flex items-center justify-center text-[23px] mb-3'><img src={calender} alt=''  className='w-10'/></Link>
+              </div>
           {/* END SIDE  MENU */}
 
           <div className='flex items-start justify-between p-5 '>

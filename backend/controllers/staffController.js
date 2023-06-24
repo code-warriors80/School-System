@@ -35,6 +35,7 @@ const addStaff = async (req, res) => {
     const { title, firstname, lastname, surname, email, gender,  contact, address, city, state, position, role } = req.body
 
     const password = 'Jethro10'
+    const status = 'Active'
     const staffId = idGen(0)
     let emptyField = []
 
@@ -82,10 +83,9 @@ const addStaff = async (req, res) => {
         // hash the password with bcrypt
         const hashedPwd = await bcrypt.hash(password, 10)
         const newStaff = await staff.create({
-            title, firstname, lastname, surname, email, gender,  contact, address, city, state, position, role, staffId, "password": hashedPwd,
+            title, firstname, lastname, surname, email, gender,  contact, address, city, state, position, role, staffId, "password": hashedPwd, status
         })
         res.json({ message: `new staff ${newStaff.firstname} created ` })
-
     } catch (error) {
         console.log(error)
     }

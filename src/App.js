@@ -27,8 +27,8 @@ function App() {
           <Route path='/student' element={<Student />}></Route>
           <Route path='/student/:id' element={<StudentProfile />} />
           <Route path='/class' element={<Class />}></Route>
-          <Route path='/class/attendance/:class' element={<ClassAttendance />}></Route>
           <Route path='/class/:id' element={<ClassProfile />}></Route>
+          <Route path='/class/attendance/:class' element={<ClassAttendance />}></Route>
       </Routes>
       </BrowserRouter>
     </div>

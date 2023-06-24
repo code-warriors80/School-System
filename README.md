@@ -5,8 +5,6 @@ DATABASE CONNECTION STRING
 
 Database Name(SchoolManagement)
 
-  "proxy": "http://localhost:3000//api/v1",
-
 PACKAGES
 - express
 - dotenv

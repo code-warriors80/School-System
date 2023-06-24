@@ -11,7 +11,7 @@ export const staffsReducer = (state, action) => {
 
                               case 'GET_STAFF':
                                              return {
-
+                                                staffs: state.staffs.filter((w) => w._id !== action.payload._id)
                                              }
 
                               case 'CREATE_STAFF':
