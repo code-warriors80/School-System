@@ -47,6 +47,7 @@ const StaffProfile = () => {
                                     </nav>
                               {/* END TOP NAV */}
 
+
                               {/* MODEL */}
                                     {model === true && (<Materials setModel={setModel}/>)}
                               {/* END MODEL */}
@@ -60,21 +61,21 @@ const StaffProfile = () => {
                               <div className='flex items-start justify-between p-5'>
                                              <div className='bg-white w-[25%] text-center py-10 rounded-2xl shadow-lg'>
                                                                   <img src={user} alt='' className='w-[150px] h-[150px] rounded-full border-2 border-dashed border-dark-purple p-1 mx-auto'/>
-                                                                  <h4 className='text-[20px] font-thin my-2'>Mrs Adedolapo Aboaba</h4>
-                                                                  <p className='text-dark-purple mb-5'>Principal</p>
+                                                                  <h4 className='text-[20px] font-thin my-2'>{staffs.title + ' ' +staffs.firstname + ' ' + staffs.surname}</h4>
+                                                                  <p className='text-dark-purple mb-5'>{staffs.position}</p>
                                                             {/* STAFF DETAILS TABLE */}
                                                                   <table className='w-[80%] mx-auto profile'>
                                                                               <tr >
                                                                                                 <th className='py-3 text-[18px] float-left'>Email</th>
-                                                                                                <td className='py-3 text-[16px] float-right'>Muctar@gmail.com</td>
+                                                                                                <td className='py-3 text-[16px] float-right'>{staffs.email === "" ? 'null' : staffs.email}</td>
                                                                               </tr>
                                                                               <tr>
                                                                                                 <th className='py-3 text-[18px] float-left'>Contact</th>
-                                                                                                <td className='py-3 text-[16px] float-right'>08116934763</td>
+                                                                                                <td className='py-3 text-[16px] float-right'>{staffs.contact}</td>
                                                                               </tr>
                                                                               <tr>
                                                                                                 <th className='py-3 text-[18px] float-left'>Gender</th>
-                                                                                                <td className='py-3 text-[16px] float-right'>Female</td>
+                                                                                                <td className='py-3 text-[16px] float-right'>{staffs.gender}</td>
                                                                               </tr>
                                                                   </table>
                                                             {/* END STAFF DETAILS TABLE */}
@@ -82,15 +83,15 @@ const StaffProfile = () => {
                                              </div>
 
                                              <div className='bg-white w-[45%] p-5 rounded-2xl shadow-lg'>
-                                                            <Tabs />
+                                                            <Tabs staff={staffs}/>
                                              </div>
 
                                              <div className='bg-white w-[22%] p-7 py-5 rounded-2xl shadow-lg'>
-                                                            <h1 className='py-3 text-[20px]'>About Mrs Adedolapo Aboaba</h1>
-                                                            <p className='flex text-[16px] font-bold py-5'><img src={man} alt='' className='mr-6 w-5 mr-2'/> Principal</p>
+                                                            <h1 className='py-3 text-[20px]'>About {staffs.title + ' ' +staffs.firstname + ' ' + staffs.surname}</h1>
+                                                            <p className='flex text-[16px] font-bold py-5'><img src={man} alt='' className='mr-6 w-5 mr-2'/> {staffs.position}</p>
                                                             <div className='py-5'>
                                                                            <h4 className='flex text-[16px] font-bold mb-2'><img src={map} alt='' className='mr-6 w-5 mr-2'/> Location</h4>
-                                                                           <p>Blk 35 MOQ Chindit Cantoonment</p>
+                                                                           <p>{staffs.address}</p>
                                                             </div>
                                              </div>
                                              

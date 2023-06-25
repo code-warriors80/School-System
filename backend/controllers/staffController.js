@@ -26,6 +26,7 @@ const getStaff = async (req, res) => {
     if(!staff) {
         return res.status(404).json({error: 'No Staff Found'})
     }
+    res.status(200).json(staff)
 }
 // END GET SINGLE STAFF
 

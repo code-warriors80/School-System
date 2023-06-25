@@ -54,11 +54,11 @@ const Tabs = ({staff}) => {
                                              <table className='w-[100%]'>
                                                             <tr>
                                                                            <th className='float-left py-3 text-[18px]'>Title</th>
-                                                                           <td className='float-right py-3'>Mrs</td>
+                                                                           <td className='float-right py-3'>{staff.title}</td>
                                                             </tr>
                                                             <tr>
                                                                            <th className='float-left py-3 text-[18px]'>Name</th>
-                                                                           <td className='float-right py-3'>Adedolapo Aboaba</td>
+                                                                           <td className='float-right py-3'>{staff.firstname + ' ' + staff.surname}</td>
                                                             </tr>
                                                             <tr>
                                                                            <th className='float-left py-3 text-[18px]'>Position</th>
