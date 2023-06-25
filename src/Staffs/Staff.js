@@ -1,10 +1,11 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import SideNotify from '../Components/SideNotify'
 import { Link } from 'react-router-dom'
 import StaffForm from '../Forms/StaffForm'
-// import { useStaffsContext } from '../hooks/useStaffsContext'
+import { useStaffsContext } from '../hooks/useStaffsContext'
+import axios from 'axios'
 
-import { staffs } from '../data/staffs'
+// import { staffs } from '../data/staffs'
 
 // ICONS
 import staff from '../icons/icons8-writer-male-94.png'
@@ -15,23 +16,21 @@ import search from '../icons/icons8-search-94.png'
 
 const Staff = () => {
       const [model, setModel] = useState(false)
-      // const [staffs, dispatch] = useStaffsContext()
+      const [staffs, setStaff] = useState([])
 
-      // useEffect(() => {
+      const url = '/staff'
 
-      //   const fetchStaffs = async () => {
-      //     const response = await fetch("/staff");
-      //     const json = response.json()
+      useEffect(() => {
+        fetchStaff()
+      }, [])
 
-      //     if(response.ok)
-      //     {
-      //       dispatch({type: "GET_STAFFS", payload: json})
-      //     }
-      //   }
+      const fetchStaff = async () => {
+        axios.get(url).then(response => {
+            console.log(response.data);
+            setStaff(response.data)
+        })
+      }
 
-      //   fetchStaffs()
-
-      // }, [dispatch]) 
   return (
     <div className='w-full'>
         {/* TOP NAV */}
@@ -83,14 +82,14 @@ const Staff = () => {
 
             {/* FETCH STAFF PARENT */}
             <div className=' flex items-start gap-5 pb-5 pt-2 flex-wrap mx-auto'>
-                  {staffs && staffs.map((staff) => (
-                      <div>
+                  {staffs.map((staff) => (
+                      <div key={staff.id}>
                           <div className='bg-white rounded-2xl w-64 p-5 text-center shadow-lg'>
-                              <img src={staff.img} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-1'/>
-                              <h3 className='mb-1 mt-2 font-semibold text-[18px]'>{staff.name}</h3>
+                              <img src={staff} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-1'/>
+                              <h3 className='mb-1 mt-2 font-semibold text-[18px]'>{staff.title + ' ' + staff.surname + ' ' + staff.firstname}</h3>
                               <p className='text-[14px] text-dark-purple'>{staff.position}</p>
                               <div className='bg-dark-purple w-full py-3 rounded-lg text-white mt-1'>
-                                <Link to={`${staff.id}`} className='w-full'>View Profile</Link>
+                                <Link to={`${staff._id}`} className='w-full'>View Profile</Link>
                               </div>
                               
                           </div>

@@ -40,6 +40,7 @@ const addStaff = async (req, res) => {
     let emptyField = []
 
     console.log(staffId)
+
     // confirm data
     if(!firstname)
     {
@@ -76,16 +77,20 @@ const addStaff = async (req, res) => {
     }
 
     const staff = Staff.findOne({ staffId }).exec()
+    
     if (staff) {
         res.json({ message: 'staff with id already exist' })
     }
     try {
         // hash the password with bcrypt
         const hashedPwd = await bcrypt.hash(password, 10)
+
         const newStaff = await staff.create({
             title, firstname, lastname, surname, email, gender,  contact, address, city, state, position, role, staffId, "password": hashedPwd, status
         })
+
         res.json({ message: `new staff ${newStaff.firstname} created ` })
+        
     } catch (error) {
         console.log(error)
     }

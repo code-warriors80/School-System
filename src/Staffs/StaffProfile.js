@@ -1,5 +1,5 @@
 import React,{useState, useEffect} from 'react'
-import { useStaffsContext } from '../hooks/useStaffsContext'
+// import { useStaffsContext } from '../hooks/useStaffsContext'
 import { useParams } from 'react-router-dom'
 
 // ICONS
@@ -11,27 +11,26 @@ import Tabs from './tabs'
 import search from '../icons/icons8-search-94.png'
 import lesson from '../icons/icons8-bookmark-94.png'
 import Materials from './Materials'
+import axios from 'axios'
 
 const StaffProfile = () => {
       const [model, setModel] = useState(false);
-      // const [staffs, dispatch] = useStaffsContext()
+      const [staffs, setStaff] = useState({})
       const {id} = useParams()
 
-      //   useEffect(() => {
+        useEffect(() => {
 
-      //   const fetchStaff = async () => {
-      //     const response = await fetch(`/staff/${id}`);
-      //     const json = response.json()
+        const fetchStaff = async () => {
+            axios.get(`/staff/${id}`).then(res => {
+                  setStaff(res.data)
+            })
+        }
 
-      //     if(response.ok)
-      //     {
-      //       dispatch({type: "GET_STAFF", payload: json})
-      //     }
-      //   }
+        fetchStaff()
 
-      //   fetchStaff()
+      }, [id, setStaff]) 
 
-      // }, [dispatch, id]) 
+      console.log(staffs);
 
   return (
                <div className='w-full'>

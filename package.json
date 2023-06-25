@@ -1,4 +1,5 @@
 {
+  "proxy": "http://localhost:3500/api/v1",
   "name": "school",
   "version": "0.1.0",
   "private": true,
