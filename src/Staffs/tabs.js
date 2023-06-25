@@ -62,27 +62,27 @@ const Tabs = ({staff}) => {
                                                             </tr>
                                                             <tr>
                                                                            <th className='float-left py-3 text-[18px]'>Position</th>
-                                                                           <td className='float-right py-3'>Principal</td>
+                                                                           <td className='float-right py-3'>{staff.position}</td>
                                                             </tr>
 
                                                             <tr>
                                                                            <th className='float-left py-3 text-[18px]'>Role</th>
-                                                                           <td className='float-right py-3'>Admin</td>
+                                                                           <td className='float-right py-3'>{staff.role}</td>
                                                             </tr>
 
                                                             <tr>
                                                                            <th className='float-left py-3 text-[18px]'>Email</th>
-                                                                           <td className='float-right py-3'>Muctar@gmail.com</td>
+                                                                           <td className='float-right py-3'>{staff.email === "" ? 'null' : staff.email}</td>
                                                             </tr>
 
                                                             <tr>
                                                                            <th className='float-left py-3 text-[18px]'>Gender</th>
-                                                                           <td className='float-right py-3'>Female</td>
+                                                                           <td className='float-right py-3'>{staff.gender}</td>
                                                             </tr>
 
                                                             <tr>
                                                                            <th className='float-left py-3 text-[18px]'>Contact</th>
-                                                                           <td className='float-right py-3'>08116934763</td>
+                                                                           <td className='float-right py-3'>{staff.contact}</td>
                                                             </tr>
 
                                                             <tr>
@@ -92,24 +92,24 @@ const Tabs = ({staff}) => {
 
                                                             <tr>
                                                                            <th className='float-left py-3 text-[18px]'>Address</th>
-                                                                           <td className='float-right py-3'>Blk 35 MOQ Chindit Cantoonment</td>
+                                                                           <td className='float-right py-3'>{staff.address}</td>
                                                             </tr>
 
                                                             <tr>
                                                                            <th className='float-left py-3 text-[18px]'>City</th>
-                                                                           <td className='float-right py-3'>Olamaboro</td>
+                                                                           <td className='float-right py-3'>{staff.city}</td>
                                                             </tr>
 
                                                             <tr>
                                                                            <th className='float-left py-3 text-[18px]'>State</th>
-                                                                           <td className='float-right py-3'>Kogi State</td>
+                                                                           <td className='float-right py-3'>{staff.state}</td>
                                                             </tr>
                                              </table>
                               </div>
                               {/* END TAB CONTENT 2 */}
 
                               {/* TAB CONTENT 3 */}
-                                  <UpdateStaffProfile toggleState={toggleState}/>
+                                  <UpdateStaffProfile toggleState={toggleState} staff={staff}/>
                               {/* END TAB CONTENT 3 */}
 
                               {/* TAB CONTENT 4 */}
