@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
 // import { useStaffsContext } from '../hooks/useStaffsContext';
+import UpdateStaffProfile from '../Forms/updateStaffProfile';
 
-const Tabs = ({workout}) => {
+const Tabs = ({staff}) => {
                const [toggleState, setToggle] = useState(1);
               //  const [dispatch] = useStaffsContext()
 
@@ -12,7 +13,7 @@ const Tabs = ({workout}) => {
 
               //  DELETE FUNCTION
               //  const deleteStaff = async () => {
-              //       const response = await fetch('', () => workout.id, {
+              //       const response = await fetch(`staff/${staff.id}`, () => staff.id, {
               //         method: 'DELETE'
               //       })
 
@@ -53,35 +54,35 @@ const Tabs = ({workout}) => {
                                              <table className='w-[100%]'>
                                                             <tr>
                                                                            <th className='float-left py-3 text-[18px]'>Title</th>
-                                                                           <td className='float-right py-3'>Mrs</td>
+                                                                           <td className='float-right py-3'>{staff.title === "" ? 'Null' : staff.title}</td>
                                                             </tr>
                                                             <tr>
                                                                            <th className='float-left py-3 text-[18px]'>Name</th>
-                                                                           <td className='float-right py-3'>Adedolapo Aboaba</td>
+                                                                           <td className='float-right py-3'>{staff.firstname + ' ' + staff.surname}</td>
                                                             </tr>
                                                             <tr>
                                                                            <th className='float-left py-3 text-[18px]'>Position</th>
-                                                                           <td className='float-right py-3'>Principal</td>
+                                                                           <td className='float-right py-3'>{staff.position === "" ? 'Null' : staff.position}</td>
                                                             </tr>
 
                                                             <tr>
                                                                            <th className='float-left py-3 text-[18px]'>Role</th>
-                                                                           <td className='float-right py-3'>Admin</td>
+                                                                           <td className='float-right py-3'>{staff.role === "" ? 'Null' : staff.role}</td>
                                                             </tr>
 
                                                             <tr>
                                                                            <th className='float-left py-3 text-[18px]'>Email</th>
-                                                                           <td className='float-right py-3'>Muctar@gmail.com</td>
+                                                                           <td className='float-right py-3'>{staff.email === "" ? 'Null' : staff.email}</td>
                                                             </tr>
 
                                                             <tr>
                                                                            <th className='float-left py-3 text-[18px]'>Gender</th>
-                                                                           <td className='float-right py-3'>Female</td>
+                                                                           <td className='float-right py-3'>{staff.gender === "" ? 'Null' : staff.gender}</td>
                                                             </tr>
 
                                                             <tr>
                                                                            <th className='float-left py-3 text-[18px]'>Contact</th>
-                                                                           <td className='float-right py-3'>08116934763</td>
+                                                                           <td className='float-right py-3'>{staff.contact === "" ? 'Null' : staff.contact}</td>
                                                             </tr>
 
                                                             <tr>
@@ -91,92 +92,24 @@ const Tabs = ({workout}) => {
 
                                                             <tr>
                                                                            <th className='float-left py-3 text-[18px]'>Address</th>
-                                                                           <td className='float-right py-3'>Blk 35 MOQ Chindit Cantoonment</td>
+                                                                           <td className='float-right py-3'>{staff.address === "" ? 'Null' : staff.address}</td>
                                                             </tr>
 
                                                             <tr>
                                                                            <th className='float-left py-3 text-[18px]'>City</th>
-                                                                           <td className='float-right py-3'>Olamaboro</td>
+                                                                           <td className='float-right py-3'>{staff.city === "" ? 'Null' : staff.city}</td>
                                                             </tr>
 
                                                             <tr>
                                                                            <th className='float-left py-3 text-[18px]'>State</th>
-                                                                           <td className='float-right py-3'>Kogi State</td>
+                                                                           <td className='float-right py-3'>{staff.state === "" ? 'Null' : staff.state}</td>
                                                             </tr>
                                              </table>
                               </div>
                               {/* END TAB CONTENT 2 */}
 
                               {/* TAB CONTENT 3 */}
-                              <div className={toggleState === 3 ? ' content active-content' : 'tabs'}>
-                                             <h1 className='text-2xl my-5'>Update Profile</h1>
-                                             <hr/>
-                                             {/* UPDATE USER DETAIL FORM */}
-                                             <form className='w-full'>
-                                                            <div className='flex gap-3 justify-between'>
-                                                                           <div className='mb-5 w-[48%]'>
-                                                                                          <label className='block mb-3'>SurName</label>
-                                                                                          <input type='password' placeholder='SurName' className='bg-light-gray h-[50px] px-5 rounded-2xl w-full' name=''/>
-                                                                           </div>    
-                                                                           <div className='mb-5 w-[48%]'>
-                                                                                          <label className='block mb-3'>First Name</label>
-                                                                                          <input type='password' placeholder='First Name' className='bg-light-gray h-[50px] px-5 rounded-2xl w-full' name=''/>
-                                                                           </div>    
-                                                            </div>
-                                                            <div className='flex gap-3 justify-between'>
-                                                                           <div className='mb-5 w-[48%]'>
-                                                                                          <label className='block mb-3'>Last Name</label>
-                                                                                          <input type='password' placeholder='Last Name' className='bg-light-gray h-[50px] px-5 rounded-2xl w-full' name=''/>
-                                                                           </div>    
-                                                                           <div className='mb-5 w-[48%]'>
-                                                                                          <label className='block mb-3'>Email</label>
-                                                                                          <input type='password' placeholder='Email' className='bg-light-gray h-[50px] px-5 rounded-2xl w-full' name=''/>
-                                                                           </div>    
-                                                            </div>
-
-                                                            <div className='flex gap-3 justify-between'>
-                                                                           <div className='mb-5 w-[48%]'>
-                                                                                          <label className='block mb-3'>Contact</label>
-                                                                                          <input type='password' placeholder='Contact' className='bg-light-gray h-[50px] px-5 rounded-2xl w-full' name=''/>
-                                                                           </div>    
-                                                                           <div className='mb-5 w-[48%]'>
-                                                                                          <label className='block mb-3'>Address</label>
-                                                                                          <input type='password' placeholder='Address' className='bg-light-gray h-[50px] px-5 rounded-2xl w-full' name=''/>
-                                                                           </div>    
-                                                            </div>
-
-                                                            <div className='flex gap-3 justify-between'>
-                                                                           <div className='mb-5 w-[48%]'>
-                                                                                          <label className='block mb-3'>City</label>
-                                                                                          <input type='password' placeholder='City' className='bg-light-gray h-[50px] px-5 rounded-2xl w-full' name=''/>
-                                                                           </div>    
-                                                                           <div className='mb-5 w-[48%]'>
-                                                                                          <label className='block mb-3'>State</label>
-                                                                                          <input type='password' placeholder='State' className='bg-light-gray h-[50px] px-5 rounded-2xl w-full' name=''/>
-                                                                           </div>    
-                                                            </div>
-
-                                                            <div className='flex gap-3 justify-between'>
-                                                                           <div className='mb-5 w-[48%]'>
-                                                                                          <label className='block mb-3'>DOB</label>
-                                                                                          <input type='date' placeholder='Contact' className='bg-light-gray h-[50px] px-5 rounded-2xl w-full' name=''/>
-                                                                           </div>    
-                                                                           <div className='mb-5 w-[48%]'>
-                                                                                          <label className='block mb-3'>Position</label>
-                                                                                          <select className='bg-light-gray h-[50px] px-2 rounded-2xl w-full'>
-                                                                                                         <option>Chose Position</option>
-                                                                                                         <option>Principal</option>
-                                                                                                         <option>Director Of Studies</option>
-                                                                                          </select>
-                                                                           </div>    
-                                                            </div>
-                                                            <div className='flex justify-between'>
-                                                            <button className='bg-dark-purple text-white py-3 px-5 rounded-2xl mt-2'>Update Profile</button>
-                                                            <button className='bg-red-500 text-white py-3 px-5 rounded-2xl mt-2'>Reset Password</button>
-                                                            </div>
-                                             </form>
-                                             {/* END UPDATE USER DETAIL FORM */}
-                              </div>
+                                  <UpdateStaffProfile toggleState={toggleState} staff={staff}/>
                               {/* END TAB CONTENT 3 */}
 
                               {/* TAB CONTENT 4 */}

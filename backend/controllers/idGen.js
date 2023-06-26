@@ -1,5 +1,5 @@
 const idGenerator = (len) => {
-    if (len == 0) {
+    if (len === 0) {
         const stfId = 'STF-00' + 1
         return stfId
     } else if (len > 0 && len <= 9) {

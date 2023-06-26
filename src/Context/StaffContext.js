@@ -4,9 +4,14 @@ export const StaffContext = createContext();
 
 export const staffsReducer = (state, action) => {
                switch (action.type){
-                              case 'SET_STAFFS':
+                              case 'GET_STAFFS':
                                              return {
                                                             staffs: action.payload
+                                             }
+
+                              case 'GET_STAFF':
+                                             return {
+                                                staffs: state.staffs.filter((w) => w._id !== action.payload._id)
                                              }
 
                               case 'CREATE_STAFF':
@@ -14,10 +19,15 @@ export const staffsReducer = (state, action) => {
                                                             staffs: [action.payload, ...state.staffs]
                                              }
 
-                              // case 'DELETE_STAFF':
-                              //       return{
+                              case 'UPDATE_STAFF':
+                                                return {
+   
+                                                }
+
+                              case 'DELETE_STAFF':
+                                    return{
                               //             staffs: state.staffs.filter((w) => w._id !== action.payload._id)
-                              //       }
+                                    }
                               default:
                                              return state
                }
