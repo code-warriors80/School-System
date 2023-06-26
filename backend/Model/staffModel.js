@@ -10,10 +10,6 @@ const staffSchema = new Schema({
                               type: String,
                               required: true   
                },
-               image: {
-                              type: String,
-                              required: false
-               },
                firstname: {
                               type: String,
                               required: true
@@ -34,13 +30,13 @@ const staffSchema = new Schema({
                               type: String,
                               required: true
                },
-               dob: {
-                              type: Date,
-                              required: false
-               },
                contact: {
                               type: Number,
                               required: true
+               },
+               dob: {
+                              type: Date,
+                              required: false
                },
                address: {
                               type: String,
@@ -61,6 +57,10 @@ const staffSchema = new Schema({
                role: {
                               type: String,
                               required: true   
+               },
+               image: {
+                              type: String,
+                              required: false
                },
                password: {
                               type: String,

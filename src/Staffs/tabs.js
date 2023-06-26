@@ -54,7 +54,7 @@ const Tabs = ({staff}) => {
                                              <table className='w-[100%]'>
                                                             <tr>
                                                                            <th className='float-left py-3 text-[18px]'>Title</th>
-                                                                           <td className='float-right py-3'>{staff.title}</td>
+                                                                           <td className='float-right py-3'>{staff.title === "" ? 'Null' : staff.title}</td>
                                                             </tr>
                                                             <tr>
                                                                            <th className='float-left py-3 text-[18px]'>Name</th>
@@ -62,27 +62,27 @@ const Tabs = ({staff}) => {
                                                             </tr>
                                                             <tr>
                                                                            <th className='float-left py-3 text-[18px]'>Position</th>
-                                                                           <td className='float-right py-3'>{staff.position}</td>
+                                                                           <td className='float-right py-3'>{staff.position === "" ? 'Null' : staff.position}</td>
                                                             </tr>
 
                                                             <tr>
                                                                            <th className='float-left py-3 text-[18px]'>Role</th>
-                                                                           <td className='float-right py-3'>{staff.role}</td>
+                                                                           <td className='float-right py-3'>{staff.role === "" ? 'Null' : staff.role}</td>
                                                             </tr>
 
                                                             <tr>
                                                                            <th className='float-left py-3 text-[18px]'>Email</th>
-                                                                           <td className='float-right py-3'>{staff.email === "" ? 'null' : staff.email}</td>
+                                                                           <td className='float-right py-3'>{staff.email === "" ? 'Null' : staff.email}</td>
                                                             </tr>
 
                                                             <tr>
                                                                            <th className='float-left py-3 text-[18px]'>Gender</th>
-                                                                           <td className='float-right py-3'>{staff.gender}</td>
+                                                                           <td className='float-right py-3'>{staff.gender === "" ? 'Null' : staff.gender}</td>
                                                             </tr>
 
                                                             <tr>
                                                                            <th className='float-left py-3 text-[18px]'>Contact</th>
-                                                                           <td className='float-right py-3'>{staff.contact}</td>
+                                                                           <td className='float-right py-3'>{staff.contact === "" ? 'Null' : staff.contact}</td>
                                                             </tr>
 
                                                             <tr>
@@ -92,17 +92,17 @@ const Tabs = ({staff}) => {
 
                                                             <tr>
                                                                            <th className='float-left py-3 text-[18px]'>Address</th>
-                                                                           <td className='float-right py-3'>{staff.address}</td>
+                                                                           <td className='float-right py-3'>{staff.address === "" ? 'Null' : staff.address}</td>
                                                             </tr>
 
                                                             <tr>
                                                                            <th className='float-left py-3 text-[18px]'>City</th>
-                                                                           <td className='float-right py-3'>{staff.city}</td>
+                                                                           <td className='float-right py-3'>{staff.city === "" ? 'Null' : staff.city}</td>
                                                             </tr>
 
                                                             <tr>
                                                                            <th className='float-left py-3 text-[18px]'>State</th>
-                                                                           <td className='float-right py-3'>{staff.state}</td>
+                                                                           <td className='float-right py-3'>{staff.state === "" ? 'Null' : staff.state}</td>
                                                             </tr>
                                              </table>
                               </div>

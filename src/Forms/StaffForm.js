@@ -11,53 +11,57 @@ const StaffForm = ({setModel}) => {
       const [lastname, setLastname] = useState('')
       const [email, setEmail] = useState('')
       const [gender, setGender] = useState('')
+      const [dob, setDob] = useState('')
       const [contact, setContact] = useState('')
       const [address, setAddress] = useState('')
       const [state, setState] = useState('')
       const [city, setCity] = useState('')
       const [position, setPosition] = useState('')
       const [role, setRole] = useState('')
+      const [image, setImage] = useState('')
       const [error, setError] = useState(null)
       const [emptyField, setEmptyField] = useState([])
-      const [dispatch] = useStaffsContext()
+      // const [dispatch] = useStaffsContext()
 
       const handleSubmit = async (e) => {
             e.preventDefault()
 
-            const staffs = {title, surname, firstname, lastname, email, gender, contact, address, state, city, position, role}
+            const staffs = {title, surname, firstname, lastname, email, gender, contact, dob, address, state, city, position, role, image}
 
-            const response = fetch('/addStaff', {
-                  method: 'POST',
-                  body: JSON.stringify(staffs),
-                  headers: {
-                        'Content_Type': 'application/json'
-                  }
-            })
-            const json = await response.json()
+            // const response = fetch('/addStaff', {
+            //       method: 'POST',
+            //       body: JSON.stringify(staffs),
+            //       headers: {
+            //             'Content_Type': 'application/json'
+            //       }
+            // })
+            // const json = await response.json()
 
-            if(!response.ok)
-            {
-                  setError(json.error)
-                  setEmptyField(json.emptyField)
-            }
-            if(response.ok){
-                  setTitle('')
-                  setSurname('')
-                  setFirstname('')
-                  setLastname('')
-                  setEmail('')
-                  setGender('')
-                  setContact('')
-                  setAddress('')
-                  setState('')
-                  setCity('')
-                  setPosition('')
-                  setRole('')
-                  setError(null)
-                  setEmptyField([])
-                  console.log('new workout added', json);
-                  dispatch({type: 'CREATE_STAFF', payload: json})
-            }
+            // if(!response.ok)
+            // {
+            //       setError(json.error)
+            //       setEmptyField(json.emptyField)
+            // }
+            // if(response.ok){
+            //       setTitle('')
+            //       setSurname('')
+            //       setFirstname('')
+            //       setLastname('')
+            //       setEmail('')
+            //       setGender('')
+            //       setContact('')
+            //       setDob('')
+            //       setAddress('')
+            //       setState('')
+            //       setCity('')
+            //       setPosition('')
+            //       setRole('')
+            //       setImage('')
+            //       setError(null)
+            //       setEmptyField([])
+            //       console.log('new workout added', json);
+            //       dispatch({type: 'CREATE_STAFF', payload: json})
+            // }
       }
 
 
@@ -68,7 +72,7 @@ const StaffForm = ({setModel}) => {
             <button className='text-[20px]' onClick={() => setModel(false)}><img src={close} alt='' className='w-5' /></button>
         </div>
 
-        <form className='mt-10 mx-auto' onSubmit={handleSubmit}>
+        <form className='mt-10 mx-auto' onSubmit={handleSubmit} enctype="multipart/form-data">
                                                 <div className='lg:flex lg:items-center lg:justify-between mb-3'>
                                                             <div className='w-[48%]'>
                                                                                <label className='block text-[14px]'>Title</label>
@@ -117,8 +121,8 @@ const StaffForm = ({setModel}) => {
                                                                            <input type='text' name='contact' placeholder='Contact' className={emptyField.includes(`contact w-full h-[50px] border-2 border-solid border-red-500 my-2 px-2 rounded-md text-black`) ? 'error' : 'w-full h-[50px] my-2 px-2 rounded-md text-black'} onChange={(e) => setContact(e.target.value)}/>
                                                             </div>
                                                             <div className='w-[48%]'>
-                                                                           <label className='block text-[14px]'>Address</label>
-                                                                           <input type='text' name='address' placeholder='Address' className='w-full h-[50px] my-2 px-5 text-black rounded-md' onChange={(e) => setAddress(e.target.value)}/>
+                                                                        <label className='block text-[14px]'>DOB</label>
+                                                                        <input type='date' name='dob' className='w-full h-[50px] my-2 px-5 text-black rounded-md' onChange={(e) => setDob(e.target.value)}/>
                                                             </div>
                                                 </div>
 
@@ -134,7 +138,11 @@ const StaffForm = ({setModel}) => {
                                                 </div>
 
                                                 <div className='lg:flex lg:items-center lg:justify-between mb-3'>
-                                                                  <div className='w-[48%]'>
+                                                            <div className='w-[48%]'>
+                                                                           <label className='block text-[14px]'>Address</label>
+                                                                           <input type='text' name='address' placeholder='Address' className='w-full h-[50px] my-2 px-5 text-black rounded-md' onChange={(e) => setAddress(e.target.value)}/>
+                                                            </div>
+                                                            <div className='w-[48%]'>
                                                                            <label className='block text-[14px]'>Position</label>
                                                                            <select name='position' className={emptyField.includes(`position w-full h-[50px] my-2 px-2 rounded-md text-black`) ? 'error' : 'w-full h-[50px] my-2 px-2 rounded-md text-black'} onChange={(e) => setPosition(e.target.value)}>
                                                                                     <option>Set Position</option>
@@ -144,6 +152,9 @@ const StaffForm = ({setModel}) => {
                                                                                     <option value="human resource">Human Resource</option>
                                                                               </select>
                                                             </div>
+                                                </div>
+
+                                                <div className='lg:flex lg:items-center lg:justify-between mb-3'>
                                                             <div className='w-[48%]'>
                                                                            <label className='block text-[14px]'>Role</label>
                                                                            <select name='position' className={emptyField.includes(`role w-full h-[50px] my-2 px-2 rounded-md text-black`) ? 'error' : 'w-full h-[50px] my-2 px-2 rounded-md text-black'} onChange={(e) => setRole(e.target.value)}>
@@ -152,6 +163,10 @@ const StaffForm = ({setModel}) => {
                                                                                     <option value="">C_Teacher</option>
                                                                                     <option value="">S_Teacher</option>
                                                                               </select>
+                                                            </div>
+                                                            <div className='w-[48%]'>
+                                                                  <label className='block text-[14px]'>Image</label>
+                                                                  <input type='file' name='image' className='w-full h-[50px] my-2 px-5 text-black rounded-md bg-white py-3' onChange={(e) => setImage(e.target.value)}/>
                                                             </div>
                                                 </div>
 

@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react'
-import SideNotify from '../Components/SideNotify'
 import { Link } from 'react-router-dom'
-import StaffForm from '../Forms/StaffForm'
-import { useStaffsContext } from '../hooks/useStaffsContext'
-import axios from 'axios'
 
-// import { staffs } from '../data/staffs'
+// COMPONENTS
+import SideNotify from '../Components/SideNotify'
+import StaffForm from '../Forms/StaffForm'
+import axios from 'axios'
+// import { useStaffsContext } from '../hooks/useStaffsContext'
 
 // ICONS
 import staff from '../icons/icons8-writer-male-94.png'
@@ -85,13 +85,12 @@ const Staff = () => {
                   {staffs.map((staff) => (
                       <div key={staff.id}>
                           <div className='bg-white rounded-2xl w-64 p-5 text-center shadow-lg'>
-                              <img src={staff} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-1'/>
+                              <img src={user} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-1'/>
                               <h3 className='mb-1 mt-2 font-semibold text-[18px]'>{staff.title + ' ' + staff.surname + ' ' + staff.firstname}</h3>
                               <p className='text-[14px] text-dark-purple'>{staff.position}</p>
                               <div className='bg-dark-purple w-full py-3 rounded-lg text-white mt-1'>
                                 <Link to={`${staff._id}`} className='w-full'>View Profile</Link>
-                              </div>
-                              
+                            </div>
                           </div>
                       </div>
                   ))}
