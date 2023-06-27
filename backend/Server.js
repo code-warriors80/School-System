@@ -25,7 +25,7 @@ app.use('/api/v1', routes)
 // server and database connections
 mongoose.connection.once('open', () => {
     console.log('connected to mongoDB')
-     app.listen(PORT, console.log(`server running on port ${PORT}`))
+    app.listen(PORT, console.log(`server running on port ${PORT}`))
 })
 
 mongoose.connection.on('error', (err) => {

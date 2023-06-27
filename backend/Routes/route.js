@@ -6,7 +6,7 @@ const controllers = require('../controllers/staffController')
 
 // GET
 router.get('/', (req, res) => {
-               res.json({msg: 'this route is working'})
+    res.json({ msg: 'this route is working' })
 })
 
 // GET ALL STAFFS
@@ -19,10 +19,10 @@ router.get('/staff/:id', controllers.getStaff)
 router.post('/addStaff', controllers.addStaff)
 
 // UPDATE SPECIFIC STAFF
-router.patch('staff/:id', controllers.updateStaff)
+router.patch('/staff/:id', controllers.updateStaff)
 
 // DELETE SPECIFIC STAFF
-router.delete('staff/:id', controllers.deleteStaff)
+router.delete('/staff/:id', controllers.deleteStaff)
 
 
 module.exports = router

@@ -32,7 +32,10 @@ const getStaff = async (req, res) => {
 
 // ADD NEW STAFF
 const addStaff = async (req, res) => {
-    const { title, firstname, lastname, surname, email, gender, contact, address, city, state, position, role } = req.body
+    const { title, firstname,
+        lastname, surname, email,
+        gender, contact, address, image,
+        city, state, position, role, dob } = req.body
 
     const staffList = await Staff.find().lean()
     const stLength = staffList.length
@@ -41,39 +44,22 @@ const addStaff = async (req, res) => {
     const status = 'Active'
     const staffId = idGen(stLength)
 
-    let emptyField = []
-
-    console.log(req.body)
-
     // confirm data
-    if (!firstname) {
-        emptyField.push('firstname')
+    if (!firstname || !surname || !email || !staffId || !gender || !contact || !position || !address || !role.length) {
+        return res.status(400).json({ message: 'All fields are required' })
     }
-    if (!surname) {
-        emptyField.push('lastname')
+
+    // check for duplicate
+    const confirmStaffId = await Staff.findOne({ staffId }).lean().exec()
+    if (confirmStaffId) {
+        return res.status(409).json({ message: " Staff with staff-ID already exist" })
     }
-    if (!gender) {
-        emptyField.push('gender')
+    const duplicate = await Staff.findOne({ email }).lean().exec()
+
+    if (duplicate) {
+        return res.status(409).json({ message: " Staff with email already exist" })
     }
-    if (!contact) {
-        emptyField.push('contact')
-    }
-    if (!position) {
-        emptyField.push('position')
-    }
-    if (!role) {
-        emptyField.push('role')
-    }
-    if (!password) {
-        emptyField.push('password')
-    }
-    if (!address) {
-        emptyField.push('address')
-    }
-    console.log(emptyField)
-    if (emptyField.length > 0) {
-        return res.status(400).json({ error: 'Please fill in all fields' })
-    }
+
 
     const findStaff = await Staff.findOne({ staffId }).exec()
     if (findStaff) {
@@ -84,12 +70,12 @@ const addStaff = async (req, res) => {
         const hashedPwd = await bcrypt.hash(password, 10)
 
         const newStaff = await Staff.create({
-            title, firstname, lastname,
-            surname, email, gender,
-            contact, address, city,
-            state, position, role,
+            title, firstname,
+            lastname, surname, email,
+            gender, contact, address, image,
+            city, state, position, role, password, status, dob,
             staffId, "password": hashedPwd,
-            status
+
         })
         if (newStaff) {
             return res.json({ message: `new staff ${newStaff.firstname} created ` })
@@ -107,18 +93,59 @@ const addStaff = async (req, res) => {
 // UPDATE SINGLE STAFF
 const updateStaff = async (req, res) => {
     const { id } = req.params
+    const { title, firstname,
+        lastname, surname, email,
+        gender, contact, address, image,
+        city, state, position, role, password, status, dob } = req.body
 
-    if (!mongoose.Types.ObjectId.isValid(id)) {
-        return res.status(404).json({ error: 'No Such Staff' })
+
+    // confirm data
+    if (!id || !firstname || !surname || !email || !gender || !contact || !position || !address || !role.length) {
+        return res.status(400).json({ message: 'All fields are required' })
     }
 
-    const staff = await Staff.findByIdAndUpdate(id)
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).json({ error: 'Bad ID format' })
+    }
+
+    // find staff
+    const staff = await Staff.findById(id).exec()
 
     if (!staff) {
         return res.status(404).json({ error: 'No Staff Found' })
     }
 
-    res.status(200).json(staff)
+    // check for duplicate
+    const duplicate = await Staff.findOne({ email }).lean().exec()
+
+    if (duplicate && duplicate?._id.toString() !== id) {
+        return res.status(409).json({ message: " Staff with staff-ID already exist" })
+    }
+
+    staff.firstname = firstname
+    staff.surname = surname
+    staff.gender = gender
+    staff.contact = contact
+    staff.email = email
+    staff.dob = dob
+    staff.address = address
+    staff.city = city
+    staff.state = state
+    staff.position = position
+    staff.role = role
+    staff.image = image
+    staff.status = status
+    staff.title = title
+    staff.lastname = lastname
+
+    if (password) {
+        // hash password
+        hashPwd = bcrypt.hash(password, 10)
+        staff.password = hashPwd
+    }
+    const updatedStaff = await staff.save()
+
+    res.json({ message: `${updatedStaff.firstname} updated` })
 }
 // END UPDATE SINGLE STAFF
 
