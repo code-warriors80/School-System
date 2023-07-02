@@ -13,11 +13,9 @@ import calender from '../icons/icons8-calendar-94.png'
 import user from '../icons/icons8-male-user-94.png'
 import bell from '../icons/icons8-bell-94.png'
 import search from '../icons/icons8-search-94.png'
-import Response from '../response/response'
 
 const Staff = () => {
       const [model, setModel] = useState(false)
-      const [status, setStatus] = useState(false)
       const [staffs, setStaff] = useState([])
 
       const url = '/staff'

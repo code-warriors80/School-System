@@ -1,26 +1,43 @@
 import React, {useState} from 'react'
 import UpdateStaffProfile from '../Forms/updateStaffProfile';
 import axios from 'axios';
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
+import Response from '../response/response';
+
 
 const Tabs = ({staff}) => {
                const [toggleState, setToggle] = useState(1);
+               const [success, setSuccess] = useState('')
+               const [status, setStatus] = useState(false)
+               const [error, setError] = useState(null)
                const {id} = useParams()
+
+               const navigate = useNavigate()
 
               //  TAB TOGGLER
                const toggleTab = (index) => {
                               setToggle(index);
                }
 
+               setTimeout(() => {
+                setStatus(false)
+          }, 5000)
+
               //  DELETE FUNCTION
                const deleteStaff = async () => {
                     axios.delete(`/staff/${id}`).then(() => {
-                      console.log('deleted');
+                      setSuccess('SUCCESS')
+                      setStatus(true)
+                      setError(null)
+                    setTimeout(() => {
+                          navigate('/staff')
+                    }, 3000)
                     })
                }
 
   return (
     <div className='scroll h-[80vh] overflow-scroll'>
+                     {status === true && <Response success={success} error={error}/>}
               {/* TAB HEADER */}
                <div className='block-tabs flex mb-2 cursor-pointer'>
                               <div className={toggleState === 1 ? 'active-tab py-4 px-10' : 'tab bg-light-gray py-4 px-10'} onClick={() => toggleTab(1)}>Home</div>

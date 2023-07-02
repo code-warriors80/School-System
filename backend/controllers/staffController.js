@@ -32,14 +32,7 @@ const getStaff = async (req, res) => {
 
 // ADD NEW STAFF
 const addStaff = async (req, res) => {
-<<<<<<< Updated upstream
-    const { title, firstname,
-        lastname, surname, email,
-        gender, contact, address, image,
-        city, state, position, role, dob } = req.body
-=======
     const { title, firstname, lastname, surname, email, gender, contact, dob, address, city, state, position, role } = req.body
->>>>>>> Stashed changes
 
     const staffList = await Staff.find().lean()
     const stLength = staffList.length
@@ -48,31 +41,11 @@ const addStaff = async (req, res) => {
     const status = 'Active'
     const staffId = idGen(stLength)
 
-<<<<<<< Updated upstream
-    // confirm data
-    if (!firstname || !surname || !email || !staffId || !gender || !contact || !position || !address || !role.length) {
-        return res.status(400).json({ message: 'All fields are required' })
-    }
-
-    // check for duplicate
-    const confirmStaffId = await Staff.findOne({ staffId }).lean().exec()
-    if (confirmStaffId) {
-        return res.status(409).json({ message: " Staff with staff-ID already exist" })
-    }
-    const duplicate = await Staff.findOne({ email }).lean().exec()
-
-    if (duplicate) {
-        return res.status(409).json({ message: " Staff with email already exist" })
-    }
-
-
-=======
 
     console.log(req.body)
 
     // confirm data
    
->>>>>>> Stashed changes
     const findStaff = await Staff.findOne({ staffId }).exec()
     if (findStaff) {
         return res.json({ message: 'staff with id already exist' })
@@ -82,18 +55,11 @@ const addStaff = async (req, res) => {
         const hashedPwd = await bcrypt.hash(password, 10)
 
         const newStaff = await Staff.create({
-<<<<<<< Updated upstream
-            title, firstname,
-            lastname, surname, email,
-            gender, contact, address, image,
-            city, state, position, role, password, status, dob,
-=======
             title, firstname, lastname,
             surname, email, gender,
             contact, dob, address, city,
             state, position, role,
->>>>>>> Stashed changes
-            staffId, "password": hashedPwd,
+            staffId, status, "password": hashedPwd,
 
         })
         if (newStaff) {
@@ -159,7 +125,7 @@ const updateStaff = async (req, res) => {
 
     if (password) {
         // hash password
-        hashPwd = bcrypt.hash(password, 10)
+        const hashPwd = bcrypt.hash(password, 10)
         staff.password = hashPwd
     }
     const updatedStaff = await staff.save()

@@ -34,6 +34,11 @@ const StaffForm = ({setModel}) => {
             const url = '/addStaff';
             const staffs = {title, surname, firstname, lastname, email, gender, contact, dob, address, state, city, position, role}
 
+            if(title.length === 0 || surname.length === 0 || lastname.length === 0 || email.length === 0 || gender.length === 0 || position.length === 0 || role.length === 0)
+            {
+                  setError('Required Empty')
+            }
+
             const response = await fetch(url, {
                   method: 'POST',
                   body: JSON.stringify(staffs),
@@ -52,23 +57,25 @@ const StaffForm = ({setModel}) => {
             if(response.ok)
             {
                   setStatus(true)
-                  setModel(false)
-                  setSuccess('Success')
-                  setError('Error')
+                  setSuccess('Staff Added')
+                  setTimeout(() => {
+                        setModel(false)
+                  }, 3000)
             }
       }
 
 
   return (
-    <div className='scroll fixed w-[66%] p-5 bg-light-gray h-[92vh] overflow-scroll'>
+      <div>
+         {status === true && <Response success={success} error={error}/>}
+         <div className='scroll fixed w-[66%] p-5 bg-light-gray h-[92vh] overflow-scroll'>
         <div className='flex items-center justify-between'>
             <h1 className='text-[20px]'>Add Staff</h1>
             <button className='text-[20px]' onClick={() => setModel(false)}><img src={close} alt='' className='w-5' /></button>
         </div>
 
-        {status === true && <Response success={success} error={error}/>}
-
         <form className='mt-10 mx-auto' onSubmit={handleSubmit} >
+        <div className='w-[100%] flex items-center justify-center pb-5'>{error && <div className="w-[88%] text-center py-3 rounded-lg error bg-red-500">{error}</div>}</div>
                                                 <div className='lg:flex lg:items-center lg:justify-between mb-3'>
                                                             <div className='w-[48%]'>
                                                                                <label className='block text-[14px]'>Title</label>
@@ -167,9 +174,10 @@ const StaffForm = ({setModel}) => {
                                                 </div>
 
                                                 <button className=' bg-dark-purple text-white py-5 px-16 rounded-md mb-5' >Add Staff</button>
-                                                {error && <div className='error'>{error}</div>}
         </form>
   </div>
+      </div>
+    
   )
 }
 

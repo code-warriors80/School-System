@@ -27,3 +27,8 @@
 {
   background: #f0eff5;
 }
+
+.notify
+{
+  z-index: 6666666;
+}
