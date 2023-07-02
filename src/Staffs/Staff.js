@@ -13,9 +13,11 @@ import calender from '../icons/icons8-calendar-94.png'
 import user from '../icons/icons8-male-user-94.png'
 import bell from '../icons/icons8-bell-94.png'
 import search from '../icons/icons8-search-94.png'
+import Response from '../response/response'
 
 const Staff = () => {
       const [model, setModel] = useState(false)
+      const [status, setStatus] = useState(false)
       const [staffs, setStaff] = useState([])
 
       const url = '/staff'
@@ -48,6 +50,7 @@ const Staff = () => {
 
           {/* ADD STAFF MODEL */}
               {model === true &&(<StaffForm setModel={setModel}/>)}
+              
           {/* END ADD STAFF MODEL */}
 
           {/* SIDE MENU */}
@@ -83,7 +86,7 @@ const Staff = () => {
             {/* FETCH STAFF PARENT */}
             <div className=' flex items-start gap-5 pb-5 pt-2 flex-wrap mx-auto'>
                   {staffs.map((staff) => (
-                      <div key={staff.id}>
+                      <div key={staff._id}>
                           <div className='bg-white rounded-2xl w-64 p-5 text-center shadow-lg'>
                               <img src={user} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-1'/>
                               <h3 className='mb-1 mt-2 font-semibold text-[18px]'>{staff.title + ' ' + staff.surname + ' ' + staff.firstname}</h3>

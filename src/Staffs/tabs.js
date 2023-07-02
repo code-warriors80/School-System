@@ -1,10 +1,11 @@
 import React, {useState} from 'react'
-// import { useStaffsContext } from '../hooks/useStaffsContext';
 import UpdateStaffProfile from '../Forms/updateStaffProfile';
+import axios from 'axios';
+import { useParams } from 'react-router-dom'
 
 const Tabs = ({staff}) => {
                const [toggleState, setToggle] = useState(1);
-              //  const [dispatch] = useStaffsContext()
+               const {id} = useParams()
 
               //  TAB TOGGLER
                const toggleTab = (index) => {
@@ -12,17 +13,11 @@ const Tabs = ({staff}) => {
                }
 
               //  DELETE FUNCTION
-              //  const deleteStaff = async () => {
-              //       const response = await fetch(`staff/${staff.id}`, () => staff.id, {
-              //         method: 'DELETE'
-              //       })
-
-              //       const json = await response.json()
-
-              //       if(response.ok) {
-              //           dispatch({type: 'DELETE_STAFF',  payload: json})
-              //       }
-              //  }
+               const deleteStaff = async () => {
+                    axios.delete(`/staff/${id}`).then(() => {
+                      console.log('deleted');
+                    })
+               }
 
   return (
     <div className='scroll h-[80vh] overflow-scroll'>
@@ -121,7 +116,7 @@ const Tabs = ({staff}) => {
                                                     laboriosam atque quibusdam nam vero magnam hic voluptate. Voluptate, doloribus. Temporibus ut 
                                                     assumenda rem harum! Doloremque, cupiditate?
                                              </p>
-                                             {/* <button className='bg-red-500 text-white py-3 px-5 rounded-2xl mt-2' onClick={deleteStaff}>Delete Account</button> */}
+                                             <button className='bg-red-500 text-white py-3 px-5 rounded-2xl mt-2' onClick={deleteStaff}>Delete Account</button>
                               </div>
                               {/* END TAB CONTENT 4 */}
                </div>

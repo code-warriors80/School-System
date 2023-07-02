@@ -32,10 +32,14 @@ const getStaff = async (req, res) => {
 
 // ADD NEW STAFF
 const addStaff = async (req, res) => {
+<<<<<<< Updated upstream
     const { title, firstname,
         lastname, surname, email,
         gender, contact, address, image,
         city, state, position, role, dob } = req.body
+=======
+    const { title, firstname, lastname, surname, email, gender, contact, dob, address, city, state, position, role } = req.body
+>>>>>>> Stashed changes
 
     const staffList = await Staff.find().lean()
     const stLength = staffList.length
@@ -44,6 +48,7 @@ const addStaff = async (req, res) => {
     const status = 'Active'
     const staffId = idGen(stLength)
 
+<<<<<<< Updated upstream
     // confirm data
     if (!firstname || !surname || !email || !staffId || !gender || !contact || !position || !address || !role.length) {
         return res.status(400).json({ message: 'All fields are required' })
@@ -61,6 +66,13 @@ const addStaff = async (req, res) => {
     }
 
 
+=======
+
+    console.log(req.body)
+
+    // confirm data
+   
+>>>>>>> Stashed changes
     const findStaff = await Staff.findOne({ staffId }).exec()
     if (findStaff) {
         return res.json({ message: 'staff with id already exist' })
@@ -70,10 +82,17 @@ const addStaff = async (req, res) => {
         const hashedPwd = await bcrypt.hash(password, 10)
 
         const newStaff = await Staff.create({
+<<<<<<< Updated upstream
             title, firstname,
             lastname, surname, email,
             gender, contact, address, image,
             city, state, position, role, password, status, dob,
+=======
+            title, firstname, lastname,
+            surname, email, gender,
+            contact, dob, address, city,
+            state, position, role,
+>>>>>>> Stashed changes
             staffId, "password": hashedPwd,
 
         })
@@ -158,7 +177,7 @@ const deleteStaff = async (req, res) => {
         return res.status(404).json({ error: 'No Such Staff' })
     }
 
-    const staff = await Staff.findOneAndDelete({ _id: id })
+    const staff = await Staff.findByIdAndDelete({ _id: id })
 
     if (!staff) {
         return res.status(404).json({ error: 'No Staff Found' })

@@ -106,26 +106,51 @@ NOTE: Other Functions will be updated soon
 
 RESPONSIBILITIES
 
+<<<<<<< Updated upstream
 - JOSHUA (EASYLIFE)
+=======
+* JOSHUA (EASYLIFE)
+- database/server connections   ------ DONE
+- Add Staffs                                  ------ DONE
+>>>>>>> Stashed changes
 
 * database/server connections
 * Add Staffs
 
+<<<<<<< Updated upstream
 - SPARROW
+=======
+* SPARROW
+- database model/schemas        ------ DONE
+- Update Staffs                             
+>>>>>>> Stashed changes
 
 * database model/schemas
 * Update Staffs
 
+<<<<<<< Updated upstream
 - CODE WARRIOR
+=======
+* CODE WARRIOR
+- Fetch Staff                               ------ DONE
+- Search Staff
+>>>>>>> Stashed changes
 
 * Fetch Staff
 * Search Staff
 
+<<<<<<< Updated upstream
 - OGALA (SAVAGE)
 
 * routing
 * Delete Staff
 * api testing
+=======
+* OGALA (SAVAGE)
+- routing                                   ------ DONE
+- Delete Staff
+- api testing
+>>>>>>> Stashed changes
 
 NOTE This Functions Are to be completed and Submitted For Review Before 29th June 2023
 
