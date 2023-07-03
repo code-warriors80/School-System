@@ -24,9 +24,9 @@ const StaffForm = ({setModel}) => {
       const [status, setStatus] = useState(false)
       const [error, setError] = useState(null)
 
-      setTimeout(() => {
-            setStatus(false)
-      }, 5000)
+      // setTimeout(() => {
+      //       setStatus(false)
+      // }, 5000)
 
       const handleSubmit = async (e) => {
             e.preventDefault()
@@ -60,14 +60,14 @@ const StaffForm = ({setModel}) => {
                   setSuccess('Staff Added')
                   setTimeout(() => {
                         setModel(false)
-                  }, 3000)
+                  }, 5000)
             }
       }
 
 
   return (
       <div>
-         {status === true && <Response success={success} error={error}/>}
+         {status === true && <Response success={success}/>}
          <div className='scroll fixed w-[66%] p-5 bg-light-gray h-[92vh] overflow-scroll'>
         <div className='flex items-center justify-between'>
             <h1 className='text-[20px]'>Add Staff</h1>

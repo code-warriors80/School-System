@@ -15,6 +15,7 @@ PACKAGES
 - mongoose
 - axios
 - nodemon
+- bcrypt
 
 PROJECT GUIDELINES
 
@@ -56,11 +57,11 @@ ALL FIUNCTIONS
 
 - STAFFS
 
-* Add Staff
-* Fetch Staff
-* Update Staff
-* Delete Staff
-* Upload Lesson Note
+* Add Staff                                                 -------    DONE
+* Fetch Staff                                              -------     DONE
+* Update Staff                                           -------     DONE
+* Delete Staff                                            -------     DONE
+
 
 - STAFF ATTENDANCE
 
@@ -102,8 +103,14 @@ ALL FIUNCTIONS
 * Announcement
 * Staff Payroll
 * Student Fees
-* E-Liberary
 * Live Chat
+
+- MATERIAL
+
+* Lesson Plan
+* E-Liberary
+* E-Accessment
+* E-Note
 
 NOTE: Other Functions will be updated soon
 
@@ -112,35 +119,20 @@ RESPONSIBILITIES
 * JOSHUA (EASYLIFE)
 - database/server connections   ------ DONE
 - Add Staffs                                  ------ DONE
-
-* database/server connections
-* Add Staffs
+- Take Attendance
 
 * SPARROW
 - database model/schemas        ------ DONE
-- Update Staffs                             
-
-* database model/schemas
-* Update Staffs
+- Update Staffs                            ------  DONE
 
 * CODE WARRIOR
-- Fetch Staff                               ------ DONE
-- Search Staff
-
-* Fetch Staff
-* Search Staff
+- Fetch Staff                                ------ DONE
+- Search Staff                             ------ DONE
 
 * OGALA (SAVAGE)
-- routing                                   ------ DONE
-- Delete Staff
+- routing                                     ------ DONE
+- Delete Staff                             ------ DONE
 - api testing
+- Fetch Daily Attendance / Fetch Attendance By Date
 
 NOTE This Functions Are to be completed and Submitted For Review Before 29th June 2023
-
-MEETING ALERT
-Venue - 5G
-Time - 1:00 PM
-
-Please lets all be Present on time and with our pc,s
-
-THANK YOU

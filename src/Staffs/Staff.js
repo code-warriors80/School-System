@@ -17,12 +17,18 @@ import search from '../icons/icons8-search-94.png'
 const Staff = () => {
       const [model, setModel] = useState(false)
       const [staffs, setStaff] = useState([])
+      const [searchfield, setSearch] = useState('');
 
       const url = '/staff'
 
       useEffect(() => {
         fetchStaff()
       }, [])
+
+      const searchStaff = (event) => {
+        setSearch(event.target.value);
+      }
+      
 
       const fetchStaff = async () => {
         axios.get(url).then(response => {
@@ -31,13 +37,17 @@ const Staff = () => {
         })
       }
 
+      const filterStaffs = staffs.filter(staff => {
+          return staff.firstname.toLowerCase().includes(searchfield.toLowerCase());
+      })
+
   return (
     <div className='w-full'>
         {/* TOP NAV */}
             <nav className='py-3 px-10 bg-dark-purple flex items-center justify-between'>
                   <div className="hidden lg:flex search--box bg-white lg:items-center w-[25%] gap-[5px] py-[3px] rounded-md  px-[12px] bg-light-gray">
                                     <i className="text-[1.2rem] pointer text-gray-800"><img src={search} alt='' className='w-6'/></i>
-                                    <input type="text" name="search" id="" placeholder="Search" className='p-[10px] text-black w-full'/>
+                                    <input type="text" name="search" id="" placeholder="Search" onChange={searchStaff} className='p-[10px] text-black w-full'/>
                     </div>
                     <div className='flex items-center'>
                           <img src={bell} alt='' className='mr-6 w-8'/>
@@ -83,7 +93,7 @@ const Staff = () => {
 
             {/* FETCH STAFF PARENT */}
             <div className=' flex items-start gap-5 pb-5 pt-2 flex-wrap mx-auto'>
-                  {staffs.map((staff) => (
+                  {filterStaffs.map((staff) => (
                       <div key={staff._id}>
                           <div className='bg-white rounded-2xl w-64 p-5 text-center shadow-lg'>
                               <img src={user} alt="" className='w-[110px] h-[110px] rounded-full mx-auto border-2 border-dashed border-dark-brown p-1'/>

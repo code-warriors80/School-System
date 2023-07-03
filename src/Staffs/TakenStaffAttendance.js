@@ -5,6 +5,9 @@ import user from '../icons/icons8-male-user-94.png'
 import close from '../icons/icons8-close-94.png'
 
 const TakenStaffAttendance = ({setModel}) => {
+    const checkDate =  (e) => {
+        console.log(e.target.value);
+    }
   return (
     <div className='fixed w-[66%] p-5 bg-light-gray h-[90vh]'>
         <div className='flex items-center justify-between'>
@@ -27,7 +30,7 @@ const TakenStaffAttendance = ({setModel}) => {
               </div>
 
               <div className='bg-white mb-5 px-4 py-4 w-56 mt-4 rounded-lg'>
-                  <input type='date' className='w-full'/>
+                  <input type='date' className='w-full' onChange={checkDate}/>
               </div>
         </div>
         {/* END SELECT CATEGORY / SEARCH */}

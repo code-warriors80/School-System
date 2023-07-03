@@ -2,7 +2,7 @@ import React from 'react'
 import successicon from '../icons/icons8-verified-account-94.png'
 import erroricon from '../icons/icons8-close-94.png'
 
-const Response = ({success, error}) => {
+const Response = ({success}) => {
   return (
     <div className='absolute w-[100%] h-[100vh] flex items-center justify-center left-0 top-0 notify '>
                {success ? 

@@ -58,7 +58,7 @@ const StaffAttendance = () => {
                                   </thead>
                                   <tbody>
                                     {staffs.map((allstaff,index) => (
-                                    <tr>
+                                    <tr key={index}>
                                           <td className='py-5'>{index + 1}</td>
                                           <td className='py-5'><img src={user} alt='' className='w-[50px] h-[50px] border-2 border-dashed border-dark-brown p-1 rounded-full mx-auto'/></td>
                                           <td>

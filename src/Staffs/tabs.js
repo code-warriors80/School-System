@@ -19,9 +19,9 @@ const Tabs = ({staff}) => {
                               setToggle(index);
                }
 
-               setTimeout(() => {
-                setStatus(false)
-          }, 5000)
+          //      setTimeout(() => {
+          //       setStatus(false)
+          // }, 5000)
 
               //  DELETE FUNCTION
                const deleteStaff = async () => {
@@ -37,7 +37,7 @@ const Tabs = ({staff}) => {
 
   return (
     <div className='scroll h-[80vh] overflow-scroll'>
-                     {status === true && <Response success={success} error={error}/>}
+                     {status === true && <Response success={success}/>}
               {/* TAB HEADER */}
                <div className='block-tabs flex mb-2 cursor-pointer'>
                               <div className={toggleState === 1 ? 'active-tab py-4 px-10' : 'tab bg-light-gray py-4 px-10'} onClick={() => toggleTab(1)}>Home</div>
