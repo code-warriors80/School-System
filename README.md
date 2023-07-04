@@ -119,7 +119,7 @@ RESPONSIBILITIES
 * JOSHUA (EASYLIFE)
 - database/server connections   ------ DONE
 - Add Staffs                                  ------ DONE
-- Take Attendance
+- Take Attendance                   
 
 * SPARROW
 - database model/schemas        ------ DONE
@@ -133,6 +133,7 @@ RESPONSIBILITIES
 - routing                                     ------ DONE
 - Delete Staff                             ------ DONE
 - api testing
+- Staff Attendance Model
 - Fetch Daily Attendance / Fetch Attendance By Date
 
 NOTE This Functions Are to be completed and Submitted For Review Before 29th June 2023
