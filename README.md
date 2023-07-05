@@ -135,10 +135,10 @@ RESPONSIBILITIES
 - Delete Daily Attendance
 
 * SPARROW
+- database model/schemas
 - Take Attendance  
 
 * CODE WARRIOR
-- database model/schemas
 
 
 * OGALA (SAVAGE)
