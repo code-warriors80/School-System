@@ -47,7 +47,7 @@ const Staff = () => {
             <nav className='py-3 px-10 bg-dark-purple flex items-center justify-between'>
                   <div className="hidden lg:flex search--box bg-white lg:items-center w-[25%] gap-[5px] py-[3px] rounded-md  px-[12px] bg-light-gray">
                                     <i className="text-[1.2rem] pointer text-gray-800"><img src={search} alt='' className='w-6'/></i>
-                                    <input type="text" name="search" id="" placeholder="Search" onChange={searchStaff} className='p-[10px] text-black w-full'/>
+                                    <input type="text" name="search" id="" placeholder="Search" className='p-[10px] text-black w-full'/>
                     </div>
                     <div className='flex items-center'>
                           <img src={bell} alt='' className='mr-6 w-8'/>
@@ -85,7 +85,7 @@ const Staff = () => {
 
                     <div className="flex bg-white items-center w-[29%] gap-[5px] py-[3px] rounded-md  px-[12px] bg-light-gray">
                                     <i className="text-[1.2rem] pointer text-gray-800"><img src={search} alt='' className='w-6'/></i>
-                                    <input type="text" name="search" id="" placeholder="Search" className='p-[10px] text-black w-full'/>
+                                    <input type="text" name="search" id="" placeholder="Search" onChange={searchStaff} className='p-[10px] text-black w-full'/>
                     </div>
 
               </div>
