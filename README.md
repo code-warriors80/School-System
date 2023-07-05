@@ -58,10 +58,12 @@ password                                  String                         True   
 
 STAFFATTENDANCE MODEL
 
+Table                                         Data Type                    Required
+
 Staffid                                      String                         True
 Timein                                       TimeRange                False
 Timeout                                     TimeRange                False
-Date                                           TimeStamp                   
+Date                                           TimeStamp               True
 
 ALL FIUNCTIONS
 

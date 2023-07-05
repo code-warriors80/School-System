@@ -1,8 +1,10 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import SideNotify from '../Components/SideNotify'
 import TakenStaffAttendance from './TakenStaffAttendance'
 
 import { staffs } from '../data/staffs'
+
+import axios from 'axios'
 
 // ICONS
 import user from '../icons/icons8-male-user-94.png'
@@ -12,6 +14,20 @@ import search from '../icons/icons8-search-94.png'
 
 const StaffAttendance = () => {
   const [model, setModel] = useState(false)
+  const [staffs, setStaffs] = useState([]);
+
+  useEffect(() => {
+    getUser();
+  })
+
+  const getUser = () => {
+    axios.get('/staffAttendance').then(response => {
+        setStaffs(response.data);
+    }).catch(error => {
+      console.log(error);
+    })
+  }
+  
   return (
     <div className='w-full'>
           {/* TOP NAV */}
@@ -62,7 +78,7 @@ const StaffAttendance = () => {
                                           <td className='py-5'>{index + 1}</td>
                                           <td className='py-5'><img src={user} alt='' className='w-[50px] h-[50px] border-2 border-dashed border-dark-brown p-1 rounded-full mx-auto'/></td>
                                           <td>
-                                                <p className='font-semibold text-[17px]'>{allstaff.name}</p>
+                                                <p className='font-semibold text-[17px] font'>{allstaff.title + ' ' + allstaff.surname + ' ' + allstaff.firstname}</p>
                                           </td>
                                           <td className='py-5'>
                                               <button className='border-2 border-solid border-green-500 text-green-500 hover:bg-green-500 hover:text-white p-3 rounded-lg'>Sign In</button>

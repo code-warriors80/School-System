@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const controllers = require('../controllers/staffController')
+const staffAttendance = require('../controllers//staffAttendanceController')
 
 // STAFF ROUTES
 
@@ -24,5 +25,7 @@ router.patch('/staff/:id', controllers.updateStaff)
 // DELETE SPECIFIC STAFF
 router.delete('/staff/:id', controllers.deleteStaff)
 
+// STAFF ATTENDANCE
+router.get('/staffAttendance', staffAttendance.getStaff);
 
 module.exports = router
