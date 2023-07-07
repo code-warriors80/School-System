@@ -45,7 +45,7 @@ const addStaff = async (req, res) => {
     console.log(req.body)
 
     // confirm data
-   
+
     const findStaff = await Staff.findOne({ staffId }).exec()
     if (findStaff) {
         return res.json({ message: 'staff with id already exist' })
@@ -106,31 +106,35 @@ const updateStaff = async (req, res) => {
     if (duplicate && duplicate?._id.toString() !== id) {
         return res.status(409).json({ message: " Staff with staff-ID already exist" })
     }
+    try {
 
-    staff.firstname = firstname
-    staff.surname = surname
-    staff.gender = gender
-    staff.contact = contact
-    staff.email = email
-    staff.dob = dob
-    staff.address = address
-    staff.city = city
-    staff.state = state
-    staff.position = position
-    staff.role = role
-    staff.image = image
-    staff.status = status
-    staff.title = title
-    staff.lastname = lastname
+        staff.firstname = firstname
+        staff.surname = surname
+        staff.gender = gender
+        staff.contact = contact
+        staff.email = email
+        staff.dob = dob
+        staff.address = address
+        staff.city = city
+        staff.state = state
+        staff.position = position
+        staff.role = role
+        staff.image = image
+        staff.status = status
+        staff.title = title
+        staff.lastname = lastname
 
-    if (password) {
-        // hash password
-        const hashPwd = bcrypt.hash(password, 10)
-        staff.password = hashPwd
+        if (password) {
+            // hash password
+            const hashPwd = bcrypt.hash(password, 10)
+            staff.password = hashPwd
+        }
+        const updatedStaff = await staff.save()
+
+        res.json({ message: `${updatedStaff.firstname} updated` })
+    } catch (error) {
+        console.log(error)
     }
-    const updatedStaff = await staff.save()
-
-    res.json({ message: `${updatedStaff.firstname} updated` })
 }
 // END UPDATE SINGLE STAFF
 
