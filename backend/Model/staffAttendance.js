@@ -7,11 +7,11 @@ const staffAttendanceSchema = new Schema({
                               required: true   
                },
                timeIn: {
-                              type: TimeRanges,
+                              type: Date,
                               required: false
                },
                timeOut: {
-                              type: TimeRanges,
+                              type: Date,
                               required: false
                }
 

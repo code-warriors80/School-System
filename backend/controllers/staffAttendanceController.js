@@ -1,5 +1,6 @@
 const { default: mongoose } = require('mongoose')
 const staffAttendance = require('../Model/staffAttendance')
+const Staff = require('../Model/staffModel')
 
 
 const getStaff = async (req, res) => {
@@ -7,6 +8,9 @@ const getStaff = async (req, res) => {
 
     res.status(200).json(staffs)
 }
+
+
+// DELETE ATTENNDANCE
 
 const deleteAttendance = async (req, res) => {
     const { staffId, timeIn } = req.body
