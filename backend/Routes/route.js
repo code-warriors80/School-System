@@ -27,6 +27,7 @@ router.delete('/staff/:id', controllers.deleteStaff)
 
 // STAFF ATTENDANCE
 router.get('/staffAttendance', staffAttendance.getStaff);
+router.post('/staffAttendance', staffAttendance.addAttendance);
 router.delete('/staffAttendance', staffAttendance.deleteAttendance);
 
 module.exports = router
